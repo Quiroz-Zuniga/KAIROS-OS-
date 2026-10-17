@@ -1,0 +1,211 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #11113F;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+section {
+    height: 500px;
+    width: 600px;
+}
+
+.col {
+    background-color: #fff;
+    width: 100%;
+    border-radius: 4px;
+    padding: 5px;
+    box-shadow: #00000059 0px 5px 15px;
+}
+
+.box {
+    display: inline-block;
+    padding: 0 5px;
+}
+
+.first {
+    border-right: 2px solid #30307033;
+}
+
+input[type=number] {
+    outline: none;
+    border: none;
+    width: 50px;
+    color: #11113F;
+    font-size: 24px;
+    padding: 10px 0px;
+    margin-left: 10px;
+}
+
+.second {
+    border-right: 2px solid #30307033;
+}
+
+button {
+    border: none;
+    color: #11113F;
+    font-size: 20px;
+    font-weight: 300;
+    background-color: transparent;
+    padding: 10px 16px;
+    border-radius: 3px;
+    cursor: pointer;
+    user-select: none;
+}
+
+button:hover {
+    background-color: #3030701a;
+}
+
+button.active {
+    background-color: #F8D97833;
+    color: #E8B010;
+}
+
+.third {
+    border-right: 2px solid #30307033;
+}
+
+.third button:focus {
+    background-color: #F8D97833;
+    color: #E8B010;
+}
+
+input[type=color] {
+    width: 35px;
+    outline: none;
+    border: none;
+    background: none;
+}
+
+textarea {
+    width: 100%;
+    height: 400px;
+    padding: 10px;
+    border-radius: 3px;
+    outline: none;
+    border: none;
+    resize: vertical;
+}
+
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+    position: absolute;
+    top: 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 10px;
+    background-color: gray;
+    gap: 20px;
+}
+
+.archivo {
+    background: blue;
+    height: 90px;
+    border-radius: 10px;
+    padding: 10px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.archivo:hover {
+    background: #303070;
+}
+
+.buttonSave{
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    font-weight: 600; /* Puedes ajustar el peso de la fuente según tus preferencias */
+    font-size: 14px; /* Puedes ajustar el tamaño de la fuente según tus preferencias */
+    color: #fff;
+    background: linear-gradient(to bottom right, #181858, #E8A810);
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: background 0.3s ease-in-out;
+}
+
+#open-button{
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    font-weight: 600; /* Puedes ajustar el peso de la fuente según tus preferencias */
+    font-size: 14px; /* Puedes ajustar el tamaño de la fuente según tus preferencias */
+    color: #fff;
+    background: linear-gradient(to bottom right, #181858, #E8A810);
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: background 0.3s ease-in-out;
+
+}
+
+.button:hover {
+    background: linear-gradient(to bottom left, #181858, #E8B010);
+}
+
+.saved-f{
+    /* flex  */
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    justify-content: flex-start;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600; /* Puedes ajustar el peso de la fuente según tus preferencias */
+    font-size: 14px; /* Puedes ajustar el tamaño de la fuente según tus preferencias */
+    color: #fff;
+    background: linear-gradient(to bottom right, #b3acc0, #d6dadf);
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+
+.saved-f:hover {
+    background: linear-gradient(to bottom left, #b3acc0, #d6dadf);
+}
+
+.file-list{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 20px;
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    font-weight: 600; /* Puedes ajustar el peso de la fuente según tus preferencias */
+    font-size: 14px; /* Puedes ajustar el tamaño de la fuente según tus preferencias */
+    color: #fff;
+    background: linear-gradient(to bottom right, #b3acc0, #d6dadf);
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.botones{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}

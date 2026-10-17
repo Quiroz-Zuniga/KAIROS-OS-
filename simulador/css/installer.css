@@ -1,0 +1,96 @@
+#sistema { background: #141735; border: 1px solid #34445c; border-radius: 16px; padding: clamp(20px, 4vw, 40px); }
+#sistema h1 { font-size: clamp(1.8rem, 4vw, 2.5rem); margin-top: 12px; }
+.paso { color: #a5b4ff; font-size: .9rem; }
+.campo { display: grid; gap: 8px; margin: 20px 0; }
+.campo[hidden] { display: none; }
+input, select { width: 100%; padding: 12px; color: #eef3fa; background: #0b0e26; border: 1px solid #526681; border-radius: 6px; font: inherit; }
+input[type=checkbox] { width: auto; margin-right: 10px; }
+small { color: #b8c9dc; line-height: 1.5; }
+.acciones { display: flex; gap: 12px; justify-content: flex-end; flex-wrap: wrap; margin-top: 32px; }
+button { padding: 12px 22px; border: 1px solid #526681; background: #23364d; color: #eef3fa; border-radius: 8px; cursor: pointer; }
+button[type=submit], .principal { background: #a5b4ff; color: #10202d; border-color: #a5b4ff; }
+button:disabled { opacity: .6; cursor: wait; }
+.peligro { background: #742f3c; border-color: #ffb8b8; color: #fff; }
+.error { color: #ffb8b8; white-space: pre-wrap; }
+.error:empty { display: none; }
+dl { display: grid; grid-template-columns: minmax(120px, 1fr) 2fr; gap: 14px; }
+dt { color: #b8c9dc; } dd { margin: 0; overflow-wrap: anywhere; }
+progress { width: 100%; height: 24px; accent-color: #a5b4ff; }
+.etapas { line-height: 1.8; }
+@media (max-width: 480px) { dl { grid-template-columns: 1fr; } main { padding: 24px 12px; } }
+
+body:not(.modo-terminal) { background: radial-gradient(ellipse at 15% 10%, #26215a 0, #0b0e26 55%); }
+body:not(.modo-terminal) main { max-width: 1180px; padding-top: 32px; }
+.modo-instalador #sistema { padding: 0; overflow: hidden; }
+.instalador-layout { display: grid; grid-template-columns: 250px minmax(0, 1fr); min-height: 600px; }
+.ruta-instalacion { background: #10132c; border-right: 1px solid #34445c; padding: 30px 20px; }
+.marca-instalador { font-size: 1.6rem; font-weight: 800; letter-spacing: .12em; color: #a5b4ff; }
+.marca-instalador span { display: block; color: #b8c9dc; font-size: .7rem; font-weight: 400; letter-spacing: 0; margin-top: 8px; }
+.ruta-instalacion > p { font-size: .8rem; margin-top: 26px; color: #8fa5bd; }
+.ruta-instalacion ol { padding: 0; list-style: none; margin: 20px 0 32px; }
+.ruta-instalacion li { margin-bottom: 5px; }
+.ruta-instalacion button { display: flex; align-items: center; gap: 12px; width: 100%; text-align: left; padding: 10px; background: transparent; border: 0; font-size: .83rem; color: #8fa5bd; }
+.ruta-instalacion button:disabled { opacity: .6; cursor: default; }
+.ruta-instalacion .actual button { background: #292956; color: #e2e5ff; }
+.numero-paso { display: grid; place-items: center; width: 26px; height: 26px; flex-shrink: 0; border: 1px solid #456079; border-radius: 50%; font-size: .7rem; }
+.completo .numero-paso { border-color: #a5b4ff; color: #a5b4ff; }
+.panel-paso { min-width: 0; padding: clamp(24px, 4vw, 42px); animation: aparecer-paso .28s ease-out both; }
+#sistema .panel-paso h1 { font-size: clamp(1.6rem, 3vw, 2.2rem); }
+.panel-paso > form { margin-top: 28px; }
+.disco-cabecera, .destino-formato { display: flex; align-items: center; gap: 16px; padding: 20px; background: #1d3044; border: 1px solid #3a5369; border-radius: 10px; }
+.disco-cabecera small { display: block; margin-top: 6px; }
+.icono-disco { font-size: 2rem; color: #a5b4ff; }
+.mapa-disco { display: flex; height: 18px; gap: 3px; margin: 18px 0; }
+.mapa-disco span { flex-basis: 0; background: #456ba6; border-radius: 3px; transition: flex-grow .3s ease; }
+.mapa-disco .libre { background: repeating-linear-gradient(135deg, #223247 0 4px, #304359 4px 8px); }
+.mapa-disco .destino { background: #a5b4ff; }
+.tabla-desplazable { overflow-x: auto; border: 1px solid #3a4d63; border-radius: 8px; }
+.tabla-particiones { border-collapse: collapse; width: 100%; font-size: .8rem; text-align: left; }
+.tabla-particiones caption { text-align: left; padding: 12px; background: #122034; color: #b8c9dc; }
+.tabla-particiones th, .tabla-particiones td { padding: 12px 10px; border-bottom: 1px solid #304158; }
+.tabla-particiones thead th { color: #9cb1c9; font-weight: 500; font-size: .7rem; }
+.tabla-particiones tbody th { font-weight: 500; }
+.tabla-particiones .seleccionada { background: #292956; }
+.tabla-particiones input[type=radio] { width: auto; accent-color: #a5b4ff; }
+.herramientas-disco { display: flex; gap: 8px; flex-wrap: wrap; margin: 16px 0; }
+.herramientas-disco button { padding: 9px 12px; font-size: .78rem; }
+.herramientas-disco button:disabled { cursor: default; }
+.editor-particion { border: 1px solid #517888; border-radius: 8px; padding: 18px; display: grid; grid-template-columns: 2fr 1fr; gap: 16px; margin-bottom: 16px; animation: aparecer-paso .2s ease-out; }
+.editor-particion label { display: grid; gap: 8px; font-size: .8rem; }
+.editor-particion > div { grid-column: 1 / -1; display: flex; gap: 8px; }
+.confirmacion-disco { background: #412f37; padding: 16px; border-radius: 8px; margin-bottom: 16px; }
+.confirmar-formato { display: block; margin: 28px 0; line-height: 1.6; }
+.pantalla-arranque { text-align: center; padding: 24px 0; animation: aparecer-paso .5s ease-out; }
+.pantalla-arranque .acciones { justify-content: center; }
+.marca-arranque, .orbita-instalacion, .exito-instalacion { width: 96px; height: 96px; margin: 12px auto 28px; display: grid; place-items: center; border-radius: 24px; color: #a5b4ff; border: 1px solid #5452a4; font-weight: 800; font-size: 2.8rem; background: #201b56; }
+.marca-arranque { animation: respirar-marca 3s ease-in-out infinite; }
+.panel-instalando, .panel-final { max-width: 720px; margin: auto; padding: 48px 36px; text-align: center; animation: aparecer-paso .35s ease-out; }
+.orbita-instalacion { position: relative; background: transparent; border-radius: 50%; border: 0; }
+.orbita-instalacion::before { content: ''; position: absolute; inset: 0; border: 3px solid #25404f; border-top-color: #a5b4ff; border-radius: 50%; animation: girar-instalar 1.2s linear infinite; }
+.barra-progreso { height: 10px; background: #283b51; border-radius: 12px; overflow: hidden; margin-top: 32px; }
+.barra-progreso span { display: block; width: 0; height: 100%; background: linear-gradient(90deg, #4142a4, #a5b4ff); transition: width .25s ease-out; }
+.progreso-accesible { position: absolute; width: 1px; height: 1px; clip-path: inset(50%); overflow: hidden; }
+.etapas { list-style: none; padding: 0; text-align: left; margin-top: 28px; display: grid; gap: 12px; }
+.etapas li { display: flex; align-items: center; gap: 14px; color: #90a3ba; padding: 10px 16px; background: #132034; border-radius: 8px; }
+.etapas .en-curso { color: #e8eef8; background: #253f4e; }
+.etapas .terminada { color: #e8b313; }
+.exito-instalacion { border-radius: 50%; animation: exito .5s ease-out; }
+.panel-final .acciones { justify-content: center; }
+@keyframes aparecer-paso { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes respirar-marca { 50% { box-shadow: 0 0 42px #a5b4ff25; } }
+@keyframes girar-instalar { to { transform: rotate(360deg); } }
+@keyframes exito { from { opacity: 0; transform: scale(.8); } to { opacity: 1; transform: scale(1); } }
+@media (max-width: 820px) {
+  .instalador-layout { grid-template-columns: 1fr; min-height: 0; }
+  .ruta-instalacion { padding: 18px; border-right: none; border-bottom: 1px solid #34445c; }
+  .ruta-instalacion > p, .ruta-instalacion > small { display: none; }
+  .ruta-instalacion ol { display: flex; gap: 5px; overflow-x: auto; margin: 16px 0 0; }
+  .ruta-instalacion li { flex-shrink: 0; }
+  .ruta-instalacion button { width: auto; }
+  .ruta-instalacion button > span:last-child { display: none; }
+  .ruta-instalacion .actual button > span:last-child { display: inline; }
+}
+@media (max-width: 480px) { .editor-particion { grid-template-columns: 1fr; } .panel-instalando, .panel-final { padding: 28px 18px; } }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<script src="../js/preferences.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reproductor de Videos</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../vendor/fontawesome/css/all.min.css">
+  <style>
+    #video-gallery {
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 70vh;
+    }
+
+    #video-gallery video {
+      max-width: 100%;
+      max-height: 70vh;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .arrow-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 24px;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+    }
+
+    #prev-button {
+      left: 10px;
+    }
+
+    #next-button {
+      right: 10px;
+    }
+
+    #play-pause-button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 24px;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+      display: none;
+    }
+
+    #video-gallery:hover #play-pause-button {
+      display: block;
+    }
+
+    .contenedor {
+      background-image: url('../assets/images/fondo3.png');
+    }
+
+    .volver-escritorio {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      z-index: 50;
+      border-radius: 0.5rem;
+      padding: 0.2rem;
+    }
+
+    .volver-escritorio img {
+      width: 45px;
+      height: 45px;
+    }
+
+    .video-controls {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 1rem;
+      align-items: center;
+    }
+
+    /* Botón agregar morado con tamaño aumentado */
+    .boton-agregar img {
+      background-color: #7e22ce;
+      padding: 12px;
+      border-radius: 8px;
+      width: 60px;
+      height: 60px;
+      cursor: pointer;
+      transition: transform 0.2s;
+      display: block;
+    }
+
+    .boton-agregar img:hover {
+      transform: scale(1.1);
+    }
+
+    /* Botón eliminar rojo con tamaño aumentado */
+    .boton-eliminar img {
+      background-color: #dc2626;
+      padding: 12px;
+      border-radius: 8px;
+      width: 60px;
+      height: 60px;
+      cursor: pointer;
+      transition: transform 0.2s;
+      display: block;
+    }
+
+    .boton-eliminar img:hover {
+      transform: scale(1.1);
+    }
+
+    /* Estilos para el modal de advertencia */
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 9999;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-content {
+      background-color: white;
+      color: black;
+      padding: 30px;
+      border-radius: 10px;
+      position: relative;
+      width: 400px;
+      text-align: center;
+    }
+
+    .modal-content button {
+      margin-top: 10px;
+      padding: 8px 16px;
+      border-radius: 6px;
+      background-color: #5544ef;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 2px;
+      right: 5px;
+      background: none;
+      border: none;
+      font-size: 12px;
+      cursor: pointer;
+      color: red;
+    }
+  </style>
+    <link rel="stylesheet" href="../css/uphos.css">
+</head>
+
+<body>
+ 
+  <div class="flex h-screen w-full items-center justify-center bg-gray-900 bg-cover bg-no-repeat contenedor">
+    <div class="rounded-xl h-screen w-full bg-gray-800 bg-opacity-50 px-16 py-10 shadow-lg backdrop-blur-md max-sm:px-8">
+      <div class="text-white">
+        <div class="mb-8 flex flex-col items-center">
+        </div>
+
+        <div id="video-gallery" class="mb-4">
+          <button id="play-pause-button" onclick="togglePlayPause()">&#9654;</button>
+        </div>
+
+        <button id="prev-button" class="arrow-button" onclick="showPrevVideo()">&#9665;</button>
+        <button id="next-button" class="arrow-button" onclick="showNextVideo()">&#9655;</button>
+
+        <!-- Controles debajo del video con imágenes -->
+        <div class="video-controls">
+          <!-- Botón agregar video -->
+          <label for="video-upload" title="Agregar video" class="boton-agregar">
+            <img src="../assets/images/agg_img.png" alt="Agregar Video">
+          </label>
+          <input type="file" id="video-upload" accept="video/*" style="display:none" />
+
+          <!-- Botón eliminar video -->
+          <button onclick="deleteCurrentVideo()" title="Eliminar video" class="boton-eliminar">
+            <img src="../assets/images/eliminar_img.png" alt="Eliminar Video">
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let videos = UPHOSPreferences.read('videos', ['../assets/videos/Colibri.mp4'], value => Array.isArray(value) && value.length > 0 && value.every(v => typeof v === 'string' && (v.startsWith('../assets/videos/') || v.startsWith('/resources/assets/videos/')))) ;
+    videos = videos.map(v => v.startsWith('/resources/assets/videos/') ? '../assets/videos/' + v.slice('/resources/assets/videos/'.length) : v);
+    let currentVideoIndex = 0;
+    let isVideoPlaying = true;
+    const videosContainer = document.getElementById("video-gallery");
+
+    function showVideo() {
+      videosContainer.querySelectorAll('video').forEach(video => { video.pause(); video.remove(); });
+
+      const videoElement = document.createElement("video");
+      videoElement.src = videos[currentVideoIndex];
+      videoElement.type = "video/mp4";
+      videoElement.loop = true;
+      videoElement.controls = false;
+      videoElement.addEventListener("click", togglePlayPause);
+      videosContainer.appendChild(videoElement);
+      videoElement.play().catch(() => { isVideoPlaying = false; document.getElementById('play-pause-button').innerHTML = '&#9654;'; });
+      videoElement.addEventListener('error', () => {
+        let note = document.querySelector('#video-error');
+        if (!note) { note = document.createElement('p'); note.id = 'video-error'; note.setAttribute('role','status'); videosContainer.after(note); }
+        note.textContent = 'No se pudo cargar este video.';
+      });
+      isVideoPlaying = true;
+      document.getElementById("play-pause-button").innerHTML = "&#10074;&#10074;";
+    }
+
+    function showPrevVideo() {
+      currentVideoIndex = (currentVideoIndex - 1 + videos.length) % videos.length;
+      showVideo();
+    }
+
+    function showNextVideo() {
+      currentVideoIndex = (currentVideoIndex + 1) % videos.length;
+      showVideo();
+    }
+
+    function togglePlayPause() {
+      const video = videosContainer.querySelector("video");
+      if (isVideoPlaying) {
+        video.pause();
+        isVideoPlaying = false;
+        document.getElementById("play-pause-button").innerHTML = "&#9654;";
+      } else {
+        video.play().catch(() => { isVideoPlaying = false; });
+        isVideoPlaying = true;
+        document.getElementById("play-pause-button").innerHTML = "&#10074;&#10074;";
+      }
+    }
+
+    function mostraricono() {
+      document.getElementById("play-pause-button").innerHTML = isVideoPlaying ? "&#10074;&#10074;" : "&#9654;";
+    }
+
+    // Agregar nuevo video desde el input
+    document.getElementById("video-upload").addEventListener("change", function (event) {
+      const file = event.target.files[0];
+      if (file) {
+        const videoURL = URL.createObjectURL(file);
+        videos.push(videoURL);
+        currentVideoIndex = videos.length - 1;
+        UPHOSPreferences.write('videos', videos.filter(v => !v.startsWith('blob:')));
+        showVideo();
+      }
+    });
+
+    // Eliminar el video actual
+    function deleteCurrentVideo() {
+      if (videos.length > 1) {
+        const removed = videos.splice(currentVideoIndex, 1)[0];
+        if (removed.startsWith('blob:')) URL.revokeObjectURL(removed);
+        currentVideoIndex = currentVideoIndex % videos.length;
+        UPHOSPreferences.write('videos', videos.filter(v => !v.startsWith('blob:')));
+        showVideo();
+      } else {
+        alert("Debe haber al menos un video.");
+      }
+    }
+
+    // Teclas: espacio = play/pause | flechas = cambiar video
+    document.addEventListener("keydown", function (event) {
+      if (event.key === " ") togglePlayPause();
+      else if (event.key === "ArrowRight") showNextVideo();
+      else if (event.key === "ArrowLeft") showPrevVideo();
+    });
+
+    // Doble clic para pantalla completa
+    videosContainer.addEventListener("dblclick", function () {
+      const video = videosContainer.querySelector("video");
+      if (!document.fullscreenElement) {
+        video.requestFullscreen().catch(() => {});
+      } else {
+        document.exitFullscreen();
+      }
+    });
+
+    window.addEventListener('pagehide', () => videos.filter(v => v.startsWith('blob:')).forEach(v => URL.revokeObjectURL(v)), { once:true });
+    // Muestra el primer video al cargar
+    showVideo();
+    document.getElementById("play-pause-button").addEventListener("mouseover", mostraricono);
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPHOS · Editor de texto</title>
+    <!-- CSS StyleSheet Link -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <link rel="stylesheet" href="../vendor/fontawesome/css/all.min.css">
+    <script src="../vendor/sweetalert2.js"></script>
+    <!-- Tailwind CSS Link -->
+    <link rel="stylesheet" href="../css/styles.css">
+    
+
+    <link rel="stylesheet" href="../css/uphos.css">
+</head>
+
+<body class="uph-app">
+    <section>
+        <div class="row editor">
+            <div class="col">
+                <div class="first box">
+                    <input id="font-size" type="number" value="16" min="1" max="100" onchange="f1(this)">
+                </div>
+                <div class="second box">
+                    <button type="button" id="bold" onclick="f2(this)">
+                        <i class="fa-solid fa-bold"></i>
+                    </button>
+                    <button type="button" onclick="f3(this)">
+                        <i class="fa-solid fa-italic"></i>
+                    </button>
+                    <button type="button" onclick="f4(this)">
+                        <i class="fa-solid fa-underline"></i>
+                    </button>
+                </div>
+                <div class="third box">
+                    <button type="button" onclick="f5(this)">
+                        <i class="fa-solid fa-align-left"></i>
+                    </button>
+                    <button type="button" onclick="f6(this)">
+                        <i class="fa-solid fa-align-center"></i>
+                    </button>
+                    <button type="button" onclick="f7(this)">
+                        <i class="fa-solid fa-align-right"></i>
+                    </button>
+                </div>
+                <div class="fourth box">
+                    <button type="button" onclick="f8(this)">aA</button>
+                    <button type="button" onclick="f9()">
+                        <i class="fa-solid fa-text-slash"></i>
+                    </button>
+                    <input type="color" onchange="f10(this)">
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col">
+                <textarea id="textarea1" aria-label="Texto del documento" placeholder="Escribe aquí"></textarea>
+            </div>
+        </div>
+        <div class="botones">
+            <button id="save-button" class="buttonSave" onclick="saveFile()"><i class="fa-regular fa-floppy-disk"></i> Guardar</button>
+            
+           
+        </div>
+       
+
+        <!-- <button id="save-button" onclick="saveFile()"><i class="fa-solid fa-document"></i> Save</button> -->
+    </section>
+    <section class="saved-f saved-files">
+        <h2 class="bg-blue-300 p-2">Tus archivos</h2>
+       <!-- CREATE A 3 COLUMNS GRID USING TAILWIND CSS -->
+       
+         <div role="status" id="listado" class="grid grid-cols-2 gap-4 h-96 overflow-scroll">
+          
+         </div>
+   
+   </section>
+
+   
+    <script src="../js/editor.js"></script>
+</body>
+</html>

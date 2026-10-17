@@ -1,0 +1,657 @@
+:root{
+    --padding-pagina: 0px 20px;
+    --padding-profile: 5px 40px;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #35363a;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 10vh 90vh;
+    grid-template-areas:
+    "header"
+    "search";
+    font-family: Arial, sans-serif;
+}
+
+body, html{
+    overflow: hidden;
+}
+
+body{
+    position: relative;
+}
+
+a{
+    text-decoration: none;
+    color: #fff;
+}
+
+input{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.header{
+    grid-area: header;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.header__content{
+    padding: var(--padding-pagina);
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+}
+
+.header__content a{
+    font-size: 13px;
+}
+
+.header__section:hover{
+    text-decoration: underline;
+}
+
+.header__img{
+    object-fit: cover;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    transition: 1s box-shadow;
+}
+
+.options{
+    padding: 3px;
+}
+
+.header__img:hover{
+    box-shadow: 0px 0px 0px 5px #4a4a4e;
+}
+
+.header__plus:hover{
+    background-color: #4a4a4e;
+}
+
+/* Options/Sections Content */
+
+.header-sections__content, .header__profile{
+    width: 320px;
+    height: 450px;
+    background-color: #2d2e30;
+    position: absolute;
+    right: 0;
+    top: 60px;
+    margin: 0 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 3px 1px #000;
+    overflow-y: auto;
+    /* Translate para que no se muestra */
+    transform: translateX(300%);
+    transition: 500ms transform;
+    color: #fff;
+    z-index: 10;
+}
+
+/* Modificamos el scrollbar */
+
+.header-sections__content::-webkit-scrollbar, .header__profile::-webkit-scrollbar{
+    width: 5px;
+}
+
+.header-sections__content::-webkit-scrollbar-thumb, .header__profile::-webkit-scrollbar-thumb{
+    background-color: #5f6366;
+    border-radius: 5px;
+}
+
+/* Estilos para mostrar seccion */
+.show__sections{
+    transform: translateX(0%);
+}
+
+.header-section__content__principal, .header-section__content__secondary{
+    padding: 30px 0px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    column-gap: 10px;
+}
+
+/* Sections */
+
+.section__content__principal-section, .section__content__secondary-section{
+    display: flex;
+    flex-direction: column;
+    width: 90px;
+    height: 90px;
+    padding: 5px;
+    justify-content: center;
+    align-items: center;
+    row-gap: 7px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 500ms background-color;
+}
+
+.section__content__principal-section:hover, .section__content__secondary-section:hover{
+    background-color: #27282c;
+}
+
+.img__section{
+    width: 35px;
+    height: 35px;
+}
+
+.icon{
+    border-radius: 50%;
+}
+
+.section__title{
+    font-size: 15px;
+}
+
+.section__button{
+    display: block;
+    padding: 10px 15px;
+    border: 1px solid #525456;
+    width: 150px;
+    font-size: 17px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    text-align: center;
+    border-radius: 10px;
+    color: #8ab4f8;
+}
+
+/* Profiles */
+
+.header__profile{
+    transform: translateX(300%);
+    width: 350px;
+    padding: 15px 0px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+/* Mostrar Profile */
+
+.show__profile{
+    transform: translateX(0%);
+}
+
+
+/* Profile Top */
+
+.header__profile__top{
+    padding: var(--padding-profile);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 10px;
+}
+
+.header__top__img{
+    border-radius: 50%;
+    object-fit: cover;
+    width: 70px;
+    height: 70px;
+}
+
+.header__top__texts{
+    text-align: center;
+}
+
+.header__top__name{
+    font-size: 16px;
+    margin-bottom: 3px;
+}
+
+.header__top__email{
+    font-size: 14px;
+}
+
+.header__top__button{
+    display: inline-block;
+    padding: 5px 10px;
+    border: 1px solid #5f6366;
+    border-radius: 30px;
+    transition: border-color, background-color 500ms;
+}
+
+.profile__divisor{
+    border: 1px solid #5f6366;
+    width: 100%;
+}
+
+/* Cuentas */
+
+.header__profile__acounts{
+    display: flex;
+    flex-direction: column;
+    --padding-profile: 5px 20px;
+    padding: var(--padding-profile);
+    row-gap: 10px;
+}
+
+.header__profile__adittional__acounts{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.account{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    column-gap: 10px;
+    cursor: pointer;
+    padding: 7px;
+}
+
+.account__img{
+    width: 30px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.account__texts{
+    display: flex;
+    flex-direction: column;
+    row-gap: 2px;
+}
+
+.account__name{
+    font-size: 15px;
+    font-weight: normal;
+}
+
+.account__email{
+    font-size: 14px;
+}
+
+/* Boton Añadir Cuenta */
+
+.header__profile__acount__button{
+    display: flex;
+    width: 100%;
+    font-size: 15px;
+    padding: 7px;
+}
+
+.header__profile__acount__button img{
+    width: 20px;
+    margin-right: 10px;
+}
+
+/* Hover de los botones */
+
+.header__profile__acount__button:hover, .account:hover, .section__button:hover,
+.header__top__button:hover, .header__profile__button:hover, .direct__access-section:hover{
+    background-color: #5f6366;
+}
+
+/* Boton Cerrar Sesiones */
+
+.header__profile__buttons{
+    display: flex;
+    width: 100%;
+    padding: 5px 20px;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.header__profile__button{
+    padding: 10px 15px;
+    display: inline-block;
+    margin: 0 auto;
+    border: 1px solid #5f6366;
+    border-radius: 10px;
+    transition: border-color, background-color 500ms;
+    font-size: 15px;
+}
+
+/* Footer Profile */
+
+.header__profile__footer{
+    padding: var(--padding-profile);
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.header__profile__footer__text{
+    font-size: 12px;
+}
+
+.header__profile__footer__text:hover{
+    text-decoration: underline;
+}
+
+/* Formulario para Agregar Cuenta */
+
+.container__form{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #27282c;
+    opacity: 98%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: scale(0);
+    transition: 300ms transform;
+    z-index: 2;
+}
+
+.show__form{
+    transform: scale(1);
+}
+
+.cancel{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.form{
+    width: 80%;
+    height: auto;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 30px;
+}
+
+.form__title{
+    text-align: center;
+    color: #000;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.form__sections{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "div__left div__right";
+}
+
+.form__left{
+    grid-area: div__left;
+    border-right: 1px solid #000;
+}
+
+.form__right{
+    grid-area: div__right;
+    align-items: center;
+}
+
+.form__left, .form__right{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    color: #000;
+}
+
+.form__section__title{
+    font-size: 20px;
+    text-align: center;
+}
+
+.form-input__box{
+    width: 100%;
+    position: relative;
+    height: 40px;
+}
+
+.form__input{
+    width: 100%;
+    height: 100%;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid #408beb;
+    font-size: 17px;
+    background-color: #fff;
+    color: #000;
+}
+
+.form__label{
+    position: absolute;
+    left: 0;
+    bottom: 10px;
+    color: #408beb;
+    font-size: 17px;
+    transition: transform 200ms;
+}
+
+.form__input:focus ~ .form__label,
+.form__input:valid ~ .form__label{
+    transform: translateY(-25px);
+}
+
+.form__submit{
+    width: 150px;
+    padding: 10px 15px;
+    margin: 0 auto;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 20px;
+    background-color: #01cc65;
+    color: #fff;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+/* Form Right */
+
+.previsualizer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 20px;
+}
+
+.form__img{
+    border-radius: 50%;
+    width: 64px;
+    height: 64px;
+}
+
+.avatar__options{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+/* Inputs Radio Personalizados */
+
+.avatar__input{
+    display: none;
+}
+
+.avatar__label{
+    position: relative;
+    color: #01cc65;
+    border: 2px solid #01cc65;
+    border-radius: 5px;
+    padding: 10px 30px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.avatar__label::before{
+    content: "";
+    width: 15px;
+    height: 15px;
+    border: 3px solid #01cc65;
+    border-radius: 50%;
+    margin-right: 10px;
+    transition: all 300ms;
+}
+
+.avatar__input:checked + .avatar__label{
+    background-color: #01cc65;
+    color: white;
+}
+
+.avatar__input:checked + .avatar__label::before{
+    height: 8px;
+    width: 8px;
+    border: 5px solid #fff;
+    background-color: #01cc65;
+}
+
+/* Estilos Main */
+
+/* Padding de Main es de 400px a los lados */
+
+.main{
+    grid-area: search;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.main__container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 30px;
+    width: 650px;
+    padding: 10px 30px;
+}
+
+.main__logo{
+    max-width: 300px;
+}
+
+.main__search{
+    width: 560px;
+    position: relative;
+}
+
+.main__search-input{
+    width: 100%;
+    padding: 15px 50px;
+    border: none;
+    border-radius: 30px;
+    outline: none;
+    font-size: 16px;
+}
+
+.input-icon{
+    position: absolute;
+    width: 17px;
+    height: 17px;
+    /* Centramos Verticalment */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.search__icon{
+    left: 20px;
+}
+
+.mic__icon{
+    right: 20px;
+}
+
+/* Direct Access */
+
+.direct__access{
+    width: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    row-gap: 10px;
+}
+
+.direct__access-section{
+    width: 110px;
+    height: 110px;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 10px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.section__img{
+    padding: 12px;
+    background-color: #202124;
+    border-radius: 50%;
+    width: 50px;
+}
+
+.section__name{
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
+}
+
+@media (max-width: 650px){
+    .main__container{
+        width: 375px;
+    }
+    .main__search{
+        width: 365px;
+        position: relative;
+    }
+    .direct__access{
+        column-gap: 10px;
+    }
+    .direct__access-section{
+        width: 90px;
+        height: 90px;
+    }
+    .header-sections__content, .header__profile{
+        margin: 0 10px;
+    }
+
+    /* Hacemos el Formulario Responsive */
+    .form{
+        padding: 10px;
+        overflow-y: auto;
+    }
+    .form__sections{
+        grid-template-columns: 1fr;
+        grid-template-areas: "div__right"
+                             "div__left";
+    }
+    .form__title{
+        margin: 0px;
+    }
+    .form__left, .form__right{
+        row-gap: 20px;
+    }
+    .form__left{
+        border: none;
+    }
+}

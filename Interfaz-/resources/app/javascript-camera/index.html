@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cámera</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="../../vendor/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="../../css/uphos.css">
+</head>
+
+<body>
+  <section class="section">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-four-fifths">
+          
+          
+          <video autoplay id="video"></video>
+          <button class="button" id="btnPlay">
+            <span class="icon is-small">
+              <i class="fas fa-play"></i>
+            </span>
+          </button>
+          <button class="button is-hidden" id="btnPause">
+            <span class="icon is-small">
+              <i class="fas fa-pause"></i>
+            </span>
+          </button>
+          <button class="button is-success" id="btnScreenshot">
+            <span class="icon is-small">
+              <i class="fas fa-camera"></i>
+            </span>
+          </button>
+          <button class="button" id="btnChangeCamera">
+            <span class="icon">
+              <i class="fas fa-sync-alt"></i>
+            </span>
+            <span>Switch camera</span>
+          </button>
+        </div>
+        <div class="column">
+          <h2 class="title">Screenshots</h2>
+          <div id="screenshots"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <canvas class="is-hidden" id="canvas"></canvas>
+  <script src="script.js"></script>
+</body>
+
+</html>

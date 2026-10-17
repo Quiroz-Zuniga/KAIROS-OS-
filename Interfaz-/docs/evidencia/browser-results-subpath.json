@@ -1,0 +1,35 @@
+[
+  {
+    "name": "chromium",
+    "available": true,
+    "status": "passed",
+    "a11y": [],
+    "monitorA11y": [],
+    "calendarMonthA11y": [],
+    "calendarA11y": [],
+    "errors": [],
+    "failures": []
+  },
+  {
+    "name": "firefox",
+    "available": true,
+    "status": "passed",
+    "a11y": [],
+    "monitorA11y": [],
+    "calendarMonthA11y": [],
+    "calendarA11y": [],
+    "errors": [],
+    "failures": []
+  },
+  {
+    "name": "webkit",
+    "available": true,
+    "status": "passed",
+    "a11y": [],
+    "monitorA11y": [],
+    "calendarMonthA11y": [],
+    "calendarA11y": [],
+    "errors": [],
+    "failures": []
+  }
+]

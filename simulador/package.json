@@ -1,0 +1,47 @@
+{
+  "name": "uphos-simulator",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "main": "electron/main.cjs",
+  "description": "UPHOS Terminal Edition",
+  "author": "Proyecto UPHOS",
+  "scripts": {
+    "start": "node servidor.js",
+    "test": "node --test tests/*.test.js",
+    "desktop": "electron .",
+    "empaquetar": "node electron/empaquetar.cjs"
+  },
+  "devDependencies": {
+    "electron": "44.7.0",
+    "electron-builder": "26.15.3"
+  },
+  "build": {
+    "appId": "hn.uphos.simulator",
+    "productName": "UPHOS",
+    "asar": true,
+    "directories": {
+      "output": "../entregables",
+      "buildResources": "assets"
+    },
+    "files": [
+      "index.html",
+      "css/**/*",
+      "js/**/*",
+      "apps/**/*",
+      "assets/**/*",
+      "electron/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        "portable"
+      ],
+      "icon": "assets/logo.ico",
+      "artifactName": "UPHOS-Portable-${version}-${arch}.${ext}"
+    },
+    "portable": {
+      "requestExecutionLevel": "user"
+    }
+  }
+}

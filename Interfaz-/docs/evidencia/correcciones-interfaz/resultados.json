@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-16",
+  "browser": "Chrome",
+  "execution": "Playwright mediante APIs de JavaScript, sin terminal",
+  "checks": [
+    "Accesos iniciales",
+    "Filtro de Inicio",
+    "Clic en fondo oculta ventana",
+    "Arrastre crea acceso",
+    "Acceso conserva posición al recargar",
+    "Contenido persiste tras recarga",
+    "Abrir con editor original",
+    "Eliminación retira el icono",
+    "Papelera restaura el documento",
+    "Búsqueda muestra resultado",
+    "Búsqueda web sale del iframe",
+    "Descarga virtual",
+    "Volumen simulado",
+    "Wi-Fi simulado",
+    "Energía: Bloquear",
+    "Energía: Suspender",
+    "Energía: Reiniciar",
+    "Reiniciar cierra ventanas",
+    "Energía: Apagar",
+    "Apagar cierra ventanas",
+    "Sin errores de JavaScript"
+  ],
+  "additional": [
+    "Carpeta virtual abre su contenido",
+    "Documento Word informa su formato simulado",
+    "ZIP informa que es un contenedor de demostración",
+    "Nombre duplicado rechazado sin cerrar el diálogo",
+    "Administrador simulado abre aplicación sin privilegios del equipo"
+  ],
+  "mobile": {
+    "width": 390,
+    "height": 844,
+    "horizontalOverflow": false
+  },
+  "mkdocsBuild": "No ejecutado: restricción de línea de comandos",
+  "branch": "interfaz-ruben-quiroz"
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title> Antivirus</title>
+  <link rel="stylesheet" href="estilosAntivirua.css" />
+    <link rel="stylesheet" href="../../css/uphos.css">
+</head>
+<body>
+<div class="sidebar">
+    <div class="tab active" data-tab="status">Status</div>
+    <div class="tab" data-tab="protection">Protection</div>
+    <div class="tab" data-tab="privacy">Privacy</div>
+    <div class="tab" data-tab="performance">Performance</div>
+  </div>
+
+  <div class="main">
+    <div id="statusTab" class="tab-content">
+      <h2>Escáner de Archivos</h2>
+      <p id="status">Listo para escanear.</p>
+      <button id="scanBtn">Iniciar escaneo</button>
+      <ul id="log"></ul>
+    </div>
+
+    <div id="protectionTab" class="tab-content" style="display:none;">
+      <h2>Protección</h2>
+      <ul>
+        <li>  Escudo de archivos - 🟢 Activado</li>
+        <li>  Escudo de comportamiento - 🟢Activado</li>
+        <li>  Escudo Web  - 🟢 Activado</li>
+        <li>  Escudo de correo - 🟢Activado</li>
+      </ul>
+    </div>
+
+    <div id="privacyTab" class="tab-content" style="display:none;">
+      <h2>Privacidad</h2>
+      <p>Protege tu identidad y datos personales.</p>
+    </div>
+
+    <div id="performanceTab" class="tab-content" style="display:none;">
+      <h2>Rendimiento</h2>
+      <p>Optimiza el rendimiento de tu sistema.</p>
+    </div>
+  </div>
+  <script src="Antivirus.js"></script>
+</body>
+</html>

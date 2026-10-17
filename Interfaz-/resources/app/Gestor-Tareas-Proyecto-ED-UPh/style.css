@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+body {
+    margin: 0;
+    padding: 0;
+    --bk-fondo: #ffffff;
+    box-sizing: border-box;
+    font-family: "Roboto";
+    --color-texto:#FFFFFF;
+    --color-titles: #A8AEF9;
+    --color-fondo-imput:#FFFFFF;
+       background:url(../../assets/images/uphos-wallpaper.svg) no-repeat fixed;
+        background-size: cover;
+}
+
+main{
+    margin: 0;
+    padding: 0;
+   
+    padding-bottom: 20px;
+    width: 100%;
+}
+.titles{
+    margin: 0 ;
+    padding-top: 10px;
+    text-align:center;
+    color: var(--color-titles);
+    font-size: 3em;
+}
+
+/* contenedor */
+#task-container , #task-form{
+    min-width: 980px ;
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    padding: 10px;
+    gap: 20px;
+    color: var(--color-texto);
+}
+
+#task-container div{
+    min-width: inherit;
+    display: flex;
+    flex-direction:column ;
+    justify-items:center;
+    align-items: center;
+    gap: 20px;
+    color: var(--color-texto);
+}
+
+.tamaño {
+    width: 50%;
+    padding: 10px;
+    color: var(--color-texto);
+    background-color:transparent;
+    border-radius: 14px;
+    font-size: 1.2rem;
+    border: none;
+    border: 1px solid var(--color-fondo-imput);
+}
+
+
+input:focus{
+    outline: none;
+    margin: 0;
+    box-shadow: none;
+}
+
+.tamaño::placeholder {
+    color: var(--color-texto);
+}
+
+.tamaños{
+    background: #4C7FC6;
+    background: linear-gradient(90deg,rgba(76, 127, 198, 1) 0%, rgba(70, 23, 110, 1) 50%);
+}
+
+
+button:hover{
+    background-color: var(--color-titles);
+    color: var(--bk-fondo);
+}
+/* Tareas */
+#task-list {
+    max-width: 980px ;
+    justify-self: center;
+    align-items: center;
+
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-between;
+    padding: 10px;
+    margin-bottom: 10px;
+    background:#33333333;
+    border-radius: 15px;
+    color: var(--color-titles);
+}
+
+.task-item button{
+    padding: 1.5vh;
+    border:0px solid #333;
+    /* background:#544C70; */
+    background-color: rgba(84, 76, 112, 0.45);
+    border-radius: 14px;
+    color: var(--bk-fondo);
+}
+
+.task-item button:hover{
+    background: #4C7FC600;
+    background: linear-gradient(90deg,rgba(76, 127, 198, 10) 0%, rgba(70, 23, 110, 10) 30%);
+}
+.taskContainer p {
+    text-align: center;
+}
+
+
+p{
+    text-align: center;
+    color: var(--color-texto);
+    font-weight: bold;
+    font-size: 2vh ;
+    
+}
+
+/* footer   */
+img{
+    margin: 0;
+}
+
+a{
+    color: var(--color-titles);
+}
+
+/* MEdia queries */
+
+@media (max-whidth: 1200px) {
+    #task-container, #task-form, #task-list {
+        min-width: 80%;
+    }
+    .tamaño{
+        width:70%;
+    }
+    .titles{
+        font-size: 2.5em; 
+    }
+}
+
+@media (max-whidth: 768px) {
+    #task-container, #task-form, #task-list {
+        min-width: 90%;
+    }
+    .tamaño{
+        width:80%;
+    }
+    .titles{
+        font-size: 2em; 
+    }
+}
+
+@media (max-whidth: 480px) {
+    #task-container, #task-form, #task-list {
+        min-width: 100%;
+    }
+    .tamaño{
+        width:90%;
+    }
+    .titles{
+        font-size: 1.5em ;
+    }
+    .task-item{
+        flex-direction: column;
+        align-items:start;
+        
+    }
+}

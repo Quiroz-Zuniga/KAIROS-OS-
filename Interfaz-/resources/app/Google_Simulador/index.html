@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+
+    <script src="../../vendor/sweetalert2.js"></script>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="assets/favicon/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../css/uphos.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="header__content">
+            <a href="https://mail.google.com/mail/u/0/#inbox" class="header__section" target="_blank">Gmail</a>
+            <a href="https://www.google.com.co/imghp?hl=es&authuser=0&ogbl" class="header__section" target="_blank">Imagenes</a>
+            <a href="#" id="options"><img src="assets/icons/options.png" alt="Options" class="header__img options"></a>
+            <a href="#" id="profile"><img src="assets/img/profile.png" alt="Profile" class="header__img header__profile__img"></a>
+        </nav>
+
+        <!-- Options Google -->
+
+        <div class="header-sections__content">
+            <div class="header-section__content__principal">
+            <a href="https://myaccount.google.com/?utm_source=OGB&authuser=0&utm_medium=app" target="_blank">
+                <div class="section__content__principal-section">
+                    <img src="assets/img/profile.png" alt="Profile" class="img__section icon">
+                    <p class="section__title">Cuenta</p>
+            </div></a>
+
+            <a href="https://www.google.com.co/webhp?authuser=0" target="_blank">
+            <div class="section__content__principal-section">
+                <img src="assets/icons/google-icon.png" alt="Google" class="img__section">
+                <p class="section__title">Busqueda</p>
+            </div></a>
+
+            <a href="https://maps.google.com.co/maps?hl=es&authuser=0" target="_blank">
+                <div class="section__content__principal-section">
+                    <img src="assets/icons/maps-icon.png" alt="Maps" class="img__section">
+                    <p class="section__title">Maps</p>
+            </div></a>
+
+
+            <a href="https://www.youtube.com/?gl=CO&authuser=0" target="_self">
+                <div class="section__content__principal-section">
+                    <img src="assets/icons/youtube-icon.png" alt="Youtube" class="img__section">
+                    <p class="section__title">Youtube</p>
+            </div></a>
+
+            <a href="https://play.google.com/?hl=es&authuser=0" target="_blank">
+                <div class="section__content__principal-section">
+                    <img src="assets/icons/play-icon.png" alt="Play" class="img__section">
+                    <p class="section__title">Play</p>
+            </div></a>
+
+            <a href="https://mail.google.com/mail/u/0/#inbox" target="_blank">
+                <div class="section__content__principal-section">
+                    <img src="assets/icons/gmail-icon.png" alt="Gmail" class="img__section">
+                    <p class="section__title">Gmail</p>
+            </div></a>
+
+
+            <a href="https://contacts.google.com/?hl=es&authuser=0" target="_blank">
+                <div class="section__content__principal-section">
+                    <img src="assets/icons/contacts-icon.png" alt="Contactos" class="img__section">
+                    <p class="section__title">Contactos</p>
+            </div></a>
+
+            <a href="https://drive.google.com/?authuser=0" target="_blank">
+                <div class="section__content__principal-section">
+                    <img src="assets/icons/drive-icon.png" alt="Drive" class="img__section">
+                    <p class="section__title">Drive</p>
+            </div></a>
+
+            <a href="https://calendar.google.com/calendar?authuser=0" target="_blank">
+                <div class="section__content__principal-section">
+                    <img src="assets/icons/calendar-icon.png" alt="Calendar" class="img__section">
+                    <p class="section__title">Calendar</p>
+            </div></a>
+
+
+            <a href="https://translate.google.com.co/?hl=es&authuser=0" target="_blank">
+                <div class="section__content__principal-section">
+                    <img src="assets/icons/traductor-icon.png" alt="Traductor" class="img__section">
+                    <p class="section__title">Traductor</p>
+            </div></a>
+
+            <a href="https://photos.google.com/?authuser=0&pageId=none" target="_blank" >
+                <div class="section__content__principal-section">
+                    <img src="assets/icons/fotos-icon.png" alt="Fotos" class="img__section">
+                    <p class="section__title">Fotos</p>
+            </div></a>
+
+            <a href="https://www.google.com.co/shopping?hl=es&source=og&authuser=0" target="_blank">
+                <div class="section__content__principal-section">
+                    <img src="assets/icons/shopping-icon.png" alt="Shopping" class="img__section">
+                    <p class="section__title">Shopping</p>
+            </div></a>
+
+            <a href="https://duo.google.com/?usp=duo_ald" target="_blank">
+                <div class="section__content__principal-section">
+                    <img src="assets/icons/duo-icon.png" alt="Duo" class="img__section">
+                    <p class="section__title">Duo</p>
+            </div></a>
+
+            <a href="https://news.google.com/?authuser=0" target="_blank">
+                <div class="section__content__principal-section">
+                    <img src="assets/icons/noticias-icon.png" alt="Noticias" class="img__section">
+                    <p class="section__title">Noticias</p>
+            </div></a>
+
+            <a href="https://meet.google.com/?hs=197&pli=1&authuser=0" target="_blank">
+                <div class="section__content__principal-section">
+                    <img src="assets/icons/meet-icon.png" alt="Meet" class="img__section">
+                    <p class="section__title">Meet</p>
+            </div></a>
+
+        </div>
+
+
+            <hr class="divisor">
+
+            <div class="header-section__content__secondary">
+                
+                <a href="https://docs.google.com/document/?usp=docs_alc&authuser=0" target="_self">
+                    <div class="section__content__principal-section">
+                        <img src="assets/icons/docs-icon.png" alt="Docs" class="img__section">
+                        <p class="section__title">Docs</a>
+                </div></a>
+
+                <a href="https://docs.google.com/spreadsheets/?usp=sheets_alc&authuser=0" target="_blank">
+                    <div class="section__content__principal-section">
+                        <img src="assets/icons/sheets-icon.png" alt="Sheets" class="img__section">
+                        <p class="section__title">Sheets</p>
+                </div></a>
+
+                <a href="https://meet.google.com/?hs=197&pli=1&authuser=0" target="_blank">
+                    <div class="section__content__principal-section">
+                        <img src="assets/icons/slides-icon.png" alt="Slides" class="img__section">
+                        <p class="section__title">Slides</p>
+                </div></a>
+
+                <a href="https://books.google.com.co/?hl=es&authuser=0" target="_blank">
+                    <div class="section__content__principal-section">
+                        <img src="assets/icons/book-icon.png" alt="Libros" class="img__section">
+                        <p class="section__title">Libros</p>
+                </div></a>
+
+                <a href="https://www.blogger.com/?authuser=0" target="_blank" >
+                    <div class="section__content__principal-section">
+                        <img src="assets/icons/blogger-icon.png" alt="Blogger" class="img__section">
+                        <p class="section__title">Blogger</p>
+                </div></a>
+
+                <a href="https://hangouts.google.com/?authuser=0" target="_blank">
+                    <div class="section__content__principal-section">
+                        <img src="assets/icons/hangouts-icon.png" alt="Hangouts" class="img__section">
+                        <p class="section__title">Hangouts</p>
+                </div></a>
+
+                <a href="https://ads.google.com/home/?subid=ww-ww-xs-ip-awhc-a-ogb_cons!o2&authuser=0" target="_blank">
+                    <div class="section__content__principal-section">
+                        <img src="assets/icons/ads-icon.png" alt="Ads" class="img__section">
+                        <p class="section__title">Ads</p>
+                </div></a>
+
+                <a href="https://podcasts.google.com/?authuser=0" target="_blank">
+                    <div class="section__content__principal-section">
+                        <img src="assets/icons/podcast-icon.png" alt="Podcast" class="img__section">
+                        <p class="section__title">Podcast</p>
+                </div></a>
+
+                <a href="https://docs.google.com/forms/?authuser=0&usp=forms_alc" target="_blank">
+                    <div class="section__content__principal-section">
+                        <img src="assets/icons/forms-icons.png" alt="Forms" class="img__section">
+                        <p class="section__title">Forms</p>
+                </div></a>
+        </div>
+
+        <a href="https://www.google.com.co/intl/es/about/products?tab=rh" target="_blank" class="section__button">Mas de Google</a>
+    </div>
+
+    <!-- Perfiles/Sesiones -->
+
+    <div class="header__profile">
+        <!-- Top del Profile -->
+        <div class="header__profile__top">
+            <img src="assets/img/profile.png" alt="Profile" class="header__top__img">
+
+            <div class="header__top__texts">
+                <h3 class="header__top__name">Eddie Santiago Delgado</h3>
+                <p class="header__top__email">eddiesantiago122007@gmail.com</p>
+            </div>
+
+            <a href="#" class="header__top__button">Gestionar tu cuenta de Google</a>
+        </div>
+
+        <hr class="profile__divisor">
+
+        <!-- Cuentas -->
+        <div class="header__profile__acounts">
+            <div class="header__profile__adittional__acounts">
+                <!-- Cuentas -->
+                <div class="account" data-number="1">
+                    <img src="assets/img/Logo Aprende Codigo.jpg" alt="Logo" class="account__img">
+
+                    <div class="account__texts">
+                        <h4 class="account__name">Aprende Codigo</h4>
+                        <p class="account__email">aprendecodigo@gmail.com</p>
+                    </div>
+                </div>
+
+                <div class="account" data-number="2">
+                    <img src="assets/img/Logo Alex CG.jpg" alt="Logo" class="account__img">
+
+                    <div class="account__texts">
+                        <h4 class="account__name">Alex CG</h4>
+                        <p class="account__email">alexcgdesign@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="header__profile__acount__button" id="añadir__cuenta"><img src="assets/icons/add-user.svg" alt="Add User"> Añadir otra cuenta</a>
+        </div>
+
+        <hr class="profile__divisor">
+
+        <!-- Boton Cerrar Sesiones -->
+        <div class="header__profile__buttons">
+            <a href="#" class="header__profile__button close__sessions">Cerrar sesion en cuentas adicionales</a>
+            <a href="#" class="header__profile__button restart__session">Restaurar Cuenta</a>
+        </div>
+
+        <hr class="profile__divisor">
+
+        <!-- Footer -->
+
+        <div class="header__profile__footer">
+            <a href="#" class="header__profile__footer__text">Politica de Privacidad</a>
+            <a href="#" class="header__profile__footer__text">Terminos del Servicio</a>
+        </div>
+    </div>
+
+        <!-- Formulario Para Agregar Cuenta -->
+
+        <div class="container__form">
+
+            <img src="assets/icons/cancel.svg" alt="Cancel" class="cancel">
+
+            <form action="#" class="form">
+                <h3 class="form__title">Añadir Cuenta</h3>
+
+                <div class="form__sections">
+                    <div class="form__left">
+                        <h4 class="form__section__title">Informacion de la Cuenta</h4>
+
+                        <div class="form-input__box">
+                            <input type="text" class="form__input" id="nombre" required autocomplete="off">
+                            <label class="form__label">Nombre</label>
+                        </div>
+
+                        <div class="form-input__box">
+                            <input type="email" class="form__input" id="email" required autocomplete="off">
+                            <label class="form__label">Email</label>
+                        </div>
+
+                        <input type="submit" value="Añadir Cuenta" class="form__submit" id="submit">
+                    </div>
+
+                    <div class="form__right">
+                        <h4 class="form__section__title">Avatar</h4>
+                        <div class="previsualizer">
+                            <img src="assets/img/Users/user-1.png" alt="Usuario" class="form__img">
+
+                            <div class="avatar__options">
+                                <input type="radio" name="img" id="avatar__1" class="avatar__input" checked>
+                                <label for="avatar__1" class="avatar__label">Avatar 1</label>
+
+                                <input type="radio" name="img" id="avatar__2" class="avatar__input">
+                                <label for="avatar__2" class="avatar__label">Avatar 2</label>
+
+                                <input type="radio" name="img" id="avatar__3" class="avatar__input">
+                                <label for="avatar__3" class="avatar__label">Avatar 3</label>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </header>
+
+    <!-- Main o Seccion Principal de la Busqueda -->
+
+    <main class="main">
+        <div class="main__container">
+            <img src="assets/img/Google Logo.png" alt="Google Logo" class="main__logo">
+
+            <div class="main__search">
+                <input type="text" class="main__search-input" placeholder="Buscar en Google o escribir una URL" autocomplete="off">
+    
+                <!-- Iconos -->
+    
+                <img src="assets/icons/search-icon.svg" alt="Search Icon" class="input-icon search__icon">
+    
+                <a href="voice.html" target="_blank"><img src="assets/icons/microphone-icon.svg" alt="Microphone Icon" class="input-icon mic__icon"></a>
+            </div>
+    
+            <div class="direct__access">
+                <a href="https://www.youtube.com/" target="_blank">
+                    <div class="direct__access-section">
+                        <img src="assets/icons/youtube-icon.png" alt="Youtube" class="section__img">
+                        <p class="section__name">Youtube</p>
+                </div></a>
+    
+                <a href="https://twitter.com/?lang=es" target="_blank">
+                    <div class="direct__access-section">
+                        <img src="assets/img/directAccess/twitter-logo.png" alt="Twitter" class="section__img">
+                        <p class="section__name">Twitter</p>
+                </div></a>
+    
+                <a href="https://www.twitch.tv/" target="_blank">
+                    <div class="direct__access-section">
+                        <img src="assets/img/directAccess/twitch-logo.png" alt="Twitch" class="section__img">
+                        <p class="section__name">Twitch</p>
+                </div></a>
+    
+                <a href="https://github.com/" target="_blank">
+                    <div class="direct__access-section">
+                        <img src="assets/img/directAccess/github-logo.png" alt="Youtube" class="section__img">
+                        <p class="section__name">Github</p>
+                </div></a>
+    
+                <a href="https://www.instagram.com/" target="_blank">
+                    <div class="direct__access-section">
+                        <img src="assets/img/directAccess/instagram-logo.png" alt="Instagram" class="section__img">
+                        <p class="section__name">Instagram</p>
+                </div></a>
+    
+                <a href="https://unsplash.com/es" target="_blank">
+                    <div class="direct__access-section">
+                        <img src="assets/img/directAccess/unsplash-logo.png" alt="Unsplash" class="section__img">
+                        <p class="section__name">Unsplash</p>
+                </div></a>
+    
+                <a href="https://htmlcolorcodes.com/" target="_blank">
+                    <div class="direct__access-section">
+                        <img src="assets/img/directAccess/color-picker-logo.png" alt="Color Pick" class="section__img">
+                        <p  class="section__name">Color Pick</p>
+                </div></a>
+    
+                <a href="https://www.flaticon.com/" target="_blank">
+                    <div class="direct__access-section">
+                        <img src="assets/img/directAccess/flaticon-logo.png" alt="Flaticon" class="section__img">
+                        <a  class="section__name">Flaticon</a>
+                </div></a>
+            </div>
+        </div>
+        
+    </main>
+
+    <script src="js/main.js"></script>
+    <script src="js/search.js"></script>
+    
+    <!-- <script src="../../js/fullscreen.js"></script> -->
+
+</body>
+</html>

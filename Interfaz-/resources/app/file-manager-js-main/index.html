@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Explorador de Archivos</title>
+    <link rel="stylesheet" href="../../vendor/pico.css" />
+    <link rel="stylesheet" href="../../vendor/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="../../app/file-manager-js-main/style.css" />
+    <script src="../../js/pending-files.js" defer></script>
+      <link rel="stylesheet" href="../../css/uphos.css">
+</head>
+  
+  <body>
+  </div>
+   <main class="container file-explorer-container" id="explorer-main">
+  <!-- Logo -->
+  <div class="logo-contariner">
+    <img src="../../assets/images/uphos-logo-transparent.png" alt="UPHOS" class="system-logo uph-logo">
+  </div>
+  <!-- Breadcrumb -->
+  <nav aria-label="breadcrumb">
+    <ol id="directories">
+      <li><strong onclick="goToDirectory(event)">root</strong></li>
+    </ol>
+  </nav>
+  <!-- Tabla de archivos/carpetas -->
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Nombre</th>
+        <th>Tipo</th>
+        <th>Fecha</th>
+      </tr>
+    </thead>
+    <tbody id="files"></tbody>
+  </table>
+  <div id="view"></div>
+</main>
+
+    <!-- Menú contextual -->
+    <div id="context-menu" style="display:none; position:absolute; z-index:1000; background:#222; color:white; border-radius:6px; box-shadow:0 2px 8px #0008; min-width:180px; font-size:1rem;">
+      <ul style="list-style:none; margin:0; padding:8px 0;">
+        <li style="padding:8px 20px; cursor:pointer;" onclick="contextAddDir()">➕ Nueva carpeta</li>
+        <li style="padding:8px 20px; cursor:pointer;" onclick="contextAddFile()">📄 Nuevo documento</li>
+        <li style="padding:8px 20px; cursor:pointer;" onclick="contextAddImage()">🖼️ Agregar imagen</li>
+        <li style="padding:8px 20px; cursor:pointer;" onclick="contextRename()">✏️ Renombrar</li>
+        <li style="padding:8px 20px; cursor:pointer;" onclick="contextDelete()">🗑️ Eliminar</li>
+      </ul>
+    </div>
+
+    <!-- Modal personalizado -->
+    <div id="modal-bg" style="display:none; position:fixed; left:0; top:0; width:100vw; height:100vh; background:#000a; z-index:2000;"></div>
+    <div id="modal" style="display:none; position:fixed; left:50%; top:50%; transform:translate(-50%,-50%); background:#222; color:white; border-radius:8px; box-shadow:0 2px 16px #000a; min-width:320px; z-index:2100; padding:24px 20px;">
+      <form id="modal-form">
+        <h4 id="modal-title"></h4>
+        <div id="modal-fields"></div>
+        <div style="margin-top:18px; text-align:right;">
+          <button type="button" id="modal-cancel" style="margin-right:10px;">Cancelar</button>
+          <button type="submit" id="modal-ok">Aceptar</button>
+        </div>
+      </form>
+    </div>
+
+  <!-- Modal de visualización -->
+<div id="viewer-modal-bg">
+  <div id="viewer-modal">
+    <button id="viewer-close" aria-label="Cerrar modal">×</button>
+    <h4 id="viewer-title"></h4>
+    <div id="viewer-content"></div>
+  </div>
+</div>
+
+
+      <!-- <script src="../../js/fullscreen.js"></script> -->
+
+  </body>
+</html>

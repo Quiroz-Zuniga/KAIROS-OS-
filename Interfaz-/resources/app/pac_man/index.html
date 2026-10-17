@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Juego Pacman </title>
+    <link href="./style.css" rel="stylesheet" type="text/css">
+    <script type="module" src="./js/main.js" defer></script>
+      <link rel="stylesheet" href="../../css/uphos.css">
+</head>
+  
+  <body>
+    <main class='contenedor__main'>
+      <section class='contenedor2 scores' id='contenedor2__scores'>
+        <span class='score ptos' id='puntos'>Puntos: 0</span>
+        <span class='score nivel' id='nivel'>Nivel: 1</span>
+        <span class='score vidas' id='vidas'>Vidas: 3</span>
+        <button class='boton NewGame' id='boton__newGame'>Nueva Partida</button>
+      </section>
+
+      <canvas id="canvas"></canvas>
+
+      <section class='contenedor2 botonesControl' id='contenedor2__botonesControl'>
+        <button class='boton controles' id='boton__up'>
+          <div class='flecha__direccion arriba' id='flecha__up'></div>
+        </button>
+
+        <button class='boton controles' id='boton__le'>
+          <div class='flecha__direccion izquierda' id='flecha__le'></div>
+        </button>
+
+        <button class='boton controles' id='boton__ri'>
+          <div class='flecha__direccion derecha' id='flecha__ri'></div>
+        </button>
+
+        <button class='boton controles' id='boton__do'>
+          <div class='flecha__direccion abajo' id='flecha__do'></div>
+        </button>
+      </section>
+    </main>
+
+  </body>
+</html>

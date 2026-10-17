@@ -1,0 +1,23 @@
+# Documentación de la interfaz de Rubén; no publica ni modifica otras ramas.
+site_name: UPHOS Interfaz
+site_description: Manual y correcciones de la interfaz gráfica de UPHOS
+site_author: Rubén Quiroz
+repo_url: https://github.com/UPHOS/UPHOS
+edit_uri: ''
+docs_dir: docs/manual
+site_dir: site
+theme:
+  name: mkdocs
+  locale: es
+nav:
+  - Inicio: index.md
+  - Correcciones de interfaz: correcciones.md
+  - Arquitectura y comentarios: arquitectura.md
+  - Verificación: verificacion.md
+plugins:
+  - search:
+      lang:
+        - es
+markdown_extensions:
+  - tables
+  - fenced_code

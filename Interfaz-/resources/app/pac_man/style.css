@@ -1,0 +1,184 @@
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+html, body {
+	width: 100vw;
+	height: 100vh;
+}
+
+body {
+	background: #181858;
+	background: radial-gradient(circle, rgba(48, 48, 112, 1) 0%, rgba(17, 17, 63, 1) 100%);  
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+}
+
+.contenedor__main {
+	width: fit-content;
+	height: inherit;
+	background-color: inherit;
+	display: block;
+}
+
+/*----CONTENEDORES < SCORE & BOTONES CONTROLES >-----------*/
+.contenedor2 {
+	border: solid black;
+	border-width: 2px 2px 0 2px;
+	border-radius: 7px 7px 0 0;
+	font-size: 24px;
+	font-weight: bold;
+	text-shadow: 1px 1px 1px #BBB;
+	color: rgb(255, 255, 255);
+	background: linear-gradient(#777, #222);
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.scores {
+	display: flex;
+}
+
+.botonesControl {
+	display: none;
+	border-radius: 5px;
+	border: none;
+	background: none;
+}
+
+.score .nivel .vidas {
+	width: fit-content;
+	height: fit-content;
+	font-size: inherit;
+	font-weight: inherit;
+	color: inherit;
+	text-align: center;
+}
+
+.nivel {
+	color: rgb(255, 255, 255);
+}
+
+.vidas {
+	color: rgb(255, 255, 255);
+}
+
+/*----CANVAS----------*/
+#canvas {
+	border: 2px solid black;
+}
+
+/*------BOTONES < CONTROLES & NUEVA PARTIDA >-----------*/
+.boton {
+	width: fit-content;
+	height: fit-content;
+	border-radius: 7px;
+	font-size: 24px;
+	font-weight: 700;
+	text-align: center;
+	cursor: pointer;
+	padding: 5px 25px 7px 25px;
+	outline: none;
+}
+
+.boton:active {
+	transform: translate(-2px, -4px);
+}
+
+.NewGame {
+	color: #FFFFA5; 
+	background-color: #FF3010;
+	text-shadow: 2px 2px 2px black;
+	box-shadow: inset 0 -0.5em 0 -0.35em rgba(0, 0, 0, 0.45);
+}
+
+.controles {
+	height: 60px;
+	color: black;
+	border-radius: 6px;
+	background: linear-gradient(#CCC, #777);
+	font-size: 30px;
+	font-weight: bold;
+	box-shadow: inset -3px -2px 2px rgba(0, 0, 0, 0.7);
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	outline: none;
+}
+
+#boton__up {
+	width: 100%;
+	border-radius: 90% 90% 0 0;
+}
+
+#boton__do {
+	width: 100%;
+	border-radius: 0 0 90% 90%;
+}
+
+#boton__le, #boton__ri {
+	width: 45%;
+}
+
+.flecha__direccion {
+	box-sizing: content-box;
+	width: 1px;
+	height: 1px;
+	border: 20px solid;
+}
+
+.arriba {
+	border-color: transparent transparent black transparent;
+	margin: 0 0 7% 0;
+}
+
+.izquierda {
+	border-color: transparent black transparent transparent;
+}
+
+.derecha {
+	border-color: transparent transparent transparent black;
+}
+
+.abajo {
+	border-color: black transparent transparent transparent;
+	margin: 7% 0 0 0;
+}
+
+/*-----RESPONSIVE----------------*/
+@media screen and (max-width: 750px) {
+	#canvas {
+		width: 350px;
+		height: 320px;
+	}
+
+	.contenedor__main {
+		width: 350px;
+	}
+
+	.contenedor2 {
+		font-size: 16px;
+	}
+
+	.boton {
+		width: 90px;
+		font-size: 14px;
+		padding: 4px;
+	}
+
+	.botonesControl {
+		width: 100%;
+		height: 180px;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: flex-start;
+		justify-content: space-between;
+	}
+}
+
+

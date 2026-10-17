@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <script src="../js/preferences.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Visor de Imágenes</title>
+
+  <!-- Estilos y fuentes -->
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="../vendor/inter/inter.css">
+  <link rel="stylesheet" href="../vendor/fontawesome/css/all.min.css">
+  
+
+  <style>
+    /* Contenedor principal de la galería */
+#image-gallery {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
+}
+
+#image-gallery img {
+  max-width: 100%;
+  max-height: 70vh;
+  display: block;
+  margin: 0 auto;
+}
+
+
+/* Flechas de navegación */
+.arrow-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+    /* Flechas de navegación */
+    .arrow-button {
+      position: absolute;
+      top: 90%;
+      transform: translateY(-90%);
+      font-size: 24px;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+    }
+
+
+#prev-button {
+  left: 10px;
+}
+
+#next-button {
+  right: 10px;
+}
+
+.contenedor {
+  background-image: url('../assets/images/fondo2.png');
+}
+
+/* Botón de volver al escritorio */
+.volver-escritorio {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 50;
+}
+
+.volver-escritorio button {
+  border: none;
+  background: transparent;
+}
+
+.volver-escritorio img {
+  width: 45px;
+  height: 45px;
+}
+
+/* Botones de acción (subir, eliminar, fondo) */
+.botones-extra {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+label.subir,
+.botones-extra button {
+  padding: 6px 10px; /* ligeramente más grande */
+  border-radius: 6px;
+  background-color: #303070;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 14px; /* tamaño de fuente ligeramente más grande */
+}
+
+.botones-extra input[type="file"] {
+  display: none;
+}
+
+label.subir img,
+.botones-extra button img {
+  width: 36px;  /* ligeramente más grande */
+  height: 36px;
+}
+
+/* Botón eliminar en rojo */
+.botones-extra button.eliminar {
+  background-color: #dc2626;
+}
+
+/* Botón usar como fondo: transparente con borde */
+.botones-extra button.fondo-transparente {
+  background-color: transparent;
+  border: 1px solid white;
+}
+
+/* Modal de confirmación */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background-color: white;
+  color: black;
+  padding: 30px;
+  border-radius: 10px;
+  position: relative;
+  width: 400px;
+  text-align: center;
+}
+
+.modal-content button {
+  margin-top: 10px;
+  padding: 8px 16px;
+  border-radius: 6px;
+  background-color: #5544ef;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.modal-close {
+  position: absolute;
+  top: 2px;
+  right: 5px;
+  background: none;
+  border: none;
+  font-size: 12px;
+  cursor: pointer;
+  color: red;
+}
+
+  </style>
+    <link rel="stylesheet" href="../css/uphos.css">
+</head>
+
+<body>
+
+  <!-- Contenedor general -->
+  <div class="relative flex h-screen w-full items-center justify-center bg-gray-900 contenedor">
+    <div class="rounded-xl h-screen w-full bg-gray-800 bg-opacity-50 px-16 py-10 shadow-lg backdrop-blur-md max-sm:px-8">
+      <div class="text-white">
+        <div class="mb-8 flex flex-col items-center">
+        </div>
+
+        <!-- Galería de imágenes -->
+        <div id="image-gallery" class="mb-8"></div>
+
+        <!-- Botones de navegación -->
+        <button id="prev-button" class="arrow-button" onclick="showPrevImage()">◁</button>
+        <button id="next-button" class="arrow-button" onclick="showNextImage()">▷</button>
+
+        <!-- Botones para subir, eliminar, fondo -->
+        <div class="botones-extra">
+          <label class="subir" for="upload-image">
+            <img src="../assets/images/agg_img.png" alt="Agregar Imagen" />
+          </label>
+          <input type="file" id="upload-image" accept="image/*" />
+
+          <button class="eliminar" onclick="confirmDelete()" title="Eliminar Imagen">
+            <img src="../assets/images/eliminar_img.png" alt="Eliminar Imagen" />
+          </button>
+
+          <button class="fondo-transparente" onclick="setAsWallpaper()" title="Usar como Fondo de Pantalla">
+            <img src="../assets/images/Wallpaper.png" alt="Usar como Fondo" />
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal de confirmación -->
+  <div id="deleteModal" class="modal" style="display:none;">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal()">X</button>
+      <p>¿Estás seguro de eliminar esta imagen?</p>
+      <button onclick="deleteCurrentImage()">Aceptar</button>
+    </div>
+  </div>
+
+  <!-- Script para funcionalidad -->
+  <script>
+    let currentImageIndex = 0;
+    const imagesContainer = document.getElementById("image-gallery");
+    const modal = document.getElementById("deleteModal");
+
+    // Cargar imágenes desde localStorage o usar imágenes predeterminadas
+    let images = UPHOSPreferences.read('imagenesGuardadas', ['../assets/images/uphos-wallpaper.svg'],
+      value => Array.isArray(value) && value.every(item => UPHOSPreferences.validImage(item)))
+      .map(item => UPHOSPreferences.imageURL(item))
+      .filter(item => !/\/(?:fondo[1-6]|fondologin|fondoregistro)\.png$/i.test(item));
+    if (!images.length) images = ['../assets/images/uphos-wallpaper.svg'];
+
+//     // Mostrar la imagen anterior
+//     function showPrevImage() {
+//       currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+//       showImage();
+//     }
+
+//     // Mostrar la siguiente imagen
+//     function showNextImage() {
+//       currentImageIndex = (currentImageIndex + 1) % images.length;
+//       showImage();
+//     }
+
+//     // Mostrar la imagen actual
+//     function showImage() {
+//       imagesContainer.innerHTML = "";
+//       images.forEach((image, index) => {
+//         const imgElement = document.createElement("img");
+//         imgElement.src = image;
+//         imgElement.alt = `Imagen ${index + 1}`;
+//         imgElement.style.display = index === currentImageIndex ? "block" : "none";
+//         imagesContainer.appendChild(imgElement);
+//       });
+//       localStorage.setItem("imagenesGuardadas", JSON.stringify(images));
+//     }
+
+//     // Mostrar modal de confirmación
+//     function confirmDelete() {
+//       if (images.length === 0) return;
+//       modal.style.display = "flex";
+//     }
+
+//     // Cerrar el modal
+//     function closeModal() {
+//       modal.style.display = "none";
+//     }
+
+//     // Eliminar imagen actual
+//     function deleteCurrentImage() {
+//       images.splice(currentImageIndex, 1);
+//       currentImageIndex = Math.max(0, currentImageIndex - 1);
+//       closeModal();
+//       showImage();
+//     }
+
+//     // Establecer la imagen como fondo
+//     function setAsWallpaper() {
+//   const currentImgSrc = images[currentImageIndex];
+//   localStorage.setItem("wallpaper", currentImgSrc);
+//   alert("Imagen establecida como fondo de escritorio.");
+
+//   // Si existe un contenedor de galería, cambia su fondo (imagenes.html)
+//   const contenedor = document.getElementsByClassName("contenedor")[0];
+//   if (contenedor) {
+//     contenedor.style.backgroundImage = `url('${currentImgSrc}')`;
+//   }
+
+//   // Si existe un fondo de escritorio, cámbialo (escritorio.html)
+//   const bgCover = document.getElementsByClassName("bg-cover")[0];
+//   if (bgCover) {
+//     bgCover.style.backgroundImage = `url('${currentImgSrc}')`;
+//     bgCover.style.backgroundSize = "cover";
+//     bgCover.style.backgroundRepeat = "no-repeat";
+//     bgCover.style.backgroundPosition = "center";
+//   }
+// }
+//     // Subir imagen desde el dispositivo
+// //       const uploadInput = document.getElementById("upload-image");
+// if (uploadInput) {
+//   uploadInput.addEventListener("change", function (event) {
+//     const file = event.target.files[0];
+//     if (file && file.type.startsWith("image/")) {
+//       const reader = new FileReader();
+//       reader.onload = function (e) {
+//         images.push(e.target.result);
+//         currentImageIndex = images.length - 1;
+//         showImage();
+//       };
+//       reader.readAsDataURL(file);
+//     }
+//   });
+// }
+
+//     // Navegación con flechas del teclado
+//     document.addEventListener("keydown", function (event) {
+//       if (event.key === "ArrowRight") showNextImage();
+//       else if (event.key === "ArrowLeft") showPrevImage();
+//     });
+
+//     // Mostrar imagen al cargar la página
+//     showImage();
+  </script>
+  <script src="../js/imagenes.js"></script>
+</body>
+
+</html>

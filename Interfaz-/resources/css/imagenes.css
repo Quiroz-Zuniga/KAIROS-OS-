@@ -1,0 +1,127 @@
+#image-gallery {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
+}
+
+#image-gallery img {
+  max-width: 100%;
+  max-height: 70vh;
+  display: block;
+  margin: 0 auto;
+}
+
+.arrow-button {
+  position: absolute;
+  top: 70%;
+  transform: translateY(-70%);
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+#prev-button {
+  left: 10px;
+}
+
+#next-button {
+  right: 10px;
+}
+
+.contenedor {
+  background-image: url('../assets/images/uphos-wallpaper.svg');
+}
+
+.volver-escritorio {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 50;
+}
+
+.volver-escritorio button {
+  border: none;
+  background: transparent;
+}
+
+.volver-escritorio img {
+  width: 45px;
+  height: 45px;
+}
+
+.botones-extra {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+label.subir,
+.botones-extra button {
+  padding: 6px 12px;
+  border-radius: 6px;
+  background-color: #303070;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.botones-extra input[type="file"] {
+  display: none;
+}
+
+label.subir img,
+.botones-extra button img {
+  width: 50px;
+  height: 50px;
+}
+
+/* Estilos para el modal de advertencia */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background-color: white;
+  color: black;
+  padding: 30px;
+  border-radius: 10px;
+  position: relative;
+  width: 400px;
+  text-align: center;
+}
+
+.modal-content button {
+  margin-top: 10px;
+  padding: 8px 16px;
+  border-radius: 6px;
+  background-color: #5544ef;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.modal-close {
+  position: absolute;
+  top: 2px;
+  right: 5px;
+  background: none;
+  border: none;
+  font-size: 12px;
+  cursor: pointer;
+  color: red;
+}

@@ -1,0 +1,101 @@
+.window {
+    position: absolute;
+    border: 1px solid #333;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    transition: all 0.3s ease;
+    /* Nuevas propiedades para mejor manejo de contenido */
+    resize: both; /* Permite redimensionar */
+    min-width: 300px;
+    min-height: 200px;
+}
+
+.window-header {
+    cursor: move;
+    user-select: none;
+    padding: 5px 10px;
+    background: #f0f0f0;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+}
+
+.window-content {
+    flex-grow: 1;
+    overflow: auto;
+    background: #fff;
+}
+
+/* Estados de la ventana */
+.window.minimized {
+    height: 30px !important;
+    opacity: 0.8;
+    resize: none; /* Desactiva redimensionado cuando está minimizado */
+}
+
+.window.minimized .window-content {
+    display: none;
+}
+
+.window.maximized {
+    width: 95vw !important;
+    height: 90vh !important;
+    left: 2.5vw !important;
+    top: 2.5vh !important;
+
+    resize: none; /* Desactiva redimensionado cuando está maximizado */
+}
+
+/* Estilos para los botones de control */
+.window-controls {
+    display: flex;
+    gap: 6px;
+    margin-left: auto;
+}
+
+.window-control {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.window-control.close {
+    background: #ff5f56;
+    border: 1px solid #e0443e;
+}
+
+.window-control.minimize {
+    background: #F8D978;
+    border: 1px solid #dea123;
+}
+
+.window-control.maximize {
+    background: #27c93f;
+    border: 1px solid #1aab29;
+}
+
+/* Efectos hover para los controles */
+.window-control.close:hover {
+    background: #e0443e;
+}
+
+.window-control.minimize:hover {
+    background: #dea123;
+}
+
+.window-control.maximize:hover {
+    background: #1aab29;
+}
+
+/* Para iframes dentro del contenido */
+.window-content iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: white;
+}

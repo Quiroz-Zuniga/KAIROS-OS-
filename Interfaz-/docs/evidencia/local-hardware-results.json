@@ -1,0 +1,11 @@
+{
+  "get": 200,
+  "post": 405,
+  "foreignOrigin": 403,
+  "capabilities": {
+    "battery": true,
+    "audio": true,
+    "network": true
+  },
+  "privateNetworkNamesSaved": false
+}

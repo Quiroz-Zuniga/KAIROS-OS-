@@ -1,0 +1,51 @@
+.spotify-app {
+    text-align: center;
+    color: white;
+    padding: 5px;
+    background: linear-gradient(135deg, #1db954 0%, #191414 100%);
+    max-height: 100%;
+    overflow: auto;
+}
+
+.playlist {
+    list-style: none;
+    padding: 0;
+    /* margin-bottom: ; */
+    text-align: left;
+    min-height: 10px;
+    max-height: 360px;
+    overflow-y:scroll;
+}
+
+.playlist li {
+    padding: 5px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    transition: background 0.2s;
+
+}
+
+.playlist li:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.playlist li.active {
+    background: rgba(255, 255, 255, 0.2);
+    font-weight: bold;
+}
+
+.player-controls button {
+    background-color: #1db954;
+    border: none;
+    padding: 5px 10px;
+    margin: 0 5px;
+    border-radius: 6px;
+    cursor: pointer;
+    color: white;
+    font-size: 16px;
+    transition: background 0.2s;
+}
+
+.player-controls button:hover {
+    background-color: #1ed760;
+}

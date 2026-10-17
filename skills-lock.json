@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "skills": {
+    "reducing-entropy": {
+      "source": "softaworks/agent-toolkit",
+      "sourceType": "github",
+      "skillPath": "skills/reducing-entropy/SKILL.md",
+      "computedHash": "b13a84c41dc386c758a3eec600314ad2753989bd556bc2628519277ae3739fe5"
+    }
+  }
+}

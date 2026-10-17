@@ -1,0 +1,32 @@
+{
+  "name": "uphos-interfaz",
+  "version": "1.0.0",
+  "description": "Interfaz original de UPHOS conectada a un n\u00facleo virtual determinista",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node scripts/serve.js",
+    "build:css": "tailwindcss -i ./resources/src/input.css -o ./resources/css/styles.css",
+    "build": "npm run vendor && node scripts/build.js",
+    "test": "node --test tests/*.test.js",
+    "vendor": "node scripts/vendor.js",
+    "test:browser": "node tests/browser.js",
+    "test:hardware": "python3 -m unittest discover -s tests -p test_system_status.py"
+  },
+  "keywords": [],
+  "author": "Ruben Quiroz",
+  "license": "ISC",
+  "devDependencies": {
+    "@fontsource/inter": "5.0.18",
+    "@fortawesome/fontawesome-free": "6.5.0",
+    "@picocss/pico": "1.5.13",
+    "alpinejs": "2.8.2",
+    "autoprefixer": "^10.4.21",
+    "axe-core": "4.10.3",
+    "bootstrap-icons": "1.11.3",
+    "playwright": "1.62.1",
+    "postcss": "^8.5.3",
+    "sweetalert2": "10.15.7",
+    "tailwindcss": "^3.4.17"
+  },
+  "type": "module"
+}

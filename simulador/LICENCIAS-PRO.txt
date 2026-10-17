@@ -1,0 +1,13 @@
+UPHOS PRO — LICENCIAS ACADÉMICAS DE DEMOSTRACIÓN
+
+UPHOS-PRO-H7K2-M9Q4-T6XA
+UPHOS-PRO-B3W8-N5R2-L9VC
+UPHOS-PRO-D8F4-P2J7-Z6ME
+UPHOS-PRO-Q5S9-A3U6-K2NB
+UPHOS-PRO-V4C7-E8Y3-R5HD
+
+Uso: escribe una clave en la selección de edición Pro del instalador.
+En Live: configurar licencia CLAVE.
+En una instalación Pro anterior: activar CLAVE (cuenta administradora).
+Validación local, sin servidor de activación. Estas claves se pueden reutilizar.
+Fuente de validación: js/core/licencias.js.

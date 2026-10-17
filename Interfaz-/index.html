@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPHOS · Desbloqueo</title>
+    <link rel="stylesheet" href="./resources/css/styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="resources/vendor/inter/inter.css">
+    <link rel="stylesheet" href="resources/vendor/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="resources/css/uphos.css">
+</head>
+<body id="paginaDesbloqueo">
+    <div class="bg-cover bg-center h-screen" style="background-image: url('./resources/assets/images/uphos-wallpaper.svg');">
+        <div class="flex items-center " style="padding-top: 40px; padding-left: 20px;">
+            <img src="./resources/assets/images/uphos-logo-transparent.png" alt="UPHOS" class="uph-logo uph-logo-lock" id="logo">
+            
+        </div>
+        <div
+            style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: white;">
+            <div class="text-8xl" id="horaActual"></div>
+            <div class="text-4xl" id="fechaActual" style="margin-top: 10px;"></div><button id="desbloquear" class="uph-primary" style="margin-top:24px">Entrar a UPHOS</button>
+        </div>
+    </div>
+    <div
+        style="position: fixed; bottom: 40px; left: 92.2%; transform: translateX(-50%); text-align: center; color: white;">
+        <button class="px-2">
+            <i class="fa-solid fa-wifi" role="img" aria-label="WiFi · indicador visual" title="WiFi · indicador visual"></i>
+        </button>
+        <button class="px-2">
+            <i class="fa-solid fa-volume-high" role="img" aria-label="Sonido · indicador visual" title="Sonido · indicador visual"></i>
+        </button>
+        <button class="px-2">
+            <i class="fa-solid fa-battery-full" role="img" aria-label="Batería · indicador visual" title="Batería · indicador visual"></i>
+        </button>
+    </div>
+    <script defer type="module" src="./resources/js/index.js"></script>
+     <script src="resources/js/fullscreen.js"></script>
+</body>
+
+</html>

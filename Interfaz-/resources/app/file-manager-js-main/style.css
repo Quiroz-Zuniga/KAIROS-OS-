@@ -1,0 +1,381 @@
+/* Importa la fuente desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap');
+
+/* ===================== */
+/* VARIABLES GLOBALES    */
+/* ===================== */
+:root {
+  --article-bg: #10181E;
+  --article-border: rgba(255, 255, 255, 0.05);
+  --border-radius: 8px;
+}
+
+/* ===================== */
+/* ESTILO GENERAL        */
+/* ===================== */
+body {
+  font-family: 'IBM Plex Sans', sans-serif;
+  background: linear-gradient(90deg, rgba(18, 33, 84, 1) 0%, rgba(147, 109, 170, 1) 50%);
+  min-height: 100vh;
+  color: white;
+  margin: 0;
+  padding: 1rem;
+}
+
+p {
+  text-align: justify;
+}
+
+footer {
+  text-align: center;
+}
+
+h2, h3, h4, h5, h6 {
+  margin-bottom: 10px;
+}
+
+h4 {
+  color: white !important;
+}
+
+hgroup {
+  margin-bottom: 0px;
+}
+
+/* ===================== */
+/* CONTENEDORES          */
+/* ===================== */
+.container {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.file-explorer-container {
+  transition: all 0.3s ease;
+  max-width: 900px;
+  margin: 2rem auto 0 auto;
+  padding-bottom: 2rem;
+}
+
+/* ===================== */
+/* BREADCRUMB Y LOGO     */
+/* ===================== */
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.system-logo {
+  height: 70px;
+  width: auto;
+  transition: all 0.3s ease;
+  display: block;
+}
+
+.system-logo:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+  cursor: pointer;
+}
+
+nav[aria-label="breadcrumb"] {
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  margin-bottom: 1.5rem;
+  margin-top: 0;
+}
+
+.breadcrumb-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 0.5rem 1rem;
+}
+
+#directories {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+#directories li strong {
+  color: white !important;
+  font-weight: 600;
+  padding: 2px 6px;
+}
+
+#directories li strong:hover {
+  color: white !important;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* ===================== */
+/* TABLAS                */
+/* ===================== */
+table {
+  width: 96%;
+  margin: 0 auto 2rem auto;
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  border-radius: var(--border-radius);
+  overflow: hidden !important;
+  border-collapse: collapse !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+thead {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+tbody tr {
+  border: none;
+  background-color: transparent;
+}
+
+tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+}
+
+th, td {
+  padding: 12px 15px;
+  color: white;
+  border: none;
+}
+
+td > i {
+  margin-right: 8px;
+  color: #ffffff;
+}
+
+/* Reseteo de bordes y espaciado para tablas */
+table, thead, tbody, tr, th, td {
+  border: none !important;
+  border-spacing: 0 !important;
+  border-collapse: collapse !important;
+}
+
+/* ===================== */
+/* ARTÍCULOS             */
+/* ===================== */
+article {
+  background: var(--article-bg) !important;
+  margin: 0;
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  color: white !important;
+  border: 1px solid var(--article-border);
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.02);
+}
+
+/* Protección contra temas externos */
+body.dark article,
+body.light article,
+.theme-dark article,
+.theme-light article {
+  background: var(--article-bg) !important;
+  color: white !important;
+}
+
+/* ===================== */
+/* CÓDIGO <pre>          */
+/* ===================== */
+pre {
+  background: transparent !important;
+  color: white !important;
+  border-radius: var(--border-radius);
+}
+
+/* ===================== */
+/* BOTONES E ICONOS      */
+/* ===================== */
+.icon-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  margin: 0;
+}
+
+.fa-bars {
+  color: white;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
+
+i:hover {
+  cursor: pointer;
+  color: #ffffff;
+}
+
+/* ===================== */
+/* DETALLES SEMÁNTICOS   */
+/* ===================== */
+details {
+  align-items: center;
+}
+/* ===================== */
+/* BOTÓN DE REGRESO SOLO CON FLECHA */
+/* ===================== */
+
+.volver-escritorio {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 50;
+}
+
+/* Elimina fondo, borde y padding innecesario */
+.volver-flecha {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  color: white;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+/* Opcional: efecto al pasar el mouse */
+.volver-flecha:hover {
+  opacity: 0.8;
+  transform: scale(1.05);
+}
+
+/* ===================== */
+/* SEPARACIÓN ENTRE SECCIONES */
+/* ===================== */
+#view {
+  margin-top: 2rem;
+}
+
+
+/* ===================== */
+/* MODAL DE VISUALIZACIÓN DE DOCUMENTOS */
+/* ===================== */
+#viewer-modal-bg {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5); /* Fondo oscuro semi-transparente */
+  z-index: 2000;
+  backdrop-filter: blur(3px); /* efecto glassmorphism */
+}
+
+#viewer-modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--article-bg);
+  color: white;
+  font-family: 'IBM Plex Sans', sans-serif;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--article-border);
+  box-shadow:
+    0 4px 10px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.02);
+  padding: 1.2rem 1.5rem;
+  width: 400px;
+  max-width: 90vw;
+  max-height: 80vh;
+  overflow-y: auto;
+  z-index: 2100;
+  position: relative;
+}
+
+/* Título del modal */
+#viewer-modal h4 {
+  margin: 0 0 1rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: white;
+}
+
+/* Contenido del archivo */
+#viewer-content {
+  white-space: pre-wrap;
+  font-family: monospace;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: white;
+  max-height: 50vh;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+/* Botón X de cerrar */
+#viewer-close {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.7rem;
+  background: none;
+  border: none;
+  color: #aaa;
+  font-size: 1.4rem;
+  cursor: pointer;
+  z-index: 2200;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+#viewer-close:hover {
+  color: white;
+  transform: scale(1.1);
+}
+
+#viewer-modal-bg {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+  z-index: 1000;
+}
+
+#viewer-modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #10181E;
+  color: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  width: 600px;
+  max-height: 80vh;
+  overflow-y: auto;
+  z-index: 1010;
+}
+
+#viewer-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.8rem;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+#viewer-title {
+  margin-bottom: 1rem;
+}
+
+#viewer-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}

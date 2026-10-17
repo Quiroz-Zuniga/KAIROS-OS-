@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<script src="../../js/preferences.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../vendor/bootstrap-icons/bootstrap-icons.min.css">
+    <title>Gestor de Tareas</title>
+    <link rel="stylesheet" href="../../css/uphos.css">
+</head>
+
+<body> 
+    <main>
+      <form  id="task-form">
+                <input class="tamaño" type="text" id="task-title" placeholder="Titulos de la tarea " required>
+                <input class="tamaño" type="text" id="task-desc" placeholder="Descripción de la tarea " required>
+                <input class="tamaño" type="date" id="task-date" required>
+                <select class="tamaño" id="task-importance">
+                    <option value="3">Baja</option>
+                    <option value="2">Media</option>
+                    <option value="1">Alta</option>
+                </select>
+                <button class="tamaño tamaños">Agregar Tarea</button>
+            </form>
+
+    <!-- Divisor para visualizar las tareas -->
+        <div id="task-container">
+            <h2 class="titles">Tareas</h2>
+            <div>
+                <input type="text" class="tamaño" id="search-task" placeholder="Buscar tarea por título">
+                <button class="tamaño tamaños" id="search-button">Buscar</button>
+            </div>
+        </div>
+        <div id="task-list">
+        </div>
+    </main>
+    
+    <!-- archivos script para la funcionalidad -->
+    <script src="LinkedList.js" ></script>
+    <script src="binaryTree.js" ></script>
+    <script src="hashTable.js" ></script>
+    <script src="script.js" ></script>
+
+    <!-- <script src="../../js/fullscreen.js"></script> -->
+
+</body>
+</html>
