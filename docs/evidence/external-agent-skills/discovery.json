@@ -1,0 +1,46 @@
+{
+  "date": "2026-10-16",
+  "scope": "Local discovery only; no model execution or UI hot reload test",
+  "codex_version": "0.162.0-alpha.2",
+  "opencode_version": "1.19.3",
+  "codex_method": "initialize; initialized; skills/list {cwds:[repository root],forceReload:true}",
+  "opencode_command": "opencode debug skill",
+  "skills": [
+    {
+      "name": "designing-frontend-interfaces",
+      "path": ".agents/skills/designing-frontend-interfaces/SKILL.md",
+      "codex": "VERIFIED",
+      "opencode": "VERIFIED"
+    },
+    {
+      "name": "reviewing-interface-quality",
+      "path": ".agents/skills/reviewing-interface-quality/SKILL.md",
+      "codex": "VERIFIED",
+      "opencode": "VERIFIED"
+    },
+    {
+      "name": "reviewing-security",
+      "path": ".agents/skills/reviewing-security/SKILL.md",
+      "codex": "VERIFIED",
+      "opencode": "VERIFIED"
+    },
+    {
+      "name": "systematic-debugging",
+      "path": ".agents/skills/systematic-debugging/SKILL.md",
+      "codex": "VERIFIED",
+      "opencode": "VERIFIED"
+    },
+    {
+      "name": "verifying-before-completion",
+      "path": ".agents/skills/verifying-before-completion/SKILL.md",
+      "codex": "VERIFIED",
+      "opencode": "VERIFIED"
+    },
+    {
+      "name": "using-git-worktrees",
+      "path": ".agents/skills/using-git-worktrees/SKILL.md",
+      "codex": "VERIFIED",
+      "opencode": "VERIFIED"
+    }
+  ]
+}

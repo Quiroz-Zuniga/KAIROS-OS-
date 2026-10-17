@@ -1,0 +1,18 @@
+PASS frontmatter / folder-name: designing-frontend-interfaces
+PASS frontmatter / folder-name: kairos-context
+PASS frontmatter / folder-name: kairos-dependency-security
+PASS frontmatter / folder-name: kairos-docs
+PASS frontmatter / folder-name: kairos-git-workflow
+PASS frontmatter / folder-name: kairos-os-security
+PASS frontmatter / folder-name: kairos-ui
+PASS frontmatter / folder-name: reviewing-interface-quality
+PASS frontmatter / folder-name: reviewing-security
+PASS frontmatter / folder-name: systematic-debugging
+PASS frontmatter / folder-name: using-git-worktrees
+PASS frontmatter / folder-name: verifying-before-completion
+PASS pinned snapshot hashes: 23 files
+PASS six local license notices
+PASS recorded discovery: Codex 6/6, OpenCode 6/6 (not a live re-scan)
+PASS authority, progressive disclosure, selection and Markdown fence
+PASS tracked scope vs baseline; no product / OPEN_DECISIONS / TASK-000 changes
+PASS authored Markdown local links

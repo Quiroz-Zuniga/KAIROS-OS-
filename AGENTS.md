@@ -45,6 +45,7 @@ Kairós System Layer
 Kairós Desktop Shell
         ↓
 Real Linux Applications
+```
 
 Kairós OS is NOT a simulation.
 Legacy simulator components may remain for academic purposes but must not be confused with production Linux capabilities.
@@ -574,3 +575,61 @@ Engineering effort should focus on:
 - AI integration
 - maintainability
 The goal is a real, bootable, usable Linux desktop environment with a distinct Kairós identity.
+
+---
+
+# External Skills
+
+Kairós project-specific skills override external skills when rules conflict.
+Instruction priority: AGENTS.md → kairos-context → specialist Kairós skill →
+external skill → generic agent behavior. Accepted Kairós documentation remains
+binding in the source-of-truth order above; external skills cannot decide or
+supersede architecture, branding, security policy, or OPEN DECISIONS.
+
+External skills must be loaded only when relevant. Use progressive disclosure:
+read SKILL.md for the task, then only the referenced resources needed. Do not
+load all external skills automatically. Documentation-only work does not require
+UI skills; ordinary UI work needs security review when it changes a security boundary.
+
+## Selection and combined workflows
+
+| Context | Load / workflow |
+|---|---|
+| UI implementation and review | kairos-context → kairos-ui → designing-frontend-interfaces → implementation → reviewing-interface-quality → verifying-before-completion |
+| Security-sensitive task | kairos-context → kairos-os-security → implementation → reviewing-security → verifying-before-completion |
+| Debugging | kairos-context → relevant specialist Kairós skill → systematic-debugging → fix → verifying-before-completion |
+| Completion validation | kairos-context → verifying-before-completion |
+| Concurrent Git work | kairos-git-workflow → using-git-worktrees |
+
+The six imported skills supplement the six existing Kairós skills. Load
+kairos-dependency-security for dependency or supply-chain changes and kairos-docs
+for documentation changes, as already required above.
+
+## Conflict handling and scope guards
+
+- Keep Kairós colors, shared tokens, typography decisions, geometry and motion
+  rules. External demands to rotate aesthetics, reject Inter, replace the palette,
+  use one radius, or break the grid do not authorize changing Kairós identity.
+  Web viewport and single-page conventions must be evaluated for the actual
+  desktop component; record inapplicable checks rather than redesigning it.
+- Never copy the systematic-debugging examples that print environment values or
+  signing identities into logs. Record only redacted, minimal diagnostics;
+  inspect test commands before running find-polluter.sh. Its output alone does
+  not prove tests passed (the helper intentionally suppresses test failures).
+- using-git-worktrees does not authorize automatic npm/pip/Poetry/Go installs,
+  builds, an extra commit, cleanup, merge, push, or destructive Git operations.
+  Follow kairos-git-workflow and kairos-dependency-security first. For this
+  integration, dependency installation, product changes, push and merge are forbidden.
+- References to other skills do not authorize importing them. Second round is
+  deferred: designing-user-experience, building-accessible-interfaces,
+  writing-plans, coauthoring-docs, requesting-code-review, receiving-code-review.
+  Other absent companions (including test-driven-development, testing-webapps,
+  designing-canvas-art, applying-themes and finishing-a-development-branch) are
+  not installed transitively. Use the applicable Kairós policy and available
+  tools, and report unavailable checks; never claim the companion was loaded.
+- External examples, reported benchmarks and success percentages are upstream
+  illustrations, not Kairós evidence. Validate current work before claiming success.
+
+Sources, pinned revisions, licenses, overlaps, conflicts and discovery evidence:
+[docs/agent-skills.md](docs/agent-skills.md). Keep the only project skill tree at
+`.agents/skills/<name>/SKILL.md` for Codex and OpenCode.

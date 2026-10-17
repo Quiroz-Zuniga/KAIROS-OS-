@@ -1,0 +1,98 @@
+{
+  "repository": "https://github.com/osmontero/opencode-skills",
+  "commit": "c269996b62c8a8f245264851e24110b46c9d8863",
+  "files": {
+    ".agents/skills/designing-frontend-interfaces/LICENSE.txt": {
+      "source": "skills/designing-frontend-interfaces/LICENSE.txt",
+      "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+    },
+    ".agents/skills/designing-frontend-interfaces/SKILL.md": {
+      "source": "skills/designing-frontend-interfaces/SKILL.md",
+      "sha256": "950c1b60943768b340c5842479528a2e21f4c94ffce1344060331776d5d25520"
+    },
+    ".agents/skills/designing-frontend-interfaces/references/aesthetic-directions.md": {
+      "source": "skills/designing-frontend-interfaces/references/aesthetic-directions.md",
+      "sha256": "a300c107eaffd1784d8788da8b079f424be4e5c771f2cf84376b9798cc28bd4c"
+    },
+    ".agents/skills/designing-frontend-interfaces/references/color-and-theme.md": {
+      "source": "skills/designing-frontend-interfaces/references/color-and-theme.md",
+      "sha256": "543b543ac154791f5fdb9bdfcfcbd3111ee731225745a89fb322c4cd9a62daeb"
+    },
+    ".agents/skills/designing-frontend-interfaces/references/layout-and-composition.md": {
+      "source": "skills/designing-frontend-interfaces/references/layout-and-composition.md",
+      "sha256": "6d8d60d72582e27f678c45197ec5460dc5814a216fc580ed6f312051c4474abd"
+    },
+    ".agents/skills/designing-frontend-interfaces/references/motion.md": {
+      "source": "skills/designing-frontend-interfaces/references/motion.md",
+      "sha256": "396797bec9b6744adae3e1891d795ee0eb96a6a5d59ef5631737c9cbaf63a14b"
+    },
+    ".agents/skills/designing-frontend-interfaces/references/typography.md": {
+      "source": "skills/designing-frontend-interfaces/references/typography.md",
+      "sha256": "90161cd16892be6a73bada50c778711b29b64aa5238c74c2390b9dce04dde065"
+    },
+    ".agents/skills/reviewing-interface-quality/SKILL.md": {
+      "source": "skills/reviewing-interface-quality/SKILL.md",
+      "sha256": "4626fdfe84edfae78bf05cdcc9831e973118954da9026029172c943fe455b8a3"
+    },
+    ".agents/skills/reviewing-security/SKILL.md": {
+      "source": "skills/reviewing-security/SKILL.md",
+      "sha256": "096e4e8b2cc08d96bf3f4a094523875cdb6f465661e75ae05159171fdc4c0ec4"
+    },
+    ".agents/skills/reviewing-security/references/vulnerability-patterns.md": {
+      "source": "skills/reviewing-security/references/vulnerability-patterns.md",
+      "sha256": "265f8c047269974130780239d753ac8bd1c36207c4055ae1a47bdf46604df5a6"
+    },
+    ".agents/skills/systematic-debugging/LICENSE.txt": {
+      "source": "skills/systematic-debugging/LICENSE.txt",
+      "sha256": "42e6ce7a105549819e37d3533236f6c35944a9e8644357cb9a8201bba5b4aa92"
+    },
+    ".agents/skills/systematic-debugging/SKILL.md": {
+      "source": "skills/systematic-debugging/SKILL.md",
+      "sha256": "37eb6ce47aa4e16358cac8515c8510200d40244d5450d2c28e12a1ae26dedc5a"
+    },
+    ".agents/skills/systematic-debugging/condition-based-waiting-example.ts": {
+      "source": "skills/systematic-debugging/condition-based-waiting-example.ts",
+      "sha256": "40ae5ebe497fdf310200e43fe986552546d0a22837c0d39e855db1cfd33eb88e"
+    },
+    ".agents/skills/systematic-debugging/condition-based-waiting.md": {
+      "source": "skills/systematic-debugging/condition-based-waiting.md",
+      "sha256": "e89fec8400d6cd50f43407cec9fab50976ba4d55d0ec2eb51c0bd68036b54c26"
+    },
+    ".agents/skills/systematic-debugging/defense-in-depth.md": {
+      "source": "skills/systematic-debugging/defense-in-depth.md",
+      "sha256": "1e175fb86fc357e58c6aebf5441e481e1b7868b4380c0456b63a17eefbd18ba7"
+    },
+    ".agents/skills/systematic-debugging/find-polluter.sh": {
+      "source": "skills/systematic-debugging/find-polluter.sh",
+      "sha256": "6462747eae9b175ac145b78bcfaeab755654a75e32637f08eb633f065a9e1d7c"
+    },
+    ".agents/skills/systematic-debugging/root-cause-tracing.md": {
+      "source": "skills/systematic-debugging/root-cause-tracing.md",
+      "sha256": "0c671d065e99879a922f1e54d73d910911fb14fd1b7b74bcdca0d41d543f14f1"
+    },
+    ".agents/skills/verifying-before-completion/LICENSE.txt": {
+      "source": "skills/verifying-before-completion/LICENSE.txt",
+      "sha256": "42e6ce7a105549819e37d3533236f6c35944a9e8644357cb9a8201bba5b4aa92"
+    },
+    ".agents/skills/verifying-before-completion/SKILL.md": {
+      "source": "skills/verifying-before-completion/SKILL.md",
+      "sha256": "caed4312485edcd7e03de8ae8109c4a5178596cc8f82c4f9e23cd6cec0e19f3f"
+    },
+    ".agents/skills/using-git-worktrees/LICENSE.txt": {
+      "source": "skills/using-git-worktrees/LICENSE.txt",
+      "sha256": "42e6ce7a105549819e37d3533236f6c35944a9e8644357cb9a8201bba5b4aa92"
+    },
+    ".agents/skills/using-git-worktrees/SKILL.md": {
+      "source": "skills/using-git-worktrees/SKILL.md",
+      "sha256": "08fca536aeee777699b0a2221ecf5e665784b650437f49716096f4d602902a4f"
+    },
+    ".agents/skills/reviewing-interface-quality/LICENSE.txt": {
+      "source": "LICENSE",
+      "sha256": "2fbc345f227be248dc0bd0a9faf6f15a9ae9d06be6aa3e56e6f433e0bbe6410b"
+    },
+    ".agents/skills/reviewing-security/LICENSE.txt": {
+      "source": "LICENSE",
+      "sha256": "2fbc345f227be248dc0bd0a9faf6f15a9ae9d06be6aa3e56e6f433e0bbe6410b"
+    }
+  }
+}
