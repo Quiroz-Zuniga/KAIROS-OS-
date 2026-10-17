@@ -1,5 +1,8 @@
 # 19. Kairós AI
 
+> Documento de planificación o revisión previa. El [manual técnico actual](guia/arquitectura.md) describe el código disponible; las capacidades Linux de esta especificación siguen propuestas.
+
+
 Estado: arquitectura propuesta; no hay aplicación, proveedor ni credenciales implementados. AI no bloquea sesión, launcher, ISO o aplicaciones nativas.
 
 MVP: app propia con lateral de conversaciones, chat central y panel contextual opcional; usa mismos tokens y geometría. Búho discreto, sin saturar superficies de marca. Conversaciones locales versionadas en XDG, límites y eliminación explícita. Un error de red no bloquea el escritorio.

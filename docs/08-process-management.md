@@ -1,10 +1,10 @@
 # 08. Administrador de procesos reales
 
-> Revisión Kairós OS, 2026-10-16: la [ADR vigente](ARCHITECTURE_DECISION.md), el [roadmap](14-roadmap-8-weeks.md) y los [15 criterios MVP](MVP_ACCEPTANCE.md) gobiernan el alcance actual. Los nombres de código/datos UPHOS son históricos y se conservan. Las pruebas citadas de etapas anteriores no se ejecutaron en esta revisión.
+> Revisión Kairós OS, 2026-10-16: la [ADR vigente](ARCHITECTURE_DECISION.md), el [roadmap](14-roadmap-8-weeks.md) y los [15 criterios MVP](MVP_ACCEPTANCE.md) gobiernan el alcance actual. Los identificadores técnicos actuales usan `kairos`; el manual técnico describe la implementación vigente. Las pruebas citadas de etapas anteriores no se ejecutaron en esta revisión.
 
 ## Fuente y semántica
 
-La tabla real procederá de Linux mediante psutil dentro del invitado. `/proc` es procfs, una vista del kernel, no archivos persistentes ni el árbol virtual de UPHOS. `ps`, `top` y `htop` son instrumentos de contraste; systemd aporta unidades y cgroups, no una lista completa equivalente de todos los procesos.
+La tabla real procederá de Linux mediante psutil dentro del invitado. `/proc` es procfs, una vista del kernel, no archivos persistentes ni el árbol virtual de KAIROS. `ps`, `top` y `htop` son instrumentos de contraste; systemd aporta unidades y cgroups, no una lista completa equivalente de todos los procesos.
 
 | Campo | Fuente propuesta | Semántica |
 |---|---|---|

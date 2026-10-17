@@ -1,6 +1,9 @@
 # 14. Roadmap concreto de ocho semanas — Kairós OS
 
-Semanas relativas al inicio de implementación; no fechas comprometidas. Supuestos de capacidad de [02](02-feasibility-study.md) siguen sin confirmar; el alcance nuevo añade panel, VSCodium y AI. Riesgo alto: medir primer hito y reestimar, sin prometer 205–270 h para requisitos ampliados. Tareas en [IMPLEMENTATION_PLAN](../IMPLEMENTATION_PLAN.md).
+> Documento de planificación o revisión previa. El [manual técnico actual](guia/arquitectura.md) describe el código disponible; las capacidades Linux de esta especificación siguen propuestas.
+
+
+Semanas relativas al inicio de implementación; no fechas comprometidas. Supuestos de capacidad de [02](02-feasibility-study.md) siguen sin confirmar; el alcance nuevo añade panel, VSCodium y AI. Riesgo alto: medir primer hito y reestimar, sin prometer 205–270 h para requisitos ampliados. Tareas en [IMPLEMENTATION_PLAN](IMPLEMENTATION_PLAN.md).
 
 | Semana | Entregable verificable | Tareas principales | Gate / riesgo |
 |---|---|---|---|

@@ -30,7 +30,7 @@ export class WindowManager {
         listen(element.querySelector('.maximize-btn'), 'click', () => this.toggleMaximize());
         listen(element.querySelector('.close-btn'), 'click', () => this.onClose());
         this.restoreBtn = document.createElement('button');
-        this.restoreBtn.className = 'uph-restore'; this.restoreBtn.textContent = element.querySelector('.app-title').textContent;
+        this.restoreBtn.className = 'kairos-restore'; this.restoreBtn.textContent = element.querySelector('.app-title').textContent;
         this.restoreBtn.hidden = true; this.restoreBtn.setAttribute('aria-label','Restaurar '+this.restoreBtn.textContent);
         document.querySelector('#restaurar-ventanas').append(this.restoreBtn);
         listen(this.restoreBtn,'click', () => this.restore());

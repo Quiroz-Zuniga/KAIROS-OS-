@@ -1,5 +1,8 @@
 # GAP ANALYSIS — Kairós OS
 
+> Documento de planificación o revisión previa. El [manual técnico actual](guia/arquitectura.md) describe el código disponible; las capacidades Linux de esta especificación siguen propuestas.
+
+
 Revisión: 2026-10-16. Evidencia del árbol actual, no de una distribución instalada. Se inventariaron fuentes y recursos de ambos proyectos, se leyeron los documentos de docs/ y antecedentes de Interfaz-/docs/, manifiestos, entradas Electron/web, controladores, persistencia, lectores y estilos principales. Se inspeccionó visualmente Logo/Kairos.png y se leyó Logo/kairoz-terminal-boot.txt. Dependencias vendorizadas, binarios y cada línea de apps de terceros no recibieron auditoría exhaustiva.
 
 No hay `.git` accesible en la raíz: `git status` devuelve «not a git repository». Las afirmaciones de ramas/cambios previos de informes antiguos son antecedentes, no estado verificable ahora. No se hizo commit, instalación, build, arranque VM ni consulta de hardware. Las suites presentes no se ejecutaron porque esta entrega modifica Markdown exclusivamente.
@@ -17,8 +20,8 @@ No hay `.git` accesible en la raíz: `git status` devuelve «not a git repositor
 | Files/editor | desktop-store.js localStorage; editor.js | Conservar datos; archivos reales mediante API distinta o gestor nativo inicial | P1 |
 | Procesos | core/virtual-system.js y procesos.js, scheduler académico | Monitor Linux read-only separado, unidades/muestreo reales | P1 |
 | Dispositivos/red/audio | hardware.js controles virtuales; system_status.py lector separado | No están conectados; trasladar lectores a IPC; inventario udev pendiente | P1 |
-| Datos | uphos.desktop.v1, uphos-simulator y almacenamiento Electron UPHOS | No renombrar/borrar por branding; no comparten volumen ni credenciales | P0 |
-| Marca | uphos.css azul/dorado; PNGs antiguos; Logo/Kairos.png | Nuevo raster disponible, sin seis SVG oficiales; detalles/sombras se simplifican manualmente | P0 |
+| Datos | kairos.desktop.v1, kairos-simulator y almacenamiento Electron KAIRÓS OS | Namespaces kairos nuevos, sin migración ni borrado automático; volúmenes independientes | P0 |
+| Marca | kairos.css azul/cyan; PNGs derivados de Logo/Kairos.png | Nuevo raster disponible, sin seis SVG oficiales; detalles/sombras se simplifican manualmente | P0 |
 | Terminal | Consola educativa; sin app terminal en catálogo gráfico | xterm/Bash externo primero; referencia Unicode no es splash validado | P0 |
 | Code | Sin app ni paquete VSCodium/VS Code integrado | Seleccionar artefacto, licencia/avisos, actualización, marketplace y prueba de edición/Git | P1 |
 | AI | Sin app/servicio/contrato Kairós AI | Cloud opt-in y solo lectura; proveedor/credenciales sin resolver | P2 |

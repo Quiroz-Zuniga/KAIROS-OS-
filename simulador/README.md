@@ -1,4 +1,4 @@
-# UPHOS Simulator
+# KAIRÓS OS Simulator
 
 Simulación académica de un sistema operativo para la Universidad Politécnica de Honduras, construida con HTML, CSS y JavaScript.
 
@@ -14,7 +14,7 @@ Primera fase funcional: arranque, bienvenida, idioma, edición Plus/Pro, arquite
 
 El arranque comprueba IndexedDB automáticamente. Una instalación válida pasa directamente al acceso por consola, que solicita usuario y contraseña; no muestra opciones Live ni limpieza. Antes de instalar se puede elegir el asistente o la consola Live. Al autenticarse se abre la terminal, sin escritorio gráfico. `reiniciar` vuelve automáticamente al acceso; `apagar` termina la sesión.
 
-El disco tiene 64 GiB lógicos. El instalador muestra una tabla y un mapa con particiones y huecos sin asignar. Permite crear hasta 16 particiones, editar nombre y tamaño o eliminarlas del plan con confirmación. Cada partición tiene una posición y un tamaño entero de al menos 1 GiB; el destino de UPHOS exige 8 GiB. No se permiten superposiciones ni superar el disco. La partición seleccionada se formatea en UPHFS; las demás quedan reservadas, sin formato ni montaje en esta fase. UPHFS es un modelo virtual, no un formato de disco real. Los cambios del plan se guardan solamente al instalar. La selección de teclado se guarda como preferencia y no cambia la distribución del equipo. Español es el idioma predeterminado e inglés es seleccionable.
+El disco tiene 64 GiB lógicos. El instalador muestra una tabla y un mapa con particiones y huecos sin asignar. Permite crear hasta 16 particiones, editar nombre y tamaño o eliminarlas del plan con confirmación. Cada partición tiene una posición y un tamaño entero de al menos 1 GiB; el destino de KAIRÓS OS exige 8 GiB. No se permiten superposiciones ni superar el disco. La partición seleccionada se formatea en KAIROSFS; las demás quedan reservadas, sin formato ni montaje en esta fase. KAIROSFS es un modelo virtual, no un formato de disco real. Los cambios del plan se guardan solamente al instalar. La selección de teclado se guarda como preferencia y no cambia la distribución del equipo. Español es el idioma predeterminado e inglés es seleccionable.
 
 El diseño del instalador incluye una guía lateral de pasos, tabla de disco, herramientas inferiores y confirmación de destino. Las transiciones, animación de arranque, indicador de actividad y pantalla final son decorativas. Se desactivan con la preferencia del navegador de movimiento reducido. La rueda refleja las tareas del motor. La capa de presentación reparte los avances en aproximadamente diez segundos para la exposición; el éxito depende de la transacción de IndexedDB. El motor y sus pruebas no requieren esas esperas.
 
@@ -34,9 +34,9 @@ IndexedDB guarda la instalación completa en una transacción. Las contraseñas 
 
 La terminal ofrece 120 comandos principales en español, con alias Windows, prompt y ejecución con Enter, sin botón Ejecutar ni selector gráfico de idioma. `+` o Alt+Mayús+T abre otra pestaña. Cada pestaña conserva ruta, historial, salida y borrador propios. Los archivos se comparten; las operaciones entre pestañas se ordenan y leen el estado actualizado. Si otra pestaña elimina la carpeta actual, se vuelve al hogar. Las operaciones pasan por el núcleo y el servicio de archivos virtuales. La carpeta inicial es `/home/usuario`; al cerrar o recargar se pierde el historial, pero los archivos de la cuenta instalada permanecen guardados. Consulta `apps/consola/README.md` para sintaxis y atajos.
 
-## UPHOS Live e instalación desde consola
+## KAIRÓS OS Live e instalación desde consola
 
-Antes de instalar, el arranque ofrece `Probar UPHOS Live`; después de instalar se abre directamente el acceso. La sesión usa archivos temporales compartidos entre sus pestañas y no modifica la instalación guardada. Reiniciar o recargar descarta estos archivos. `js/core/live.js` administra el borrador y delega la instalación al mismo motor y validaciones del asistente gráfico. La cuenta y el plan de disco se guardan únicamente con `instalar confirmar`; los archivos creados en Live no se transfieren.
+Antes de instalar, el arranque ofrece `Probar KAIRÓS OS Live`; después de instalar se abre directamente el acceso. La sesión usa archivos temporales compartidos entre sus pestañas y no modifica la instalación guardada. Reiniciar o recargar descarta estos archivos. `js/core/live.js` administra el borrador y delega la instalación al mismo motor y validaciones del asistente gráfico. La cuenta y el plan de disco se guardan únicamente con `instalar confirmar`; los archivos creados en Live no se transfieren.
 
 ```text
 configurar nombre "Ana López"
@@ -65,9 +65,9 @@ No incluye escritorio, navegación externa, descargas, ejecución de EXE ni Elec
 
 ## Verificación manual en navegador
 
-Para repetir la instalación, iniciar sesión y ejecutar `reinstalar`. La consola informa que se perderán la cuenta, las preferencias y todos los archivos de UPHOS. `reinstalar confirmar` realiza la limpieza y abre el asistente. Cualquier otra entrada conserva los datos. La sesión solo se cierra después de confirmar la transacción; se comparan revisión y fecha para evitar borrar una instalación reemplazada desde otra sesión.
+Para repetir la instalación, iniciar sesión y ejecutar `reinstalar`. La consola informa que se perderán la cuenta, las preferencias y todos los archivos de KAIROS. `reinstalar confirmar` realiza la limpieza y abre el asistente. Cualquier otra entrada conserva los datos. La sesión solo se cierra después de confirmar la transacción; se comparan revisión y fecha para evitar borrar una instalación reemplazada desde otra sesión.
 
-1. Sin instalación, elegir `Instalar UPHOS` o `Probar UPHOS Live`.
+1. Sin instalación, elegir `Instalar KAIRÓS OS` o `Probar KAIRÓS OS Live`.
 2. Recorrer los pasos del asistente, comprobar errores y ajustes de particiones.
 3. Instalar y observar la rueda durante unos diez segundos; el acceso aparece automáticamente tras reiniciar.
 4. Probar contraseña incorrecta, mostrar u ocultar la contraseña y luego entrar con la correcta.
@@ -96,11 +96,11 @@ Las carpetas pendientes contienen documentación de responsabilidad; no duplican
 
 ## Electron y almacenamiento local
 
-El comando `pnpm empaquetar` produce `entregables/UPHOS-Portable-0.2.0-x64.exe` con el logotipo como icono. Es portátil: ejecutarlo abre UPHOS sin un asistente de instalación de Windows. En un equipo sin datos previos muestra el arranque y las opciones del instalador de UPHOS; después de instalar, solicita usuario y contraseña en consola. No necesita Node.js instalado en el equipo de presentación.
+El comando `pnpm empaquetar` produce `entregables/KAIROS-Portable-0.2.0-x64.exe` con el logotipo como icono. Es portátil: ejecutarlo abre KAIRÓS OS sin un asistente de instalación de Windows. En un equipo sin datos previos muestra el arranque y las opciones del instalador de KAIRÓS OS; después de instalar, solicita usuario y contraseña en consola. No necesita Node.js instalado en el equipo de presentación.
 
 El paquete es para Windows x64. La selección de 32/64 bits pertenece al perfil simulado: no produce un emulador de procesador ni otro ejecutable. Plus admite hasta tres cuentas y Pro hasta ocho, incluida la administradora creada al instalar.
 
-Electron guarda el estado en `%LOCALAPPDATA%\UPHOS\datos\estado.json` y los archivos y carpetas en un volumen dentro de esa misma carpeta. `almacen` muestra la ubicación actual. Cada escritura prepara un volumen nuevo, confirma el estado y retira el volumen anterior; evita publicar cambios incompletos. El estado JSON es la fuente de verdad: editar directamente el espejo desde el Explorador no importa cambios a UPHOS. Modifica archivos mediante la consola. En el navegador se conserva IndexedDB; sus instalaciones son independientes de Electron.
+Electron guarda el estado en `%LOCALAPPDATA%\KAIROS\datos\estado.json` y los archivos y carpetas en un volumen dentro de esa misma carpeta. `almacen` muestra la ubicación actual. Cada escritura prepara un volumen nuevo, confirma el estado y retira el volumen anterior; evita publicar cambios incompletos. El estado JSON es la fuente de verdad: editar directamente el espejo desde el Explorador no importa cambios a KAIROS. Modifica archivos mediante la consola. En el navegador se conserva IndexedDB; sus instalaciones son independientes de Electron.
 
 `electron/main.cjs` configura la ventana y permite solamente operaciones de almacenamiento; `preload.cjs` expone un puente limitado. La interfaz no recibe acceso a Node.js, al shell ni a rutas arbitrarias del anfitrión. `almacen-local.cjs` valida rutas y revisiones; `js/platform/repositorio-local.js` adapta el puente al contrato del núcleo. `electron/empaquetar.cjs` prepara una copia de producción en una carpeta temporal para evitar bloqueos de OneDrive. No sobrescribe un EXE existente: cambia la versión o conserva el archivo anterior con otro nombre antes de volver a empaquetar. El EXE no tiene firma comercial; Windows puede mostrar una advertencia de editor desconocido.
 
@@ -121,7 +121,7 @@ El código fuente incorpora 120 comandos registrados. La ayuda aparece como tabl
 
 El nombre del usuario y el nombre completo permanecen visibles, incluso mientras se escriben comillas. Solo se enmascara la contraseña. La entrada separada de contraseña no se guarda en el historial. La creación de cuentas y los cambios de contraseña rechazan una clave usada por otra cuenta; el inicio de sesión siempre verifica las credenciales de la cuenta elegida. No se alteran contraseñas existentes durante esta actualización.
 
-El instalador solo ofrece teclado español latinoamericano e inglés (Estados Unidos). La selección cambia la escritura por posición física dentro de UPHOS y se puede comprobar inmediatamente en el campo de prueba. Incluye Shift, Bloq Mayús, AltGr, tildes y diéresis. Se guarda para el acceso por consola y el editor; pegar texto e introducir texto mediante IME conserva el comportamiento nativo. Los atajos siguen funcionando. La antigua preferencia español de España conserva entrada nativa para instalaciones previas. No cambia el teclado de Windows.
+El instalador solo ofrece teclado español latinoamericano e inglés (Estados Unidos). La selección cambia la escritura por posición física dentro de KAIRÓS OS y se puede comprobar inmediatamente en el campo de prueba. Incluye Shift, Bloq Mayús, AltGr, tildes y diéresis. Se guarda para el acceso por consola y el editor; pegar texto e introducir texto mediante IME conserva el comportamiento nativo. Los atajos siguen funcionando. La antigua preferencia español de España conserva entrada nativa para instalaciones previas. No cambia el teclado de Windows.
 
 Pro requiere una de las cinco claves de `LICENCIAS-PRO.txt`; la fuente central de validación es `js/core/licencias.js`. Son licencias académicas de demostración, verificadas localmente y reutilizables entre instalaciones. No existe servidor de activación. Las instalaciones Pro anteriores se conservan; `activar clave` permite registrar su clave antes de crear cuentas adicionales.
 
@@ -144,6 +144,6 @@ Las instalaciones antiguas se conservan. No se inventa una respuesta para cuenta
 
 Para instalar desde Live, configura `pregunta mascota` y `respuesta` mediante el comando configurar, ademas de usuario y contrasena. El resumen nunca muestra la respuesta. Pruebas: 165 verificaciones automatizadas, recuperacion integral en navegador con datos aislados, recarga y acceso con nueva clave, archivos conservados y almacenamiento nativo reabierto. No se ha generado un nuevo EXE.
 
-En el acceso, `recuperar` recupera la contrasena mediante la pregunta de seguridad. `restaurar` solicita escribir `confirmar` para borrar la instalacion completa de UPHOS y abrir el asistente para una instalacion limpia. Escape cancela y ningun dato se borra hasta confirmar. No requiere recordar la contrasena. El borrado pasa por el nucleo y verifica que la instalacion no haya cambiado mientras se confirma. Dentro de una sesion iniciada, `restaurar` conserva su funcion de restaurar respaldos de archivos; `reinstalar confirmar` permite borrar la instalacion desde esa sesion.
+En el acceso, `recuperar` recupera la contrasena mediante la pregunta de seguridad. `restaurar` solicita escribir `confirmar` para borrar la instalacion completa de KAIRÓS OS y abrir el asistente para una instalacion limpia. Escape cancela y ningun dato se borra hasta confirmar. No requiere recordar la contrasena. El borrado pasa por el nucleo y verifica que la instalacion no haya cambiado mientras se confirma. Dentro de una sesion iniciada, `restaurar` conserva su funcion de restaurar respaldos de archivos; `reinstalar confirmar` permite borrar la instalacion desde esa sesion.
 
 Los nombres de usuario admiten letras mayusculas y minusculas, conservando la escritura elegida (por ejemplo Jorge). Para identificar una cuenta en el acceso, recuperacion o comandos de usuarios, Jorge, jorge y JORGE se consideran el mismo usuario. No se permiten cuentas duplicadas que solo cambien por mayusculas. Las carpetas y el prompt conservan el nombre guardado; las contrasenas si distinguen mayusculas. La longitud sigue siendo de 3 a 24 caracteres, comenzando con una letra sin tilde y admitiendo numeros, guion y guion bajo.

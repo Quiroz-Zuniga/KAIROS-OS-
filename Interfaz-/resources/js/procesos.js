@@ -1,5 +1,5 @@
 import { applications } from './system/applications.js';
-const controller = window.parent !== window ? window.parent.uphos : null;
+const controller = window.parent !== window ? window.parent.kairos : null;
 const $ = selector => document.querySelector(selector);
 const states = { NEW:'Preparando',READY:'Listo',RUNNING:'En ejecución',BLOCKED:'En espera',TERMINATED:'Finalizado' };
 const devices = { disk0:['Disco virtual','fa-hard-drive'],keyboard0:['Teclado','fa-keyboard'],mouse0:['Ratón','fa-computer-mouse'],display0:['Pantalla','fa-display'],network0:['Red virtual','fa-network-wired'],audio0:['Audio virtual','fa-volume-high'] };
@@ -96,7 +96,7 @@ function renderResources() {
 }
 function describeEvent(e) {
     const p=e.pid?processName(e.pid):'';
-    const text={boot:'UPHOS se inició',run:'La simulación continúa',pause:'La simulación se puso en pausa',reset:'Se reinició la simulación',shutdown:'El sistema se apagó',created:`Se creó ${p}`,ready:`${p} está listo`,dispatched:`El procesador atiende a ${p}`,terminated:`${p} finalizó`,'io-requested':`${p} solicitó ${devices[e.device]?.[0]||'un dispositivo'}`,'io-completed':`${p} completó su entrada/salida`,'resource-created':`Se creó el recurso ${e.id}`,'resource-acquire':`${p} solicitó acceso a ${e.id}`,'resource-release':`${p} liberó ${e.id}`,'resource-granted':`${e.id} se asignó a ${p}`,scheduler:`Se cambió la planificación a ${e.policy}`,service:'Se actualizó el estado del servicio del escritorio'};
+    const text={boot:'KAIRÓS OS se inició',run:'La simulación continúa',pause:'La simulación se puso en pausa',reset:'Se reinició la simulación',shutdown:'El sistema se apagó',created:`Se creó ${p}`,ready:`${p} está listo`,dispatched:`El procesador atiende a ${p}`,terminated:`${p} finalizó`,'io-requested':`${p} solicitó ${devices[e.device]?.[0]||'un dispositivo'}`,'io-completed':`${p} completó su entrada/salida`,'resource-created':`Se creó el recurso ${e.id}`,'resource-acquire':`${p} solicitó acceso a ${e.id}`,'resource-release':`${p} liberó ${e.id}`,'resource-granted':`${e.id} se asignó a ${p}`,scheduler:`Se cambió la planificación a ${e.policy}`,service:'Se actualizó el estado del servicio del escritorio'};
     return text[e.type]||'El sistema se actualizó';
 }
 function renderActivity() {

@@ -1,6 +1,6 @@
 # 09. Filesystem y gestor de archivos
 
-> Revisión Kairós OS, 2026-10-16: la [ADR vigente](ARCHITECTURE_DECISION.md), el [roadmap](14-roadmap-8-weeks.md) y los [15 criterios MVP](MVP_ACCEPTANCE.md) gobiernan el alcance actual. Los nombres de código/datos UPHOS son históricos y se conservan. Las pruebas citadas de etapas anteriores no se ejecutaron en esta revisión.
+> Revisión Kairós OS, 2026-10-16: la [ADR vigente](ARCHITECTURE_DECISION.md), el [roadmap](14-roadmap-8-weeks.md) y los [15 criterios MVP](MVP_ACCEPTANCE.md) gobiernan el alcance actual. Los identificadores técnicos actuales usan `kairos`; el manual técnico describe la implementación vigente. Las pruebas citadas de etapas anteriores no se ejecutaron en esta revisión.
 
 ## Elección y distinción Live
 
@@ -10,7 +10,7 @@
 | btrfs | CoW, checksums y snapshots | Más conceptos de subvolúmenes, espacio y recuperación | Reevaluar si rollback se vuelve requisito |
 | XFS | Escalabilidad y herramientas maduras | Beneficio pequeño para VM académica; reducción de tamaño no es flujo simple | No inicial |
 
-La ISO contiene ISO9660 y un root comprimido **SquashFS**, no una raíz ext4 modificable. live-boot monta capa de escritura temporal con overlay; archivos de esa sesión son reales, pero se pierden al apagar salvo persistencia. ext4 se recomienda para un segundo disco virtual de persistencia o el destino de un instalador futuro. UPHFS es un modelo académico y no se implementará como driver de disco.
+La ISO contiene ISO9660 y un root comprimido **SquashFS**, no una raíz ext4 modificable. live-boot monta capa de escritura temporal con overlay; archivos de esa sesión son reales, pero se pierden al apagar salvo persistencia. ext4 se recomienda para un segundo disco virtual de persistencia o el destino de un instalador futuro. KAIROSFS es un modelo académico y no se implementará como driver de disco.
 
 Fuentes: [filesystems del kernel](https://docs.kernel.org/filesystems/), [ext4](https://cdn.kernel.org/doc/html/latest/admin-guide/ext4.html), [live-boot](https://manpages.debian.org/trixie/live-boot-doc/live-boot.7.en.html). La preferencia ext4 es una decisión por simplicidad, no una afirmación de superioridad en todos los casos.
 

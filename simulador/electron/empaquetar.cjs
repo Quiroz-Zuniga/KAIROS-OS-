@@ -8,7 +8,7 @@ const { build, Platform } = require('electron-builder');
 async function empaquetar() {
   const proyecto = path.resolve(__dirname, '..');
   const paquete = JSON.parse(await fs.readFile(path.join(proyecto, 'package.json'), 'utf8'));
-  const temporal = await fs.mkdtemp(path.join(os.tmpdir(), 'uphos-empaquetado-'));
+  const temporal = await fs.mkdtemp(path.join(os.tmpdir(), 'kairos-empaquetado-'));
   const aplicacion = path.join(temporal, 'aplicacion');
   await fs.mkdir(aplicacion);
   for (const nombre of ['index.html', 'css', 'js', 'apps', 'assets', 'electron']) await fs.cp(path.join(proyecto, nombre), path.join(aplicacion, nombre), { recursive: true });

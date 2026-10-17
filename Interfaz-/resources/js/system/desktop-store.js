@@ -1,5 +1,5 @@
 // Rubén Quiroz: volumen exclusivo de la interfaz; no accede al disco del anfitrión.
-const key = 'uphos.desktop.v1';
+const key = 'kairos.desktop.v1';
 export function readDesktop() {
     try {
         const value = JSON.parse(localStorage.getItem(key));
@@ -14,7 +14,7 @@ export function writeDesktop(value) {
     // El aviso impide prometer persistencia si el navegador rechaza la escritura.
     try { localStorage.setItem(key, JSON.stringify(value)); }
     catch { throw Error('No se pudieron guardar los cambios en este navegador.'); }
-    window.dispatchEvent(new Event('uphos:desktop-change'));
+    window.dispatchEvent(new Event('kairos:desktop-change'));
 }
 export function createItem(kind, name, parent = 'desktop') {
     name = name.trim();

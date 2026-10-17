@@ -1,5 +1,8 @@
 # 16. Kairós Desktop Shell
 
+> Documento de planificación o revisión previa. El [manual técnico actual](guia/arquitectura.md) describe el código disponible; las capacidades Linux de esta especificación siguen propuestas.
+
+
 Responsabilidad: wallpaper, launcher, búsqueda de apps, panel, fijados, ventanas abiertas, reloj, indicadores, notificaciones y quick settings. La búsqueda inicial indexa aplicaciones, no archivos personales ni web. Electron es presentación y puente de capacidades; Openbox administra ventanas nativas.
 
 ## Ventanas shell y panel

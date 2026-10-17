@@ -1,5 +1,8 @@
 # 18. Entorno de desarrollo y ediciones
 
+> Documento de planificación o revisión previa. El [manual técnico actual](guia/arquitectura.md) describe el código disponible; las capacidades Linux de esta especificación siguen propuestas.
+
+
 Recomendación provisional: **VSCodium**, artefacto Debian amd64 fijado y verificado, con avisos y revisión de dependencias. No se descargó ni instaló durante la revisión.
 
 | Alternativa | Licencia/distribución | Extensiones/actualizaciones | Costo y decisión |

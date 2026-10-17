@@ -16,7 +16,7 @@ export function consultarArchivo(nombre, args, servicio, ruta) {
 }
 export function crearRespaldo(servicio, hogar, destino) {
   const nodos = servicio.descendientes(hogar).filter(n => n.ruta !== hogar && n.ruta !== destino).map(n => ({ ...n, ruta: n.ruta.slice(hogar.length + 1) }));
-  const contenido = JSON.stringify({ uphos: 1, archivos: nodos });
+  const contenido = JSON.stringify({ kairos: 1, archivos: nodos });
   if (new TextEncoder().encode(contenido).length > 1024 * 1024) throw new Error('terminal.errorTamano');
   servicio.crear('archivo', destino);
   servicio.escribir(destino, contenido);
@@ -24,7 +24,7 @@ export function crearRespaldo(servicio, hogar, destino) {
 export function restaurarRespaldo(servicio, origen, destino) {
   let respaldo;
   try { respaldo = JSON.parse(servicio.leer(origen)); } catch { throw new Error('herramientas.errorRespaldo'); }
-  if (respaldo.uphos !== 1 || !Array.isArray(respaldo.archivos) || respaldo.archivos.length > 10000) throw new Error('herramientas.errorRespaldo');
+  if (respaldo.kairos !== 1 || !Array.isArray(respaldo.archivos) || respaldo.archivos.length > 10000) throw new Error('herramientas.errorRespaldo');
   servicio.crear('carpeta', destino);
   const nombres = new Set();
   for (const n of [...respaldo.archivos].sort((a,b) => String(a.ruta).length-String(b.ruta).length)) {

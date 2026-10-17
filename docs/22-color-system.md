@@ -1,5 +1,8 @@
 # 22. Design System y tokens de Kairós
 
+> Documento de planificación o revisión previa. El [manual técnico actual](guia/arquitectura.md) describe el código disponible; las capacidades Linux de esta especificación siguen propuestas.
+
+
 Estado: especificación lista para implementación; aún no se importan tokens en la GUI. Ruta propuesta desktop/renderer/styles/tokens.css que compone colors.css, spacing.css, typography.css, shadows.css y components.css. Temas comparten geometría; no duplican componentes. HEX solo en definición central y adaptadores generados para Openbox/Plymouth/terminal.
 
 ## Paleta

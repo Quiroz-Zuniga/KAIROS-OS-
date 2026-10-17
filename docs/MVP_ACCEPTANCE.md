@@ -1,5 +1,8 @@
 # MVP — matriz de aceptación
 
+> Documento de planificación o revisión previa. El [manual técnico actual](guia/arquitectura.md) describe el código disponible; las capacidades Linux de esta especificación siguen propuestas.
+
+
 Estado inicial: **los 15 criterios están pendientes en Linux/ISO**. La GUI web y las capturas históricas no acreditan ninguno por sí solas. Cada evidencia registrará build, checksum de ISO, kernel/paquetes, firmware, hipervisor y recursos de VM, sin secretos.
 
 | ID | Criterio solicitado | Prueba exigida en invitado |

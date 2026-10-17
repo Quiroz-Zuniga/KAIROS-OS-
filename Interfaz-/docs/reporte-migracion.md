@@ -4,7 +4,7 @@ Fecha: 15 de octubre de 2026. Rama de integración: `interfaz-ruben-quiroz`.
 
 ## Resultado y alcance
 
-La interfaz existente se conecta a un núcleo virtual independiente mediante SystemController y un registro de aplicaciones. Se mantienen rutas, escritorio, dock, menú, ventanas, calendario y aplicaciones. Se incorporan la paleta de diez colores UPHOS, el logo proporcionado por el usuario con transparencia real, un wallpaper institucional SVG y una lupa dorada. Por instrucciones posteriores se retiraron las dos imágenes del logo Arvik, su lupa morada y los colores morados del shell y controles. Las preferencias que apuntaban a los fondos predeterminados anteriores dejan de seleccionarlos; las imágenes personales se conservan.
+La interfaz existente se conecta a un núcleo virtual independiente mediante SystemController y un registro de aplicaciones. Se mantienen rutas, escritorio, dock, menú, ventanas, calendario y aplicaciones. Se incorporan la paleta de diez colores KAIRÓS OS, el logo proporcionado por el usuario con transparencia real, un wallpaper institucional SVG y una lupa dorada. Por instrucciones posteriores se retiraron las dos imágenes del logo Arvik, su lupa morada y los colores morados del shell y controles. Las preferencias que apuntaban a los fondos predeterminados anteriores dejan de seleccionarlos; las imágenes personales se conservan.
 
 Todo el trabajo está en `Interfaz-/`. No se modifica `simulador/`, el sistema operativo anfitrión ni los cambios previos en `.gitignore`, `.agents/` o `skills-lock.json` de la raíz.
 
@@ -25,14 +25,14 @@ Todo el trabajo está en `Interfaz-/`. No se modifica `simulador/`, el sistema o
 | Aplicación | Estado |
 | --- | --- |
 | Calculadora | Operación 2+3=5 verificada; minimizar/restaurar mantiene PID; cerrar libera RAM |
-| Editor | Conserva edición y formato; guardar/listar declara UPHFS pendiente, sin backend ni tamaños inventados |
+| Editor | Conserva edición y formato; guardar/listar declara KAIROSFS pendiente, sin backend ni tamaños inventados |
 | Imágenes | Galería, selección y wallpaper conectados al documento padre; nuevo fondo institucional |
 | Videos | Reproductor conserva sus botones al cambiar el video; errores visibles y URLs temporales liberadas |
-| UPHOS Beats | Listas y reproductor conservados, sin autoplay obligatorio; error de medios visible |
+| KAIRÓS OS Beats | Listas y reproductor conservados, sin autoplay obligatorio; error de medios visible |
 | Pac-Man / temporizador | Vistas y relojes propios conservados; documento desmontado al cerrar |
 | Tareas personales | Listas/árbol/hash conservados; preferencias validadas y texto de usuario escapado |
 | Monitor | Núcleo único; consultas y acciones disponibles desde el escritorio |
-| Explorador | Vista conservada, antiguo VFS aislado; conexión UPHFS pendiente |
+| Explorador | Vista conservada, antiguo VFS aislado; conexión KAIROSFS pendiente |
 | Terminal | Retirada de la GUI por instrucción posterior; sin acceso, ruta ni aplicación registrada |
 | Acceso / registro | Retirados por instrucción posterior. El bloqueo abre el escritorio y los datos de usuario se conectarán desde la instalación |
 | Cámara | Apertura sin pedir permiso automáticamente; reproducción solicita cámara mediante acción explícita, libera tracks al cerrar |
@@ -43,17 +43,17 @@ Todo el trabajo está en `Interfaz-/`. No se modifica `simulador/`, el sistema o
 
 - `npm test`: **14/14** pruebas aprobadas. Incluyen invariantes de CPU/RAM, las cuatro políticas, E/S, mutex/semaphore FIFO, errores atómicos, límites del historial y reinicio sin reutilizar PID.
 - `npm run build`: aprobado; `dist/` contiene todas las vistas, scripts y assets. No necesita el backend antiguo.
-- `UPHOS_SERVE_DIR=dist npm run test:browser`: aprobado en **Chromium, Firefox y WebKit** usando ejecutables instalados. Resultado: `docs/evidencia/browser-results.json`.
+- `KAIROS_SERVE_DIR=dist npm run test:browser`: aprobado en **Chromium, Firefox y WebKit** usando ejecutables instalados. Resultado: `docs/evidencia/browser-results.json`.
 - Recorrido verificado: desbloqueo → escritorio → aplicación → admisión/Core → ventana → operación → minimizar/restaurar → cerrar/liberar. También se prueban falta de RAM, terminación externa, escenario académico, paso de reloj, todas las entradas de apps, calendario, wallpaper, JSON dañado, arrastre/apertura/eliminación de acceso tamaño móvil 390×844 y apagado hacia la pantalla de bloqueo.
 - Las solicitudes externas se bloquean durante las pruebas. No se detectan errores JavaScript ni respuestas locales 4xx/5xx en esos recorridos.
 - Axe WCAG 2 A/AA sobre el **escritorio al finalizar los recorridos**: sin infracciones detectadas en los tres motores. No equivale a una auditoría completa de todas las aplicaciones o todos sus estados.
 - Capturas posteriores en `docs/evidencia/despues-*.png`; referencias iniciales de tres pantallas en `antes-*.png`. No hay comparación automatizada píxel a píxel de todas las aplicaciones originales.
 
-Los ejecutables disponibles para Firefox y WebKit pertenecen al runtime del entorno y se pasaron explícitamente con `UPHOS_FIREFOX_PATH` y `UPHOS_WEBKIT_PATH`. Los comandos reproducibles y las opciones están en el README.
+Los ejecutables disponibles para Firefox y WebKit pertenecen al runtime del entorno y se pasaron explícitamente con `KAIROS_FIREFOX_PATH` y `KAIROS_WEBKIT_PATH`. Los comandos reproducibles y las opciones están en el README.
 
 ## Límites y deuda pendiente
 
-- UPHFS, sesiones, credenciales y terminal definitiva quedan expresamente para la fase posterior del plan. No se construyeron sustitutos provisionales.
+- KAIROSFS, sesiones, credenciales y terminal definitiva quedan expresamente para la fase posterior del plan. No se construyeron sustitutos provisionales.
 - E/S y memoria son modelos académicos de capacidad/espera; no representan RAM física ni velocidad de hardware. El contrato mínimo de servicio sólo registra estado lógico. Ver `arquitectura.md` para semántica exacta de planificación y recursos.
 - Las pruebas de apps comprueban su montaje, no cada función interna de cada aplicación de terceros. No se verificaron cámara/micrófono reales ni navegación contra proveedores externos.
 - Algunas fuentes decorativas de las aplicaciones importadas siguen siendo opcionales por red; el shell, calendario, iconos y fuente Inter se sirven localmente con licencias.
@@ -62,17 +62,17 @@ Los ejecutables disponibles para Firefox y WebKit pertenecen al runtime del ento
 
 ## Logo transparente
 
-Entrada original: `resources/assets/images/uphos-logo.png`. Activo aplicado: `resources/assets/images/uphos-logo-transparent.png`, PNG RGBA con alfa 0–255, sin placa blanca en CSS. La sombra tenue de presentación permite leer sus letras azules sobre fondos oscuros sin alterar el relleno. Wallpaper nuevo: `resources/assets/images/uphos-wallpaper.svg`.
+Entrada original: `resources/assets/images/kairos-logo.png`. Activo aplicado: `resources/assets/images/kairos-logo-transparent.png`, PNG RGBA con alfa 0–255, sin placa blanca en CSS. La sombra tenue de presentación permite leer sus letras azules sobre fondos oscuros sin alterar el relleno. Wallpaper nuevo: `resources/assets/images/kairos-wallpaper.svg`.
 
 Se usó el editor integrado `image_gen`, con la habilidad `imagegen`. Prompt final:
 
-> Extract the provided UPHOS wordmark onto TRUE alpha transparency, suitable as a clean production website logo. Change ONLY white background to transparent. Keep every navy and gold letter interior fully opaque; preserve the original exact letter shapes and blue/gold colors. The hole of the O and P and gaps between letters must be EMPTY TRANSPARENT: no yellow or red specks, noise or residual pixels. All contours clean smooth antialiased, flat crisp logo. No new textures, no red, no black or white background, no fake checkerboard. Horizontal canvas tightly fitted to UPHOS with small clear transparent margins. Text exactly UPHOS.
+> Extract the provided KAIRÓS OS wordmark onto TRUE alpha transparency, suitable as a clean production website logo. Change ONLY white background to transparent. Keep every navy and gold letter interior fully opaque; preserve the original exact letter shapes and blue/gold colors. The hole of the O and P and gaps between letters must be EMPTY TRANSPARENT: no yellow or red specks, noise or residual pixels. All contours clean smooth antialiased, flat crisp logo. No new textures, no red, no black or white background, no fake checkerboard. Horizontal canvas tightly fitted to KAIRÓS OS with small clear transparent margins. Text exactly KAIROS.
 
 ## Integración Git
 
 La carpeta `Interfaz-/` era nueva y no estaba versionada en este checkout; se integra completa para que la entrega sea ejecutable. Se revisó el contenido con `git diff --cached`, se verificó por rutas NUL que todos los archivos pertenecen a `Interfaz-/` y se excluyeron `node_modules/` y `dist/`. Comando de preparación: `git add -- Interfaz-`. Las modificaciones previas fuera de esa carpeta se conservan pendientes.
 
-Mensaje del commit de integración: `feat(interfaz): migrar escritorio y aplicar identidad UPHOS`. Incluye la interfaz recibida, el Core/adaptadores, marca institucional, recursos locales, pruebas y documentación como una entrega funcional.
+Mensaje del commit de integración: `feat(interfaz): migrar escritorio y aplicar identidad KAIRÓS OS`. Incluye la interfaz recibida, el Core/adaptadores, marca institucional, recursos locales, pruebas y documentación como una entrega funcional.
 
 ## Actualización posterior: retirar terminal y autenticación de la GUI
 
@@ -88,7 +88,7 @@ Se amplía la prueba de navegador para comprobar que la barra tiene estilos y qu
 
 Se añade **Ver procesos** al menú de la barra de aplicaciones, accesible por clic, clic derecho y teclado. El monitor sustituye los bloques JSON por tablas y tarjetas de procesos, memoria, colas, dispositivos/E/S, recursos, servicios y actividad. Incluye búsqueda, diálogo de nueva tarea y acciones con nombres legibles.
 
-El calendario incorpora mes completo de seis semanas, semana con horarios y eventos simultáneos, agenda, mini calendario, categorías, búsqueda, editor de eventos y deshacer eliminación. Conserva los eventos antiguos y la identidad azul/dorada de UPHOS.
+El calendario incorpora mes completo de seis semanas, semana con horarios y eventos simultáneos, agenda, mini calendario, categorías, búsqueda, editor de eventos y deshacer eliminación. Conserva los eventos antiguos y la identidad azul/dorada de KAIROS.
 
 Se incorpora lectura real de batería, volumen/silencio y redes Wi-Fi mediante un conector local de Python 3 para Linux. Se verificaron las tres fuentes disponibles en este equipo. Se consulta la caché de NetworkManager; no se modifica el anfitrión ni se utiliza el micrófono. Los servidores estáticos mantienen las funciones disponibles del navegador y explican cómo abrir la versión local. Los datos de prueba del panel y las capturas son fixtures; la evidencia de la consulta real sólo guarda disponibilidad y códigos HTTP, sin SSID.
 

@@ -7,7 +7,7 @@ import { prepararRestauracion } from '../../js/core/restauracion.js';
 export function montarAccesoConsola(contenedor, repositorio, alIngresar, usuarioInicial = '', alRestaurar = () => {}) {
   document.body.classList.remove('modo-acceso', 'modo-instalador');
   document.body.classList.add('modo-terminal');
-  contenedor.innerHTML = '<div class="barra-terminal"><h1>UPHOS</h1></div><div class="zona-terminal"><pre class="salida" role="log" aria-live="polite"></pre><form class="linea-comando"><label class="prompt" for="acceso-terminal"></label><input id="acceso-terminal" autocomplete="off" autocapitalize="off" spellcheck="false" maxlength="128" required></form><p class="error" role="alert"></p></div>';
+  contenedor.innerHTML = '<div class="barra-terminal"><h1>KAIRÓS OS</h1></div><div class="zona-terminal"><pre class="salida" role="log" aria-live="polite"></pre><form class="linea-comando"><label class="prompt" for="acceso-terminal"></label><input id="acceso-terminal" autocomplete="off" autocapitalize="off" spellcheck="false" maxlength="128" required></form><p class="error" role="alert"></p></div>';
   const input = contenedor.querySelector('input'), salida = contenedor.querySelector('pre'), prompt = contenedor.querySelector('label'), error = contenedor.querySelector('.error');
   const recuperacion = crearRecuperacion(repositorio);
   let usuario = usuarioInicial, ocupado = false, fase = usuarioInicial ? 'clave' : 'usuario', permiso, nueva = '';

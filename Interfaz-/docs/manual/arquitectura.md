@@ -17,9 +17,9 @@ La interfaz conserva HTML, CSS y JavaScript modulares, sin modificar el sistema 
 
 ## Persistencia
 
-La clave localStorage **uphos.desktop.v1** guarda versión, tamaño de iconos y lista de elementos. Cada elemento tiene identificador, nombre y tipo. Los accesos guardan el identificador de aplicación y las coordenadas. Los documentos guardan contenido de texto y carpeta de origen. El campo deleted permite mover a la papelera y restaurar sin borrar el contenido.
+La clave localStorage **kairos.desktop.v1** guarda versión, tamaño de iconos y lista de elementos. Cada elemento tiene identificador, nombre y tipo. Los accesos guardan el identificador de aplicación y las coordenadas. Los documentos guardan contenido de texto y carpeta de origen. El campo deleted permite mover a la papelera y restaurar sin borrar el contenido.
 
-Escritorio y Descargas son ubicaciones virtuales. Las carpetas nuevas actúan como contenedores navegables. La creación de elementos desde el menú contextual los sitúa en el escritorio. La sincronización de vistas usa eventos de almacenamiento y eventos internos de UPHOS. El editor y el explorador comparten el volumen; no existe sincronización con UPHFS de la consola. No se implementó edición simultánea con resolución de conflictos.
+Escritorio y Descargas son ubicaciones virtuales. Las carpetas nuevas actúan como contenedores navegables. La creación de elementos desde el menú contextual los sitúa en el escritorio. La sincronización de vistas usa eventos de almacenamiento y eventos internos de KAIROS. El editor y el explorador comparten el volumen; no existe sincronización con KAIROSFS de la consola. No se implementó edición simultánea con resolución de conflictos.
 
 El rechazo de almacenamiento muestra un error en lugar de anunciar un guardado correcto. Los nombres se escriben como texto en el DOM para evitar interpretar etiquetas introducidas por el usuario.
 

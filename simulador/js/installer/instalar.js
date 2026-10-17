@@ -11,7 +11,7 @@ export async function instalar(datos, repositorio, progreso = () => {}) {
   const instalacion = { version: 1, estado: 'preparando', edicion: configuracion.edicion ?? 'Plus', arquitectura: configuracion.arquitectura ?? '64' };
   const etapas = [
     ['etapa.particion', () => {
-      const particiones = configuracion.particiones ?? [{ id: 'principal', nombre: 'UPHOS', inicioGiB: 0, capacidadGiB: Number(configuracion.capacidad) }];
+      const particiones = configuracion.particiones ?? [{ id: 'principal', nombre: 'KAIROS', inicioGiB: 0, capacidadGiB: Number(configuracion.capacidad) }];
       const destino = configuracion.particionSeleccionada ?? 'principal';
       instalacion.disco = { capacidadGiB: 64, particionSistema: destino, particiones: [...particiones].sort((a, b) => Number(b.id === destino) - Number(a.id === destino)).map(particion => ({ ...particion, formato: null })) };
     }],

@@ -1,5 +1,5 @@
-/* Identidad UPHOS: azul del logotipo #1c1858 y dorado #e8b313. */
-:root { --azul-uphos: #1c1858; --dorado-uphos: #e8b313; --acento: #a5b4ff; --borde: #393958; }
+/* Identidad KAIROS: azul del logotipo #1c1858 y dorado #e8b313. */
+:root { --azul-kairos: #1c1858; --dorado-kairos: #e8b313; --acento: #a5b4ff; --borde: #393958; }
 body:not(.modo-terminal) { min-height: 100dvh; background: radial-gradient(ellipse at 10% 0%, #292265, transparent 58%), radial-gradient(ellipse at 95% 100%, #222044, transparent 55%), #0b0e26; }
 body:not(.modo-terminal) main { max-width: 1280px; padding: 28px 36px 48px; }
 main > header { justify-content: space-between; margin-bottom: 28px; }
@@ -11,11 +11,11 @@ h1 { letter-spacing: -.035em; }
 h1[tabindex="-1"]:focus-visible { outline: none; }
 button { transition: background .18s, transform .18s, border-color .18s; background: #242544; border-color: #4d4b72; }
 button:not(:disabled):hover { background: #343461; border-color: #8884bc; transform: translateY(-1px); }
-button[type=submit], button.principal { background: var(--azul-uphos); color: #fff; border-color: #6661bc; box-shadow: 0 5px 22px #0003; }
+button[type=submit], button.principal { background: var(--azul-kairos); color: #fff; border-color: #6661bc; box-shadow: 0 5px 22px #0003; }
 button[type=submit]:hover, button.principal:hover { background: #373186; }
 input, select { background: #0c1028; border-color: #484967; padding: 14px; }
 input:focus, select:focus { border-color: var(--acento); }
-input[type=checkbox], input[type=radio] { accent-color: var(--dorado-uphos); }
+input[type=checkbox], input[type=radio] { accent-color: var(--dorado-kairos); }
 .campo { margin: 24px 0; font-size: .9rem; }
 .campo input { font-size: 1rem; }
 small { color: #aaaac5; }
@@ -24,7 +24,7 @@ small { color: #aaaac5; }
 .pantalla-arranque h1 { font-size: clamp(2.6rem, 7vw, 4.2rem) !important; margin: 0 0 8px; }
 .marca-arranque { width: min(380px, 80%); height: auto; padding: 24px; background: #fff; border: none; border-radius: 16px; margin-bottom: 35px; }
 .marca-arranque img { width: 100%; display: block; }
-.pantalla-arranque .paso { text-transform: uppercase; letter-spacing: .18em; font-size: .7rem; color: var(--dorado-uphos); }
+.pantalla-arranque .paso { text-transform: uppercase; letter-spacing: .18em; font-size: .7rem; color: var(--dorado-kairos); }
 .pantalla-arranque .acciones { gap: 12px; }
 .pantalla-arranque [data-limpiar] { font-size: .8rem; color: #acadc6; background: transparent; border: 1px solid #393958; }
 .instalador-layout { grid-template-columns: 270px minmax(0, 1fr); min-height: 650px; }
@@ -32,18 +32,18 @@ small { color: #aaaac5; }
 .marca-instalador img { display: block; width: 170px; padding: 10px; background: #fff; border-radius: 8px; margin-bottom: 16px; }
 .marca-instalador span { font-size: .75rem; letter-spacing: .03em; }
 .ruta-instalacion button { padding: 12px 10px; border-radius: 8px; }
-.ruta-instalacion .actual button { background: #36316c; color: #fff; box-shadow: inset 3px 0 var(--dorado-uphos); }
-.ruta-instalacion .actual .numero-paso { background: var(--dorado-uphos); border-color: var(--dorado-uphos); color: #17122e; font-weight: bold; }
+.ruta-instalacion .actual button { background: #36316c; color: #fff; box-shadow: inset 3px 0 var(--dorado-kairos); }
+.ruta-instalacion .actual .numero-paso { background: var(--dorado-kairos); border-color: var(--dorado-kairos); color: #17122e; font-weight: bold; }
 .completo .numero-paso { border-color: #9c98d6; color: #cecbff; }
 .panel-paso { position: relative; padding: 44px 48px; animation: entrada-panel .48s cubic-bezier(.2,.75,.25,1) both; }
-.panel-paso .paso { color: var(--dorado-uphos); font-size: .75rem; letter-spacing: .07em; }
+.panel-paso .paso { color: var(--dorado-kairos); font-size: .75rem; letter-spacing: .07em; }
 .panel-paso h1 { margin-bottom: 12px; }
 .panel-paso form { animation: entrada-contenido .5s .08s both; }
 .avance-pasos { position: absolute; inset: 0 0 auto; height: 3px; background: #242443; }
-.avance-pasos span { height: 100%; display: block; background: var(--dorado-uphos); transition: width .45s ease; }
+.avance-pasos span { height: 100%; display: block; background: var(--dorado-kairos); transition: width .45s ease; }
 .disco-cabecera, .destino-formato { background: #1d2043; border-color: #444366; }
 .mapa-disco { height: 26px; margin: 22px 0; }
-.mapa-disco .destino { background: var(--dorado-uphos); }
+.mapa-disco .destino { background: var(--dorado-kairos); }
 .mapa-disco span { background: #6460ba; }
 .tabla-particiones caption { background: #10132c; color: #c9c7e4; }
 .tabla-particiones .seleccionada { background: #302c63; }
@@ -51,21 +51,21 @@ small { color: #aaaac5; }
 .tabla-particiones tbody tr:hover { background: #28254e; }
 .tabla-desplazable { border-color: #444366; }
 .editor-particion { background: #10132c; border-color: #5c5787; }
-.orbita-instalacion::before { border-color: #353158; border-top-color: var(--dorado-uphos); }
+.orbita-instalacion::before { border-color: #353158; border-top-color: var(--dorado-kairos); }
 .barra-progreso span { background: linear-gradient(90deg, #5c56bc, #a5b4ff); }
 .etapas li { background: #10132c; }
 .etapas .en-curso { background: #302c63; }
 .etapas .terminada { color: #dfdafa; }
-.exito-instalacion { color: var(--dorado-uphos); background: #1c1858; border-color: #6d62ae; }
+.exito-instalacion { color: var(--dorado-kairos); background: #1c1858; border-color: #6d62ae; }
 .modo-terminal { background: #090c1c; }
 .modo-terminal main { padding: 12px; }
 .modo-terminal #sistema { border-color: #363654; background: #0a0e20; }
 .barra-terminal { background: #1c1858; color: #e7e5ff; min-height: 42px; }
 .barra-terminal > span { color: #bbb6e5; }
 .barra-pestanias { background: #13152e; border-color: #363654; }
-.pestania [role=tab][aria-selected=true] { background: #0a0e20; box-shadow: inset 0 -2px var(--dorado-uphos); }
+.pestania [role=tab][aria-selected=true] { background: #0a0e20; box-shadow: inset 0 -2px var(--dorado-kairos); }
 .linea-comando .prompt { color: #bdb7ff; }
-.modo-terminal .linea-comando input { caret-color: var(--dorado-uphos); }
+.modo-terminal .linea-comando input { caret-color: var(--dorado-kairos); }
 .zona-terminal { padding: 24px 28px; scrollbar-color: #454264 #0a0e20; }
 @keyframes entrada-panel { from { opacity: 0; transform: translateX(22px); } to { opacity: 1; transform: none; } }
 @keyframes entrada-contenido { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
@@ -87,7 +87,7 @@ small { color: #aaaac5; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
 
-.rueda-progreso { --avance: 0; width: 150px; height: 150px; border-radius: 50%; margin: 10px auto 28px; position: relative; display: grid; place-items: center; background: conic-gradient(#5954a9 0deg, var(--dorado-uphos) calc(var(--avance) * 3.6deg), #303350 0deg); box-shadow: 0 0 45px #1c185855; }
+.rueda-progreso { --avance: 0; width: 150px; height: 150px; border-radius: 50%; margin: 10px auto 28px; position: relative; display: grid; place-items: center; background: conic-gradient(#5954a9 0deg, var(--dorado-kairos) calc(var(--avance) * 3.6deg), #303350 0deg); box-shadow: 0 0 45px #1c185855; }
 .rueda-progreso::before { content: ''; position: absolute; inset: 9px; border-radius: 50%; background: #141735; }
 .rueda-progreso span { position: relative; color: #fff; font-size: 2rem; font-weight: 650; font-variant-numeric: tabular-nums; }
 .panel-instalando { padding: 30px 32px; }
@@ -96,7 +96,7 @@ small { color: #aaaac5; }
 .progreso-terminal { display: flex; gap: 28px; align-items: center; padding: 18px 28px; background: #141735; border-bottom: 1px solid #393958; }
 .progreso-terminal .rueda-progreso { width: 88px; height: 88px; margin: 0; flex-shrink: 0; }
 .progreso-terminal .rueda-progreso span { font-size: 1.1rem; }
-.cargando-sistema { width: 35px; height: 35px; border: 3px solid #393958; border-top-color: var(--dorado-uphos); border-radius: 50%; animation: girar-instalar 1s linear infinite; margin: 16px; }
+.cargando-sistema { width: 35px; height: 35px; border: 3px solid #393958; border-top-color: var(--dorado-kairos); border-radius: 50%; animation: girar-instalar 1s linear infinite; margin: 16px; }
 .modo-acceso main { max-width: 1100px !important; }
 .modo-acceso main > header { display: none; }
 .modo-acceso #sistema { padding: 0; overflow: hidden; margin-top: clamp(12px, 5vh, 60px); }
@@ -108,7 +108,7 @@ small { color: #aaaac5; }
 .acceso-cuenta { padding: 56px 48px; text-align: center; display: flex; flex-direction: column; align-items: center; animation: entrada-panel .4s ease both; }
 .avatar-usuario { width: 115px; height: 115px; border-radius: 50%; background: linear-gradient(145deg, #514a93, #26214f); border: 1px solid #7770b5; overflow: hidden; padding: 10px; box-shadow: 0 15px 30px #0003; }
 .avatar-usuario svg { fill: #dcd8f3; width: 100%; height: 100%; }
-.acceso-cuenta .paso { margin: 28px 0 4px; color: var(--dorado-uphos); font-size: .75rem; letter-spacing: .07em; }
+.acceso-cuenta .paso { margin: 28px 0 4px; color: var(--dorado-kairos); font-size: .75rem; letter-spacing: .07em; }
 .acceso-cuenta h1 { margin: 0; font-size: 1.9rem !important; overflow-wrap: anywhere; }
 .identificador-usuario { margin-top: 8px; color: #a7a3c6; font-size: .9rem; }
 .acceso-cuenta form { width: 100%; max-width: 350px; text-align: left; }

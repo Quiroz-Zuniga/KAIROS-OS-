@@ -22,7 +22,7 @@ test('Ayuda, alias, entradas vacías y comandos desconocidos', async () => {
   for (const nombre of ['powershell', 'constructor', 'toString', 'ayuda;', 'eval']) assert.equal((await interpretar(nombre, nucleo)).error, true);
   assert.equal((await interpretar('  ', nucleo)).texto, '');
   assert.equal((await interpretar('limpiar', nucleo)).limpiar, true);
-  assert.match((await interpretar('acerca', nucleo)).texto, /UPHOS instalado/);
+  assert.match((await interpretar('acerca', nucleo)).texto, /KAIRÓS OS instalado/);
 });
 test('El analizador conserva comillas, argumentos vacíos y escapes sin ejecutar contenido', () => {
   assert.deepEqual(analizar('escribir "mi archivo" "hola mundo"').argumentos, ['mi archivo', 'hola mundo']);
@@ -33,11 +33,11 @@ test('El analizador conserva comillas, argumentos vacíos y escapes sin ejecutar
 });
 test('Crear, escribir, leer, copiar, mover, listar y borrar persisten archivos virtuales', async () => {
   const { nucleo, repositorio } = contextoTerminal();
-  assert.equal(nucleo.prompt(), String.raw`jorge@uphos U:\home\jorge>`);
-  for (const comando of ['crear carpeta "mis documentos"', 'entrar "mis documentos"', 'crear archivo "nota.txt"', 'escribir nota.txt "Hola UPHOS"', 'copiar nota.txt copia.txt', 'mover copia.txt final.txt']) {
+  assert.equal(nucleo.prompt(), String.raw`jorge@kairos U:\home\jorge>`);
+  for (const comando of ['crear carpeta "mis documentos"', 'entrar "mis documentos"', 'crear archivo "nota.txt"', 'escribir nota.txt "Hola KAIROS"', 'copiar nota.txt copia.txt', 'mover copia.txt final.txt']) {
     assert.equal((await interpretar(comando, nucleo)).error, undefined, comando);
   }
-  assert.equal((await interpretar('leer nota.txt', nucleo)).texto, 'Hola UPHOS');
+  assert.equal((await interpretar('leer nota.txt', nucleo)).texto, 'Hola KAIROS');
   const listado = (await interpretar('archivos', nucleo)).texto;
   assert.match(listado, /final.txt/);
   assert.ok(!listado.includes('copia.txt'));
@@ -116,7 +116,7 @@ test('Usuario, usuarios, procesos, memoria, preferencias, version y estado son c
     assert.ok(!resultado.texto.includes('credencial'));
   }
   assert.match((await interpretar('memoria', nucleo)).texto, /MiB de 128 MiB/);
-  assert.match((await interpretar('procesos', nucleo)).texto, /Núcleo UPHOS/);
+  assert.match((await interpretar('procesos', nucleo)).texto, /Núcleo KAIRÓS OS/);
 });
 test('Reiniciar y apagar terminan la sesión sin borrar archivos', async () => {
   for (const comando of ['reiniciar', 'apagar']) {

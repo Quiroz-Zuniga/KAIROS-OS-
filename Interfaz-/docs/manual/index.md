@@ -1,27 +1,23 @@
-# Interfaz gráfica de UPHOS
+# Interfaz gráfica de KAIRÓS OS
 
-Esta documentación describe la parte de interfaz de Rubén Quiroz en la rama interfaz-ruben-quiroz. El escritorio permite abrir aplicaciones, organizar accesos, crear documentos y probar estados de energía dentro de una simulación académica.
+Esta documentación describe el escritorio web de KAIRÓS OS. El escritorio permite abrir aplicaciones, organizar accesos, crear documentos y probar estados de energía dentro de una simulación académica.
 
 El código fuente está en Interfaz-. La consola y el instalador de simulador/ pertenecen a un alcance independiente y no se modificaron para estas correcciones.
 
 ## Uso desde el navegador
 
-Abrir Interfaz-/index.html con la vista previa HTTP del editor o con un servidor estático ya disponible. Pulsar **Entrar a UPHOS**. Los módulos requieren HTTP; abrir directamente un archivo mediante file:// no proporciona el entorno de módulos necesario.
+Abrir Interfaz-/index.html con la vista previa HTTP del editor o con un servidor estático ya disponible. Pulsar **Entrar a KAIRÓS OS**. Los módulos requieren HTTP; abrir directamente un archivo mediante file:// no proporciona el entorno de módulos necesario.
 
 1. Usar Inicio para buscar aplicaciones por nombre y abrirlas.
 2. Arrastrar una aplicación desde Inicio o la barra al escritorio para crear un acceso.
 3. Hacer clic derecho en el fondo para ver opciones de tamaño, orden, actualización y creación de elementos.
 4. Hacer clic derecho sobre un icono para abrirlo, consultar propiedades o quitarlo.
-5. Abrir Chrome y buscar Wikipedia, UPHOS o WinRAR en el catálogo de demostración.
-6. Usar el botón de energía de Inicio o de la barra superior para bloquear, reiniciar, suspender o apagar UPHOS.
+5. Abrir Chrome y buscar Wikipedia, KAIRÓS OS o WinRAR en el catálogo de demostración.
+6. Usar el botón de energía de Inicio o de la barra superior para bloquear, reiniciar, suspender o apagar KAIROS.
 
 ## Documentación con MkDocs
 
-Interfaz-/mkdocs.yml define el sitio, el idioma, la búsqueda y la navegación. Las fuentes se encuentran en docs/manual/ y la dependencia se declara en requirements-docs.txt. El directorio generado site/ se mantiene fuera de Git.
-
-Se prepararon la configuración y las páginas para MkDocs. La compilación del sitio está pendiente: esta intervención no ejecutó terminal ni línea de comandos. Puede generarse posteriormente en un entorno con MkDocs autorizado para ello. No se publicó documentación ni se configuraron despliegues automáticos.
-
-Referencia del formato de configuración: [documentación oficial de MkDocs](https://www.mkdocs.org/user-guide/configuration/).
+El sitio principal se configura en `mkdocs.yml` en la raíz del repositorio. Incluye este manual, la arquitectura actual, los comandos de desarrollo y las propuestas de evolución. Usa MkDocs Material y validación estricta en GitHub Actions.
 
 ## Alcance de la simulación
 

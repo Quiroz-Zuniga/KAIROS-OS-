@@ -1,6 +1,9 @@
 # ADR-001 — Kairós OS: distribución y entorno de escritorio Debian
 
-Fecha: 2026-10-16. Estado: **dirección arquitectónica adoptada por la especificación; implementación y validación pendientes**. Sustituye la recomendación anterior de evolución de UPHOS. Esta revisión entrega documentación, no un escritorio Linux terminado.
+> Documento de planificación o revisión previa. El [manual técnico actual](guia/arquitectura.md) describe el código disponible; las capacidades Linux de esta especificación siguen propuestas.
+
+
+Fecha: 2026-10-16. Estado: **dirección arquitectónica adoptada por la especificación; implementación y validación pendientes**. Sustituye la recomendación anterior de evolución de KAIROS. Esta revisión entrega documentación, no un escritorio Linux terminado.
 
 ## Decisión
 
@@ -34,11 +37,11 @@ Hardware/VM → Linux → Debian → systemd/udev/D-Bus/APT → Xorg → Openbox
 
 ## IMPACT
 
-La especificación vigente cambia el producto de simulación a entorno/distribución real. El código actual continúa siendo simulación hasta completar capacidades concretas. `simulador/` y `Interfaz-/` permanecen disponibles como laboratorio y base de migración. No convertir particiones virtuales en operaciones de disco ni credenciales académicas en cuentas Linux. El `AGENTS.md` describe la etapa histórica; antes del primer cambio de código se actualizará su alcance conforme a esta decisión, manteniendo la protección del anfitrión.
+La especificación vigente cambia el producto de simulación a entorno/distribución real. El código actual continúa siendo simulación hasta completar capacidades concretas. `simulador/` y `Interfaz-/` permanecen disponibles como laboratorio y base de migración. No convertir particiones virtuales en operaciones de disco ni credenciales académicas en cuentas Linux. `AGENTS.md` delimita la simulación ejecutable y mantiene la protección del anfitrión. Las capacidades Linux requieren un alcance de implementación separado.
 
 ## MIGRATION
 
-Crear una entrada Linux separada y extraer gradualmente la GUI, sin mover todo el árbol. Mantener almacenamiento histórico, IDs y pruebas. Nuevas capacidades usan `window.kairos`, métodos explícitos y validación backend. Migración de marca por superficies, con mapa de compatibilidad y pruebas de datos. Plan detallado: [IMPLEMENTATION_PLAN](../IMPLEMENTATION_PLAN.md), [GAP_ANALYSIS](GAP_ANALYSIS.md) y [06](06-ui-migration.md).
+Crear una entrada Linux separada y extraer gradualmente la GUI, sin mover todo el árbol. Mantener pruebas y definir una migración de datos explícita cuando sea necesaria. Nuevas capacidades usan `window.kairos`, métodos explícitos y validación backend. Migración de marca por superficies, con mapa de compatibilidad y pruebas de datos. Plan detallado: [IMPLEMENTATION_PLAN](IMPLEMENTATION_PLAN.md), [GAP_ANALYSIS](GAP_ANALYSIS.md) y [06](06-ui-migration.md).
 
 Primer hito obligatorio: Debian → Xorg → Openbox → sesión Kairós → escritorio → launcher → Firefox o terminal real, con foco y Alt+Tab. Después cerrar receta ISO y System Layer. El launcher mínimo no implica tener ya completado el descubrimiento de aplicaciones de semana 3.
 

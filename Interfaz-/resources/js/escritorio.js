@@ -7,11 +7,11 @@ import { readDesktop, writeDesktop, createItem } from './system/desktop-store.js
 // Rubén Quiroz: interacción gráfica; la consola y el instalador tienen su propio alcance.
 const $ = selector => document.querySelector(selector);
 const controller = new SystemController();
-window.uphos = controller;
+window.kairos = controller;
 let noticeTimer, dragging, selected, dialogAction;
 function notify(message) {
-    $('#uph-notice').textContent = message; $('#uph-notice').hidden = false;
-    clearTimeout(noticeTimer); noticeTimer = setTimeout(() => $('#uph-notice').hidden = true, 6000);
+    $('#kairos-notice').textContent = message; $('#kairos-notice').hidden = false;
+    clearTimeout(noticeTimer); noticeTimer = setTimeout(() => $('#kairos-notice').hidden = true, 6000);
 }
 function safe(action) { try { action(); } catch (error) { notify(error.message); } }
 function launch(id) { closePanels(); safe(() => controller.launch(id)); }
@@ -44,9 +44,9 @@ $('#desktop-dialog form').addEventListener('submit', event => {
 });
 function openItem(item) {
     if (item.kind === 'shortcut') return launch(item.app);
-    window.uphosSelectedItem = item.id;
+    window.kairosSelectedItem = item.id;
     launch('explorer');
-    window.dispatchEvent(new CustomEvent('uphos:open-item',{detail:item.id}));
+    window.dispatchEvent(new CustomEvent('kairos:open-item',{detail:item.id}));
     // El explorador recién creado lee la selección al cargar.
 }
 function iconFor(item) { return applications[item.app]?.icon || (['text','word'].includes(item.kind) ? applications.editor.icon : applications.explorer.icon); }
@@ -72,16 +72,16 @@ function context(event, item = null) {
     const mutate = fn => { const state=readDesktop(); fn(state); writeDesktop(state); };
     if (item) {
         option('Abrir', () => openItem(item));
-        if (item.kind === 'shortcut') option('Ejecutar como administrador', () => showDialog('Administrador simulado', item.name+' se abrirá dentro de UPHOS. No concede permisos sobre el equipo.', null, () => launch(item.app)));
-        else if (['text','word'].includes(item.kind)) group('Abrir con', [['Editor de texto', () => { window.uphosSelectedItem=item.id; launch('editor'); window.dispatchEvent(new CustomEvent('uphos:open-editor',{detail:item.id})); }],['Editor de documentos', () => openItem(item)]]);
-        option('Propiedades', () => showDialog('Propiedades de '+item.name, 'Tipo: '+item.kind+' · Ubicación: Escritorio de UPHOS · '+(item.app ? 'Aplicación: '+applications[item.app]?.title : 'Contenido virtual guardado en este navegador.'), null));
+        if (item.kind === 'shortcut') option('Ejecutar como administrador', () => showDialog('Administrador simulado', item.name+' se abrirá dentro de KAIROS. No concede permisos sobre el equipo.', null, () => launch(item.app)));
+        else if (['text','word'].includes(item.kind)) group('Abrir con', [['Editor de texto', () => { window.kairosSelectedItem=item.id; launch('editor'); window.dispatchEvent(new CustomEvent('kairos:open-editor',{detail:item.id})); }],['Editor de documentos', () => openItem(item)]]);
+        option('Propiedades', () => showDialog('Propiedades de '+item.name, 'Tipo: '+item.kind+' · Ubicación: Escritorio de KAIRÓS OS · '+(item.app ? 'Aplicación: '+applications[item.app]?.title : 'Contenido virtual guardado en este navegador.'), null));
         if (item.id !== 'recycle') option(item.kind === 'shortcut' ? 'Quitar acceso del escritorio' : 'Mover a la papelera', () => mutate(state => { state.items.find(x=>x.id===item.id).deleted = true; }));
     } else {
         group('Ver', [['Iconos grandes',()=>mutate(s=>s.size='large')],['Iconos medianos',()=>mutate(s=>s.size='medium')],['Iconos pequeños',()=>mutate(s=>s.size='small')]]);
         group('Ordenar por', [['Nombre',()=>sort('name')],['Tipo',()=>sort('kind')],['Fecha de creación',()=>sort('created')]]);
         option('Actualizar', () => { renderIcons(); applyWallpaper(); notify('Escritorio actualizado.'); });
         group('Nuevo', [['Carpeta',()=>newItem('folder','Nueva carpeta')],['Documento de texto',()=>newItem('text','Nota.txt')],['Documento de Word',()=>newItem('word','Documento.docx')],['Carpeta comprimida',()=>newItem('zip','Archivo.zip')]]);
-        option('Propiedades',()=>showDialog('Propiedades del escritorio', 'UPHOS · '+innerWidth+' × '+innerHeight+' · Archivos y dispositivos simulados.',null));
+        option('Propiedades',()=>showDialog('Propiedades del escritorio', 'KAIRÓS OS · '+innerWidth+' × '+innerHeight+' · Archivos y dispositivos simulados.',null));
     }
     place(menu,event.clientX,event.clientY); menu.querySelector('button,summary')?.focus();
 }
@@ -131,15 +131,15 @@ document.addEventListener('keydown',event=>{if(event.key==='Escape')closePanels(
 for(const b of document.querySelectorAll('[data-power]'))b.onclick=()=>{
     const action=b.dataset.power;closePanels();
     if(action==='restart'||action==='off')controller.resetSession(action==='restart');else controller.command('pause');
-    const labels={lock:['Escritorio bloqueado','Desbloquear'],restart:['UPHOS reiniciado','Entrar a UPHOS'],sleep:['UPHOS en suspensión','Reanudar'],off:['UPHOS apagado','Encender']};
+    const labels={lock:['Escritorio bloqueado','Desbloquear'],restart:['KAIRÓS OS reiniciado','Entrar a KAIRÓS OS'],sleep:['KAIRÓS OS en suspensión','Reanudar'],off:['KAIRÓS OS apagado','Encender']};
     $('#session-title').textContent=labels[action][0];$('#session-description').textContent='Tus archivos virtuales se conservan.';$('#session-resume').textContent=labels[action][1];$('#session-screen').hidden=false;
     $('#session-resume').onclick=()=>{$('#session-screen').hidden=true;if(action==='off')controller.resetSession(true);else controller.command('run');};$('#session-resume').focus();
 };
 $('#calendar').onclick=()=>launch('calendar');
 $('#pantalla-completa').onclick=async()=>{try{if(document.fullscreenElement)await document.exitFullscreen();else await document.documentElement.requestFullscreen();}catch{notify('No se pudo activar la pantalla completa.');}};
-function applyWallpaper(){const value=UPHOSPreferences.wallpaper();if(value)surface.style.backgroundImage='url('+JSON.stringify(value)+')';}
-applyWallpaper();window.addEventListener('storage',()=>{applyWallpaper();renderIcons();});document.addEventListener('uphos:wallpaper',applyWallpaper);
-window.addEventListener('uphos:desktop-change',renderIcons);window.addEventListener('resize',()=>{renderIcons();closePanels();});
+function applyWallpaper(){const value=KAIROSPreferences.wallpaper();if(value)surface.style.backgroundImage='url('+JSON.stringify(value)+')';}
+applyWallpaper();window.addEventListener('storage',()=>{applyWallpaper();renderIcons();});document.addEventListener('kairos:wallpaper',applyWallpaper);
+window.addEventListener('kairos:desktop-change',renderIcons);window.addEventListener('resize',()=>{renderIcons();closePanels();});
 const updateClock=()=>$('.hora_actual').textContent=new Date().toLocaleTimeString('es-HN',{hour:'2-digit',minute:'2-digit'});
 updateClock();const clock=setInterval(updateClock,1000);
 controller.subscribe(state=>{for(const b of document.querySelectorAll('[data-launch]'))b.classList.toggle('is-running',state.processes.some(p=>p.appId===b.dataset.launch&&p.state!=='TERMINATED'));});

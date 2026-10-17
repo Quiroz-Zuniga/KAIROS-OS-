@@ -45,7 +45,7 @@ test('Instalación Live admite usuario con mayúsculas sin convertir su nombre',
   assert.equal(datos.usuario.usuario,'Jorge');assert.equal(instalacionValida(datos),true);
 });
 test('Electron conserva cuentas y carpetas con mayúsculas tras reabrir',async()=>{
-  const raiz=await mkdtemp(path.join(tmpdir(),'uphos-mayusculas-'));
+  const raiz=await mkdtemp(path.join(tmpdir(),'kairos-mayusculas-'));
   try{const repo=new AlmacenLocal(raiz,instalacionValida);await instalar(borrador(),repo);
     const datos=await repo.cargar(),nucleo=crearGrupoTerminal(datos,repo,await autenticar(datos,'jorge','Clave Original')).crear();
     assert.equal((await interpretar('crear archivo nota.txt',nucleo)).error,undefined);

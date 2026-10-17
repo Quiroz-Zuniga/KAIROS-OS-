@@ -1,7 +1,7 @@
 {
-  "name": "uphos-interfaz",
+  "name": "kairos-interfaz",
   "version": "1.0.0",
-  "description": "Interfaz original de UPHOS conectada a un n\u00facleo virtual determinista",
+  "description": "Interfaz original de KAIROS conectada a un n\u00facleo virtual determinista",
   "main": "index.js",
   "scripts": {
     "dev": "node scripts/serve.js",

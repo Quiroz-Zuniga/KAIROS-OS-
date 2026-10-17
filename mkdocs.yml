@@ -1,0 +1,105 @@
+site_name: KAIRÓS OS
+site_description: Arquitectura, desarrollo y manual técnico de KAIRÓS OS
+site_author: Rubén Quiroz
+site_url: https://quiroz-zuniga.github.io/KAIROS-OS-/
+repo_name: Quiroz-Zuniga/KAIROS-OS-
+repo_url: https://github.com/Quiroz-Zuniga/KAIROS-OS-
+edit_uri: edit/main/docs/
+docs_dir: docs
+site_dir: site
+exclude_docs: |
+  README.md
+theme:
+  name: material
+  language: es
+  font: false
+  logo: assets/kairos.png
+  favicon: assets/kairos.png
+  palette:
+    - scheme: slate
+      primary: custom
+      accent: light blue
+      toggle:
+        icon: material/white-balance-sunny
+        name: Cambiar a tema claro
+    - scheme: default
+      primary: custom
+      accent: light blue
+      toggle:
+        icon: material/weather-night
+        name: Cambiar a tema oscuro
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.action.edit
+plugins:
+  - search:
+      lang: es
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+extra_css:
+  - stylesheets/extra.css
+nav:
+  - Inicio: index.md
+  - Manual técnico:
+      - Empezar: guia/inicio.md
+      - Arquitectura actual: guia/arquitectura.md
+      - Desarrollo y pruebas: guia/desarrollo.md
+      - Datos y seguridad: guia/datos.md
+      - Documentación y publicación: guia/documentacion.md
+  - Escritorio:
+      - Uso: interfaz/index.md
+      - Funciones: interfaz/correcciones.md
+      - Componentes: interfaz/arquitectura.md
+      - Evidencia histórica: interfaz/verificacion.md
+  - Arquitectura propuesta:
+      - Estado del laboratorio: 01-current-state.md
+      - Decisión principal: ARCHITECTURE_DECISION.md
+      - Brechas: GAP_ANALYSIS.md
+      - Viabilidad: 02-feasibility-study.md
+      - Alternativas: 03-architecture-options.md
+      - Capas: 04-recommended-architecture.md
+      - Stack: 05-technology-stack.md
+      - Migración de interfaz: 06-ui-migration.md
+      - Integración Linux: 07-linux-integration.md
+      - Procesos: 08-process-management.md
+      - Archivos: 09-filesystem.md
+      - Dispositivos: 10-device-management.md
+      - Virtualización: 11-virtualization.md
+      - Imagen ISO: 12-iso-build.md
+      - Seguridad: 13-security.md
+      - Desktop Shell: 16-desktop-shell.md
+      - Aplicaciones: 17-application-integration.md
+      - Entorno de desarrollo: 18-development-environment.md
+      - Kairós AI: 19-kairos-ai.md
+      - System Layer: 20-system-layer.md
+  - Diseño:
+      - Identidad: 21-brand-guidelines.md
+      - Colores: 22-color-system.md
+      - Geometría: 23-kairos-geometry.md
+      - Retícula: KAIROS_GEOMETRY.md
+      - Terminal: 24-terminal-branding.md
+  - Planificación:
+      - Plan de implementación: IMPLEMENTATION_PLAN.md
+      - Roadmap: 14-roadmap-8-weeks.md
+      - Criterios de MVP: MVP_ACCEPTANCE.md
+      - Decisiones abiertas: OPEN_DECISIONS.md
+      - Riesgos: 15-risks.md
+      - Revisión documental previa: REVIEW_VALIDATION.md

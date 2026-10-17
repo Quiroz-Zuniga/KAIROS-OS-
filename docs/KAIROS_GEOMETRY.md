@@ -1,5 +1,8 @@
 # KAIROS_GEOMETRY — guía de construcción
 
+> Documento de planificación o revisión previa. El [manual técnico actual](guia/arquitectura.md) describe el código disponible; las capacidades Linux de esta especificación siguen propuestas.
+
+
 Retícula base de 4 px. Separaciones preferidas 4/8/12/16/24/32/48 px. Alineación a retícula y simetría en símbolo; alineación óptica revisada para iconos y texto. Evitar valores aislados repetidos.
 
 | Elemento | Regla |

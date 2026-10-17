@@ -10,18 +10,18 @@ function heading(title,description){$('#app-heading').textContent=title;document
 const mutate=fn=>{const state=readDesktop();fn(state);writeDesktop(state);};
 const catalog=[
     {title:'Wikipedia',terms:'enciclopedia conocimiento wikipedia',description:'Una enciclopedia reúne artículos de consulta. Esta ficha es una muestra local para probar búsquedas.'},
-    {title:'Universidad Politécnica de Honduras',terms:'universidad uph honduras',description:'UPHOS es un proyecto académico de simulación de sistemas operativos.'},
-    {title:'WinRAR para UPHOS',terms:'winrar descargar rar zip compresion',description:'Descarga de demostración: agrega un instalador virtual a Descargas. No contiene ni ejecuta software real.',download:'WinRAR-demo.exe'},
-    {title:'Manual de UPHOS',terms:'ayuda manual archivos escritorio',description:'Usa Inicio para abrir aplicaciones; arrástralas al escritorio y haz clic derecho para ver sus opciones.'}
+    {title:'Universidad Politécnica de Honduras',terms:'universidad uph honduras',description:'KAIRÓS OS es un proyecto académico de simulación de sistemas operativos.'},
+    {title:'WinRAR para KAIRÓS OS',terms:'winrar descargar rar zip compresion',description:'Descarga de demostración: agrega un instalador virtual a Descargas. No contiene ni ejecuta software real.',download:'WinRAR-demo.exe'},
+    {title:'Manual de KAIRÓS OS',terms:'ayuda manual archivos escritorio',description:'Usa Inicio para abrir aplicaciones; arrástralas al escritorio y haz clic derecho para ver sus opciones.'}
 ];
 function browser(){
     heading('Chrome','Busca en el catálogo de demostración o abre una búsqueda web en una pestaña del navegador.');
-    const form=node('form'),input=node('input');input.type='search';input.placeholder='Buscar en UPHOS';input.setAttribute('aria-label','Buscar');input.required=true;const submit=node('button','Buscar');submit.type='submit';form.append(input,submit);controls.append(form);
+    const form=node('form'),input=node('input');input.type='search';input.placeholder='Buscar en KAIRÓS OS';input.setAttribute('aria-label','Buscar');input.required=true;const submit=node('button','Buscar');submit.type='submit';form.append(input,submit);controls.append(form);
     const results=query=>{
         body.replaceChildren();const q=query.trim().toLocaleLowerCase('es');
         const found=catalog.filter(entry=>!q||(entry.title+' '+entry.terms).toLocaleLowerCase('es').includes(q));
         if(!found.length)body.append(node('p','Sin resultados en el catálogo local. Puedes continuar con una búsqueda web.'));
-        found.forEach(entry=>{const article=node('article');article.append(node('h2',entry.title),node('p',entry.description));if(entry.download)article.append(button('Descargar en UPHOS',()=>{
+        found.forEach(entry=>{const article=node('article');article.append(node('h2',entry.title),node('p',entry.description));if(entry.download)article.append(button('Descargar en KAIRÓS OS',()=>{
             const state=readDesktop();if(state.items.some(x=>!x.deleted&&x.parent==='downloads'&&x.name===entry.download)){status('El archivo ya está en Descargas.');return;}
             createItem('download',entry.download,'downloads');status('Descarga virtual completada. Abre el Explorador y selecciona Descargas.');
         }));body.append(article);});
@@ -31,14 +31,14 @@ function browser(){
 }
 let folder='desktop';
 function files(){
-    const recycle=mode==='recycle';heading(recycle?'Papelera de reciclaje':'Explorador de archivos',recycle?'Restaura elementos eliminados del escritorio virtual.':'Documentos guardados dentro de UPHOS, separados de los archivos del equipo.');
+    const recycle=mode==='recycle';heading(recycle?'Papelera de reciclaje':'Explorador de archivos',recycle?'Restaura elementos eliminados del escritorio virtual.':'Documentos guardados dentro de KAIRÓS OS, separados de los archivos del equipo.');
     controls.replaceChildren();controls.append(button('Escritorio',()=>{folder='desktop';renderFiles();}),button('Descargas',()=>{folder='downloads';renderFiles();}));
     if(recycle)controls.replaceChildren();
     renderFiles();
-    const open=event=>{openFile(event.detail);window.parent.uphosSelectedItem=null;};
-    window.parent.addEventListener('uphos:open-item',open);
-    window.addEventListener('pagehide',()=>window.parent.removeEventListener('uphos:open-item',open),{once:true});
-    const selected=window.parent.uphosSelectedItem;window.parent.uphosSelectedItem=null;if(selected&&!recycle)openFile(selected);
+    const open=event=>{openFile(event.detail);window.parent.kairosSelectedItem=null;};
+    window.parent.addEventListener('kairos:open-item',open);
+    window.addEventListener('pagehide',()=>window.parent.removeEventListener('kairos:open-item',open),{once:true});
+    const selected=window.parent.kairosSelectedItem;window.parent.kairosSelectedItem=null;if(selected&&!recycle)openFile(selected);
 }
 function renderFiles(){
     body.replaceChildren();status('');const state=readDesktop();const recycle=mode==='recycle';
@@ -54,18 +54,18 @@ function renderFiles(){
 function openFile(id){
     const item=readDesktop().items.find(x=>x.id===id);if(!item||item.deleted){renderFiles();return;}
     if(item.kind==='folder'){folder=id;renderFiles();return;}
-    if(item.kind==='shortcut'){window.parent.uphos.launch(item.app);return;}
+    if(item.kind==='shortcut'){window.parent.kairos.launch(item.app);return;}
     body.replaceChildren();body.append(button('Volver',renderFiles),node('h2',item.name));
-    if(item.kind==='download'){body.append(node('p','Instalador de demostración. UPHOS no ejecuta archivos EXE ni instala programas en el equipo.'));return;}
+    if(item.kind==='download'){body.append(node('p','Instalador de demostración. KAIRÓS OS no ejecuta archivos EXE ni instala programas en el equipo.'));return;}
     if(item.kind==='zip'){body.append(node('p','Contenedor comprimido virtual vacío. No es un ZIP exportable.'));return;}
     const label=node('label','Contenido del documento');const area=node('textarea');area.value=item.content||'';area.setAttribute('aria-label','Contenido del documento');label.append(area);body.append(label);
     if(item.kind==='word')body.append(node('p','Documento de Word simulado: editor de texto sin formato DOCX exportable.'));
-    body.append(button('Guardar',()=>{mutate(s=>{const current=s.items.find(x=>x.id===id);if(!current||current.deleted)throw Error('El documento ya no está disponible.');current.content=area.value;});status('Documento guardado en UPHOS.');}));
+    body.append(button('Guardar',()=>{mutate(s=>{const current=s.items.find(x=>x.id===id);if(!current||current.deleted)throw Error('El documento ya no está disponible.');current.content=area.value;});status('Documento guardado en KAIROS.');}));
 }
 function demo(){
-    const configs={camara:['Cámara','Vista previa de demostración. No accede a cámara ni micrófono.'],webadpp:['Clima','Datos de ejemplo para la presentación.'],video:['Videos','Reproductor de demostración sin archivos del equipo.'],spotify:['UPHOS Beats','Controles virtuales sin salida de audio.'],imagenes:['Imágenes','Galería de demostración de UPHOS.']};
-    const [title,description]=configs[mode]||['Aplicación','Demostración de UPHOS'];heading(title,description);
-    const preview=node('div',mode==='webadpp'?'☀ 26 °C · Tegucigalpa':mode==='camara'?'◉ Vista previa virtual':mode==='imagenes'?'Paisaje UPHOS':'▶ En pausa');preview.className='virtual-preview';body.append(preview);
+    const configs={camara:['Cámara','Vista previa de demostración. No accede a cámara ni micrófono.'],webadpp:['Clima','Datos de ejemplo para la presentación.'],video:['Videos','Reproductor de demostración sin archivos del equipo.'],spotify:['KAIRÓS OS Beats','Controles virtuales sin salida de audio.'],imagenes:['Imágenes','Galería de demostración de KAIROS.']};
+    const [title,description]=configs[mode]||['Aplicación','Demostración de KAIRÓS OS'];heading(title,description);
+    const preview=node('div',mode==='webadpp'?'☀ 26 °C · Tegucigalpa':mode==='camara'?'◉ Vista previa virtual':mode==='imagenes'?'Paisaje KAIRÓS OS':'▶ En pausa');preview.className='virtual-preview';body.append(preview);
     if(mode==='camara')controls.append(button('Capturar imagen virtual',()=>{createItem('text','Captura-'+Date.now()+'.txt');status('Captura de demostración agregada al escritorio.');}));
     if(mode==='video'||mode==='spotify'){let playing=false;controls.append(button('Reproducir / Pausar',()=>{playing=!playing;preview.textContent=playing?'▶ Reproduciendo demostración':'▶ En pausa';}));}
 }

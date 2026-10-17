@@ -1,5 +1,8 @@
 # 01. Estado actual de las bases históricas de Kairós OS
 
+> Documento de planificación o revisión previa. El [manual técnico actual](guia/arquitectura.md) describe el código disponible; las capacidades Linux de esta especificación siguen propuestas.
+
+
 ## Dos productos que todavía no comparten núcleo
 
 `simulador/` implementa arranque e instalación académicos, cuentas, recuperación, consola y archivos virtuales. `Interfaz-/` implementa el escritorio gráfico. No hay un escritorio Linux, imagen de arranque, kernel propio ni una integración entre ambos volúmenes de datos.
@@ -51,15 +54,15 @@ Las rutas de esta tabla parten de la raíz del repositorio.
 
 ## Límites relevantes para la migración
 
-1. `desktop-store.js` guarda `uphos.desktop.v1`; IndexedDB usa `uphos-simulator`. No se sincronizan, ni comparten credenciales.
+1. `desktop-store.js` guarda `kairos.desktop.v1`; IndexedDB usa `kairos-simulator`. No se sincronizan, ni comparten credenciales.
 2. `almacen-local.cjs` materializa copias de un estado JSON. Cambiar el espejo desde Linux no actualiza ese estado. No usarlo como gestor de `$HOME`.
 3. `template.js` permite scripts y mismo origen en iframes locales; eso no ofrece aislamiento fuerte ante una app comprometida. El código hijo también consulta `window.parent`. Debe revisarse antes de añadir privilegios.
 4. `main.cjs` ya habilita sandbox/contextIsolation y deshabilita Node en renderer. También comprueba ventana y URL del frame para cada canal. Es una base útil, no una API de administración.
 5. `scripts/serve.js` conserva `/api/system-status` en loopback con restricciones Host/Origin. No se ejecutó el servidor ni el lector durante este estudio. El `hardware.js` actual no hace fetch: el diagrama antiguo de `Interfaz-/docs/arquitectura.md` ya no describe ese enlace.
-6. Esta copia no expone un repositorio Git en la raíz. No se pueden confirmar aquí ramas ni archivos rastreados/modificados; las afirmaciones Git de informes anteriores son históricas. Se conservaron las fuentes mediante verificación de hashes.
+6. El repositorio está enlazado a `Quiroz-Zuniga/KAIROS-OS-`, con desarrollo en `main`. El manual técnico documenta la implementación posterior al cambio de identidad.
 
 La estructura actual ya es modular en varios puntos. La necesidad es introducir fronteras de plataforma, no reemplazar toda la aplicación ni imponer un framework.
 
 ## Alcance de la revisión Kairós OS
 
-La especificación cambia el producto objetivo a distribución/entorno Debian real, pero no cambia por sí sola lo implementado. Los identificadores UPHOS de este inventario son evidencia literal. [GAP_ANALYSIS](GAP_ANALYSIS.md) añade marca, sesión, Code, AI, EWMH y archivos afectados. Logo/Kairos.png existe como referencia raster; no existe todavía la familia SVG oficial. No se ejecutaron pruebas de aplicación ni VM en esta entrega documental.
+La especificación cambia el producto objetivo a distribución/entorno Debian real, pero no cambia por sí sola lo implementado. Los identificadores KAIRÓS OS de este inventario son evidencia literal. [GAP_ANALYSIS](GAP_ANALYSIS.md) añade marca, sesión, Code, AI, EWMH y archivos afectados. Logo/Kairos.png existe como referencia raster; no existe todavía la familia SVG oficial. No se ejecutaron pruebas de aplicación ni VM en esta entrega documental.

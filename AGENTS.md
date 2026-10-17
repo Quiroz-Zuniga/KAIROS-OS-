@@ -1,8 +1,8 @@
-# AGENTS.md — UPHOS
+# AGENTS.md — KAIRÓS OS
 
 ## Proyecto
 
-UPHOS es una simulación funcional de un sistema operativo desarrollada
+KAIRÓS OS es una simulación funcional de un sistema operativo desarrollada
 como proyecto académico de la Universidad Politécnica de Honduras.
 
 La simulación se desarrollará principalmente utilizando:
@@ -17,7 +17,7 @@ usuarios, configuración y navegación web.
 
 ## Naturaleza del proyecto
 
-UPHOS en esta etapa es una SIMULACIÓN.
+KAIRÓS OS en esta etapa es una SIMULACIÓN.
 
 No es un sistema operativo real.
 No es una distribución Linux.
@@ -42,3 +42,4 @@ simulador/
 ├── assets/
 ├── index.html
 └── README.md
+```

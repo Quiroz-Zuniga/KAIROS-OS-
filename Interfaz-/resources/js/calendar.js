@@ -1,5 +1,5 @@
 import { categories,dateKey,weekDates,monthDates,shiftMonth,minutes,prepareEvent,normalizeEvents } from './calendar/model.js';
-const $=selector=>document.querySelector(selector), preferences=window.UPHOSPreferences;
+const $=selector=>document.querySelector(selector), preferences=window.KAIROSPreferences;
 const create=(tag,className,text)=>{const el=document.createElement(tag);if(className)el.className=className;if(text!==undefined)el.textContent=text;return el;};
 const weekdays=['LUN','MAR','MIÉ','JUE','VIE','SÁB','DOM'];
 const format=(date,options)=>date.toLocaleDateString('es-HN',options);

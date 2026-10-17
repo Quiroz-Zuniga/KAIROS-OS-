@@ -16,7 +16,7 @@ export function crearNucleoTerminal(instalacion, repositorio, sesion, ahora = ()
   const cambiar = ruta => { const previo = actual; actual = ruta; anterior = previo; };
   const respuesta = (clave, parametros) => ({ clave, parametros });
   return {
-    prompt() { return `${sesion.usuario}@${datos.preferencias.hostname ?? 'uphos'} ${rutaVisible(actual)}>`; },
+    prompt() { return `${sesion.usuario}@${datos.preferencias.hostname ?? 'kairos'} ${rutaVisible(actual)}>`; },
     rutaActual() { return actual; },
     temaActual() { return datos.preferencias.tema ?? 'oscuro'; },
     tecladoActual() { return datos.preferencias.teclado; },
@@ -156,5 +156,5 @@ export function crearNucleoTerminal(instalacion, repositorio, sesion, ahora = ()
 }
 
 function tDisco(datos, bytes) {
-  return traducir('terminal.discos', { capacidad: datos.disco.capacidadGiB, usada: (bytes / 1024 / 1024).toFixed(2) }) + '\n' + datos.disco.particiones.map(p => `${p.nombre || p.id || 'UPHOS'} · ${p.capacidadGiB} GiB · ${p.formato || '—'}`).join('\n');
+  return traducir('terminal.discos', { capacidad: datos.disco.capacidadGiB, usada: (bytes / 1024 / 1024).toFixed(2) }) + '\n' + datos.disco.particiones.map(p => `${p.nombre || p.id || 'KAIROS'} · ${p.capacidadGiB} GiB · ${p.formato || '—'}`).join('\n');
 }

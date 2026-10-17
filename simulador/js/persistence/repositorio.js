@@ -8,7 +8,7 @@ export function crearRepositorio(indexedDB = globalThis.indexedDB) {
     if (!indexedDB) throw new Error(t('error.indexedDB'));
     conexion = await new Promise((resolver, rechazar) => {
       let bloqueada = false;
-      const solicitud = indexedDB.open('uphos-simulator', 1);
+      const solicitud = indexedDB.open('kairos-simulator', 1);
       solicitud.onupgradeneeded = () => solicitud.result.createObjectStore('sistema');
       solicitud.onsuccess = () => {
         const base = solicitud.result;
@@ -45,7 +45,7 @@ export function crearRepositorio(indexedDB = globalThis.indexedDB) {
       const base = await abrir();
       return new Promise((resolver, rechazar) => {
         const transaccion = base.transaction('sistema', 'readwrite');
-        // Solo elimina la instalación de UPHOS; no borra otras bases del sitio.
+        // Solo elimina la instalación de KAIROS; no borra otras bases del sitio.
         const almacen = transaccion.objectStore('sistema');
         let conflicto = false;
         if (revisionEsperada === undefined) almacen.delete('instalacion');

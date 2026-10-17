@@ -1,5 +1,8 @@
 # 12. ISO Kairós OS con Debian live-build
 
+> Documento de planificación o revisión previa. El [manual técnico actual](guia/arquitectura.md) describe el código disponible; las capacidades Linux de esta especificación siguen propuestas.
+
+
 Estado: arquitectura y plan; no existe receta ejecutable, ISO ni evidencia de boot en este árbol. Un portable Electron de Windows no es una distribución ni sustituye este trabajo.
 
 ## Flujo

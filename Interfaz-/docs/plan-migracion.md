@@ -1,4 +1,4 @@
-# Plan de migración y adaptabilidad de UPHOS
+# Plan de migración y adaptabilidad de KAIRÓS OS
 
 **Fecha:** 15 de octubre de 2026.  
 **Estado:** implementación aplicada dentro de `Interfaz-/`; validación y límites en [reporte-migracion.md](reporte-migracion.md).  
@@ -8,7 +8,7 @@
 
 **Adaptar la lógica; preservar la experiencia del usuario.** La migración no autoriza reemplazar el escritorio por un dashboard ni rehacer las aplicaciones para ajustarlas a una arquitectura nueva. La arquitectura debe ofrecer adaptadores para los componentes existentes.
 
-Este plan toma como base las dos especificaciones proporcionadas: «Transformar el simulador antiguo en un núcleo de sistema operativo virtual reutilizable para UPHOS» y «Migrar y adaptar la interfaz antigua para convertirla en la GUI oficial de UPHOS», junto con la corrección posterior del usuario de conservar toda la interfaz.
+Este plan toma como base las dos especificaciones proporcionadas: «Transformar el simulador antiguo en un núcleo de sistema operativo virtual reutilizable para KAIRÓS OS» y «Migrar y adaptar la interfaz antigua para convertirla en la GUI oficial de KAIRÓS OS», junto con la corrección posterior del usuario de conservar toda la interfaz.
 
 Cuando las especificaciones anteriores sugieran otro fondo, iconografía o distribución, prevalece la instrucción de preservar la interfaz. La instrucción del 15 de octubre de 2026 autoriza aplicar los diez colores institucionales a las superficies y controles. Los tokens institucionales `#181858` y `#E8A810` se incorporarán sin sustituir sus fondos, iconos y controles. La adaptación de marca incluye nombres, textos, metadatos y los colores autorizados; no cambia fondos, iconos ni la composición del escritorio.
 
@@ -125,11 +125,11 @@ Los datos provenientes de formularios, almacenamiento, aplicaciones o mensajes s
 | Gestor de tareas personal | Mantener listas, árbol/hash y datos válidos de la aplicación | No confundir tareas personales con procesos del sistema |
 | Vista de procesos / System Monitor | Adaptar primero la tabla existente; añadir vistas para memoria, scheduler, E/S, recursos, servicios, dispositivos y eventos | Todos los datos y acciones provienen del mismo Core |
 | Terminal antigua | Conservar acceso y referencia visual; aislar comandos antiguos | No ejecutar comandos reales ni construir otra terminal provisional |
-| Explorador antiguo | Conservar presentación y acceso; preparar conexión posterior | No crear otro árbol de archivos que compita con UPHFS |
+| Explorador antiguo | Conservar presentación y acceso; preparar conexión posterior | No crear otro árbol de archivos que compita con KAIROSFS |
 | Login, registro y usuario | Conservar pantallas; aislar autenticación local insegura | Sin contraseñas nuevas en texto plano ni afirmaciones de sesión autenticada |
 | Cámara, búsqueda y clima | Revisar proveedores y permisos actuales; conservar vista y acceso | Sólo declarar disponible lo comprobado; no confundir permisos del navegador con dispositivos virtuales |
 | Antivirus | Conservar presentación; revisar qué representa su análisis | No presentar un escaneo simulado como protección real del equipo |
-| Configuración y Acerca de | Añadir sólo preferencias de GUI y descripción honesta de UPHOS | Tema funcional y declaración de sistema operativo virtual simulado |
+| Configuración y Acerca de | Añadir sólo preferencias de GUI y descripción honesta de KAIRÓS OS | Tema funcional y declaración de sistema operativo virtual simulado |
 
 Una capacidad no disponible seguirá siendo reconocible desde su acceso original y mostrará su estado. La disponibilidad y las restricciones quedarán registradas por aplicación. No se borrarán aplicaciones sólo para reducir el trabajo de integración.
 
@@ -194,7 +194,7 @@ Una capacidad no disponible seguirá siendo reconocible desde su acceso original
 1. Ejecutar la matriz final de pruebas, comprobaciones de arquitectura, build y revisión de dependencias.
 2. Revisar cada pantalla contra su referencia original; documentar diferencias intencionales y su motivo.
 3. Actualizar README, arquitectura, guía de GUI y reporte de migración con resultados exactos, limitaciones y aplicaciones pendientes.
-4. Definir puntos de conexión futuros para terminal, UPHFS, sesiones y plataforma sin implementarlos en esta fase.
+4. Definir puntos de conexión futuros para terminal, KAIROSFS, sesiones y plataforma sin implementarlos en esta fase.
 
 **Salida:** interfaz preservada, núcleo como única fuente de estado, distribución reproducible y evidencia suficiente para revisar la migración.
 
@@ -248,7 +248,7 @@ Antes de cada etapa se preservará una referencia recuperable de los cambios rel
 
 ## 9. Alcance posterior, sin adelantar implementación
 
-La integración de la terminal UPHOS existente, UPHFS, usuarios/sesiones y sus mecanismos de credenciales será una fase posterior basada en sus implementaciones reales. Después podrán incorporarse Electron, IPC/preload, persistencia tecnológica e instalador.
+La integración de la terminal KAIRÓS OS existente, KAIROSFS, usuarios/sesiones y sus mecanismos de credenciales será una fase posterior basada en sus implementaciones reales. Después podrán incorporarse Electron, IPC/preload, persistencia tecnológica e instalador.
 
 En esta fase se dejan fronteras claras y accesos visuales compatibles. No se construyen sustitutos temporales de esos módulos ni se asume que ya están disponibles.
 

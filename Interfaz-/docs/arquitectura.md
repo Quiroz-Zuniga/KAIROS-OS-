@@ -1,4 +1,4 @@
-# Arquitectura de la interfaz UPHOS
+# Arquitectura de la interfaz KAIRÓS OS
 
 Todos los archivos de esta entrega están dentro de `Interfaz-/`. El simulador hermano no se importa ni se modifica.
 
@@ -35,13 +35,13 @@ El monitor consulta el controller del escritorio padre. No importa el núcleo ni
 
 `preferences.js` valida datos de presentación y conserva claves de calendario, galería, tareas y wallpaper. JSON dañado y almacenamiento inaccesible no impiden el arranque; los errores de escritura tienen aviso visible. Los objetos URL de videos cargados duran lo que dura la ventana; no se guardan URLs caducadas. No se persisten snapshots como sesiones.
 
-El bloqueo abre directamente el escritorio, sin login ni registro. No se leen, copian ni crean contraseñas. La GUI no incluye terminal. Los datos de usuario deberán proceder de la instalación cuando se conecte su contrato definitivo. Los registros previos permanecen sin modificar; no se crea un perfil ficticio. UPHFS queda pendiente de integración. El explorador conserva su HTML, pero no carga su antiguo VFS. El editor conserva edición/formato y comunica que guardar/listar no está disponible. Antivirus, clima y noticias declaran ausencia de proveedor.
+El bloqueo abre directamente el escritorio, sin login ni registro. No se leen, copian ni crean contraseñas. La GUI no incluye terminal. Los datos de usuario deberán proceder de la instalación cuando se conecte su contrato definitivo. Los registros previos permanecen sin modificar; no se crea un perfil ficticio. KAIROSFS queda pendiente de integración. El explorador conserva su HTML, pero no carga su antiguo VFS. El editor conserva edición/formato y comunica que guardar/listar no está disponible. Antivirus, clima y noticias declaran ausencia de proveedor.
 
 Cámara, micrófono y búsqueda web dependen de permisos/proveedores externos; no representan dispositivos físicos administrados por el Core. Abrir la cámara no solicita permisos automáticamente.
 
 ## Tema y dependencias
 
-`resources/css/uphos.css` define los diez colores solicitados. Se conservan la disposición, las rutas y los iconos de aplicaciones; por petición posterior, se sustituyeron el logo, el wallpaper y la lupa del sistema antiguo por la marca UPHOS. Las superficies usan azul institucional/profundo/noche; los acentos y el foco usan dorados. Tailwind se recompila desde `resources/src/input.css` sin perder los componentes originales.
+`resources/css/kairos.css` define los diez colores solicitados. Se conservan la disposición, las rutas y los iconos de aplicaciones; por petición posterior, se sustituyeron el logo, el wallpaper y la lupa del sistema antiguo por la marca KAIROS. Las superficies usan azul institucional/profundo/noche; los acentos y el foco usan dorados. Tailwind se recompila desde `resources/src/input.css` sin perder los componentes originales.
 
 `resources/vendor/` contiene dependencias con versión fijada, fuentes Inter y licencias. El shell, calendario e iconos no necesitan CDN. Las aplicaciones de terceros conservan sus recursos; algunas fuentes decorativas importadas por sus CSS siguen siendo opcionales y requieren conexión. El estilo de respaldo sigue funcionando sin ellas. No se descargan recursos al abrir las páginas principales.
 

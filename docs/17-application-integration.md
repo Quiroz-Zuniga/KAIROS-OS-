@@ -1,5 +1,8 @@
 # 17. Application Registry e integración nativa
 
+> Documento de planificación o revisión previa. El [manual técnico actual](guia/arquitectura.md) describe el código disponible; las capacidades Linux de esta especificación siguen propuestas.
+
+
 Estado: diseño; el catálogo actual apunta a HTML. Primer hito usa una entrada nativa validada; el registro completo sigue en semana 3.
 
 Descubrir `$XDG_DATA_HOME/applications` (por defecto ~/.local/share/applications), `$XDG_DATA_DIRS/applications` (por defecto /usr/local/share y /usr/share), con prioridad XDG y Desktop File ID estable. Incluir subdirectorios según especificación. No tratar directorios de descargas como catálogo. Las entradas del usuario son configuraciones ejecutables de ese usuario: se lanzan por acción explícita y nunca se consideran administración confiable.

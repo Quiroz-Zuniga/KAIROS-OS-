@@ -28,4 +28,4 @@ Se revisaron el texto y las capturas de Prueba de Consola.docx. Solo se aplicó 
 
 **Clic en el fondo:** minimizar conserva el trabajo abierto y cumple la petición de despejar el escritorio. No se cierran permanentemente las aplicaciones por hacer clic en el fondo.
 
-**Documentación anterior:** los informes situados directamente en docs/ son antecedentes de la migración; sus descripciones del panel real y de UPHFS no representan el nuevo volumen de interfaz. Este manual documenta el comportamiento de esta revisión.
+**Documentación anterior:** los informes situados directamente en docs/ son antecedentes de la migración; sus descripciones del panel real y de KAIROSFS no representan el nuevo volumen de interfaz. Este manual documenta el comportamiento de esta revisión.

@@ -1,5 +1,8 @@
 # 07. Integración Linux de Kairós OS
 
+> Documento de planificación o revisión previa. El [manual técnico actual](guia/arquitectura.md) describe el código disponible; las capacidades Linux de esta especificación siguen propuestas.
+
+
 Contrato y módulos detallados en [20](20-system-layer.md). El proceso principal recibe IPC de capacidades específicas, llama APIs Node o helper Python por stdin/stdout y utiliza D-Bus cuando el servicio ya lo ofrece. Unix sockets solo si aparece un cliente independiente. No introducir REST localhost para CPU, archivos o ejecución.
 
 El endpoint `/api/system-status` existente pertenece al desarrollo web histórico. No es el System Layer: hardware.js actual no lo consume. Reusar lectores, añadir pruebas y cambiar transporte al integrar; no ampliar el endpoint con mutaciones.

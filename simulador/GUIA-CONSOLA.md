@@ -1,6 +1,6 @@
-# Guía de los 120 comandos de UPHOS
+# Guía de los 120 comandos de KAIRÓS OS
 
-Los comandos funcionan sobre el entorno de UPHOS. Los nombres siguen en español; idioma en cambia los mensajes y ejemplos de ayuda. Usa ayuda comando para ver una tabla con sintaxis, función y ejemplo.
+Los comandos funcionan sobre el entorno de KAIROS. Los nombres siguen en español; idioma en cambia los mensajes y ejemplos de ayuda. Usa ayuda comando para ver una tabla con sintaxis, función y ejemplo.
 
 ## Empezar con carpetas y archivos
 
@@ -32,9 +32,9 @@ cambiarusuario pedro
 cuenta clave
 ~~~
 
-La primera orden solicita después la contraseña en una entrada oculta. El nombre de usuario y el nombre completo se ven normalmente. No incluyas contraseñas en los ejemplos que compartas. UPHOS rechaza una clave que ya utiliza otra cuenta. cambiarusuario pide las credenciales de la cuenta seleccionada; no basta con cambiar el prompt. Ctrl+C o Escape cancela una contraseña pendiente.
+La primera orden solicita después la contraseña en una entrada oculta. El nombre de usuario y el nombre completo se ven normalmente. No incluyas contraseñas en los ejemplos que compartas. KAIRÓS OS rechaza una clave que ya utiliza otra cuenta. cambiarusuario pide las credenciales de la cuenta seleccionada; no basta con cambiar el prompt. Ctrl+C o Escape cancela una contraseña pendiente.
 
-## Red de UPHOS
+## Red de KAIRÓS OS
 
 ~~~text
 ip
@@ -46,7 +46,7 @@ desconectar
 conectar
 ~~~
 
-Ping se usa para comprobar conectividad. En UPHOS, sus respuestas son simuladas: no se consulta la IP real de Google ni se envían paquetes ICMP. La instalación recibe una IP privada guardada; reiniciar conserva la IP y reinstalar asigna una nueva mediante el registro de asignaciones. Puertos y rutas también son modelos virtuales.
+Ping se usa para comprobar conectividad. En KAIRÓS OS, sus respuestas son simuladas: no se consulta la IP real de Google ni se envían paquetes ICMP. La instalación recibe una IP privada guardada; reiniciar conserva la IP y reinstalar asigna una nueva mediante el registro de asignaciones. Puertos y rutas también son modelos virtuales.
 
 ## Ediciones, teclados y licencias
 
@@ -57,7 +57,7 @@ Plus admite tres cuentas y Pro ocho. Pro requiere una clave del archivo LICENCIA
 | Comando | Uso | Función | Ejemplo |
 |---|---|---|---|
 | abrirpuerto | `abrirpuerto numero servicio` | Registra un puerto virtual con el nombre de su servicio. | `abrirpuerto 8080 pruebas` |
-| activar | `activar clave` | Valida una licencia académica de Pro; requiere administrador. | `activar UPHOS-PRO-H7K2-M9Q4-T6XA` |
+| activar | `activar clave` | Valida una licencia académica de Pro; requiere administrador. | `activar KAIROS-PRO-H7K2-M9Q4-T6XA` |
 | agregargrupo | `agregargrupo grupo usuario` | Agrega una cuenta existente a un grupo. | `agregargrupo alumnos pedro` |
 | agregarlinea | `agregarlinea ruta "texto"` | Agrega una línea al final y guarda. | `agregarlinea nota.txt "Nueva tarea"` |
 | agregarruta | `agregarruta red/prefijo puerta` | Agrega una ruta al modelo de red. | `agregarruta 10.1.0.0/16 10.0.0.1` |
@@ -107,7 +107,7 @@ Plus admite tres cuentas y Pro ocho. Pro requiere una clave del archivo LICENCIA
 | editarlinea | `editarlinea ruta numero "texto"` | Reemplaza una línea por su número y guarda. | `editarlinea nota.txt 1 "Inicio"` |
 | entrar | `entrar [ruta]` | Entra en una carpeta; sin ruta vuelve a tu hogar. | `entrar proyectos\tarea` |
 | escribible | `escribible ruta` | Permite volver a escribir un archivo. | `escribible nota.txt` |
-| escribir | `escribir ruta "contenido"` | Reemplaza el contenido de un archivo existente. Usa comillas para espacios; "" lo vacía. | `escribir nota.txt "Hola UPHOS"` |
+| escribir | `escribir ruta "contenido"` | Reemplaza el contenido de un archivo existente. Usa comillas para espacios; "" lo vacía. | `escribir nota.txt "Hola KAIRÓS OS"` |
 | estado | `estado` | Muestra el estado y la ruta actual. | `estado` |
 | existe | `existe ruta` | Comprueba si existe un elemento accesible. | `existe nota.txt` |
 | extension | `extension ruta` | Muestra la extensión de una ruta. | `extension nota.txt` |
@@ -154,7 +154,7 @@ Plus admite tres cuentas y Pro ocho. Pro requiere una clave del archivo LICENCIA
 | reemplazar | `reemplazar ruta "buscar" "nuevo"` | Sustituye todas las coincidencias literales y guarda. | `reemplazar nota.txt "hola" "saludo"` |
 | registrardns | `registrardns dominio ip` | Agrega o actualiza un registro DNS simulado. | `registrardns aula.local 10.0.0.20` |
 | reiniciar | `reiniciar` | Cierra la sesión y vuelve al arranque; conserva archivos. | `reiniciar` |
-| reinstalar | `reinstalar [confirmar]` | Prepara una instalación limpia. reinstalar confirmar elimina la cuenta y todos los archivos de UPHOS y abre el instalador. | `reinstalar confirmar` |
+| reinstalar | `reinstalar [confirmar]` | Prepara una instalación limpia. reinstalar confirmar elimina la cuenta y todos los archivos de KAIRÓS OS y abre el instalador. | `reinstalar confirmar` |
 | renombrar | `renombrar ruta nombre` | Cambia el nombre sin moverlo a otra carpeta. | `renombrar nota.txt tarea.txt` |
 | resolver | `resolver dominio` | Consulta una dirección en la tabla DNS simulada. | `resolver google.com` |
 | respaldo | `respaldo archivo` | Guarda un respaldo JSON de tu carpeta de usuario. | `respaldo copia.json` |
@@ -173,9 +173,9 @@ Plus admite tres cuentas y Pro ocho. Pro requiere una clave del archivo LICENCIA
 | usuario | `usuario` | Muestra el usuario de la sesión. | `usuario` |
 | usuarios | `usuarios` | Consulta el usuario instalado, sin revelar sus credenciales. | `usuarios` |
 | vaciar | `vaciar ruta` | Vacía el contenido de un archivo. | `vaciar nota.txt` |
-| version | `version` | Consulta edición y arquitectura de UPHOS. | `version` |
+| version | `version` | Consulta edición y arquitectura de KAIROS. | `version` |
 | volver | `volver [-]` | Sin argumentos va al padre; con - regresa al directorio anterior. | `volver -` |
-| zona | `zona [valor]` | Consulta o guarda la zona horaria de UPHOS. | `zona America/Tegucigalpa` |
+| zona | `zona [valor]` | Consulta o guarda la zona horaria de KAIROS. | `zona America/Tegucigalpa` |
 
 configurar, particionar, formatear e instalar se utilizan en Live. reinstalar requiere una instalación activa y la cuenta administradora. Las órdenes de cuentas y grupos que administran otros usuarios requieren privilegios de administrador. Los grupos organizan usuarios; no conceden acceso a archivos de otras cuentas.
 
@@ -201,6 +201,6 @@ configurar respuesta
 
 El segundo comando pide la respuesta de forma oculta. Las respuestas no distinguen mayusculas ni espacios repetidos; las contrasenas si distinguen mayusculas. No uses una respuesta que otras personas puedan adivinar facilmente.
 
-En el acceso, `recuperar` recupera la contrasena mediante la pregunta de seguridad. `restaurar` solicita escribir `confirmar` para borrar la instalacion completa de UPHOS y abrir el asistente para una instalacion limpia. Escape cancela y ningun dato se borra hasta confirmar. No requiere recordar la contrasena. El borrado pasa por el nucleo y verifica que la instalacion no haya cambiado mientras se confirma. Dentro de una sesion iniciada, `restaurar` conserva su funcion de restaurar respaldos de archivos; `reinstalar confirmar` permite borrar la instalacion desde esa sesion.
+En el acceso, `recuperar` recupera la contrasena mediante la pregunta de seguridad. `restaurar` solicita escribir `confirmar` para borrar la instalacion completa de KAIRÓS OS y abrir el asistente para una instalacion limpia. Escape cancela y ningun dato se borra hasta confirmar. No requiere recordar la contrasena. El borrado pasa por el nucleo y verifica que la instalacion no haya cambiado mientras se confirma. Dentro de una sesion iniciada, `restaurar` conserva su funcion de restaurar respaldos de archivos; `reinstalar confirmar` permite borrar la instalacion desde esa sesion.
 
 Los nombres de usuario admiten letras mayusculas y minusculas, conservando la escritura elegida (por ejemplo Jorge). Para identificar una cuenta en el acceso, recuperacion o comandos de usuarios, Jorge, jorge y JORGE se consideran el mismo usuario. No se permiten cuentas duplicadas que solo cambien por mayusculas. Las carpetas y el prompt conservan el nombre guardado; las contrasenas si distinguen mayusculas. La longitud sigue siendo de 3 a 24 caracteres, comenzando con una letra sin tilde y admitiendo numeros, guion y guion bajo.

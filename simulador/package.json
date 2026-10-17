@@ -1,11 +1,11 @@
 {
-  "name": "uphos-simulator",
+  "name": "kairos-simulator",
   "version": "0.2.0",
   "private": true,
   "type": "module",
   "main": "electron/main.cjs",
-  "description": "UPHOS Terminal Edition",
-  "author": "Proyecto UPHOS",
+  "description": "KAIRÓS OS · simulación académica de sistema operativo",
+  "author": "Proyecto KAIROS",
   "scripts": {
     "start": "node servidor.js",
     "test": "node --test tests/*.test.js",
@@ -17,8 +17,8 @@
     "electron-builder": "26.15.3"
   },
   "build": {
-    "appId": "hn.uphos.simulator",
-    "productName": "UPHOS",
+    "appId": "hn.kairos.simulator",
+    "productName": "KAIRÓS OS",
     "asar": true,
     "directories": {
       "output": "../entregables",
@@ -38,7 +38,7 @@
         "portable"
       ],
       "icon": "assets/logo.ico",
-      "artifactName": "UPHOS-Portable-${version}-${arch}.${ext}"
+      "artifactName": "KAIROS-Portable-${version}-${arch}.${ext}"
     },
     "portable": {
       "requestExecutionLevel": "user"

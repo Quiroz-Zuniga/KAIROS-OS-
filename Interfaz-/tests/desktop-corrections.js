@@ -11,7 +11,7 @@ export async function verifyDesktop(page, base) {
     await page.locator('[data-app=calculator]').click();await page.locator('.window').waitFor();
     await page.locator('#desktop-surface').click({position:{x:1100,y:120}});
     check('Clic en fondo oculta ventana',await page.locator('.window').isHidden(),true);
-    await page.locator('.uph-restore').click();await page.locator('.close-btn').click();
+    await page.locator('.kairos-restore').click();await page.locator('.close-btn').click();
     await page.locator('#boton-inicio').click();await page.locator('#app-search').fill('');
     await page.locator('[data-app=calculator]').dragTo(page.locator('#desktop-surface'),{targetPosition:{x:450,y:150}});
     check('Arrastre crea acceso',await page.locator('.icono-escritorio').filter({hasText:'Calculadora'}).count(),1);
@@ -47,15 +47,15 @@ export async function verifyDesktop(page, base) {
     check('Búsqueda muestra resultado',await frame.getByRole('heading',{name:'Wikipedia',exact:true}).count(),1);
     check('Búsqueda web sale del iframe',await frame.locator('a').getAttribute('target'),'_blank');
     await frame.getByRole('searchbox',{name:'Buscar',exact:true}).fill('WinRAR');await frame.getByRole('button',{name:'Buscar',exact:true}).click();
-    await frame.getByRole('button',{name:'Descargar en UPHOS'}).click();await frame.locator('#app-status').filter({hasText:'completada'}).waitFor();
-    check('Descarga virtual',await page.evaluate(()=>JSON.parse(localStorage.getItem('uphos.desktop.v1')).items.some(x=>x.name==='WinRAR-demo.exe'&&x.parent==='downloads')),true);
+    await frame.getByRole('button',{name:'Descargar en KAIRÓS OS'}).click();await frame.locator('#app-status').filter({hasText:'completada'}).waitFor();
+    check('Descarga virtual',await page.evaluate(()=>JSON.parse(localStorage.getItem('kairos.desktop.v1')).items.some(x=>x.name==='WinRAR-demo.exe'&&x.parent==='downloads')),true);
     await page.locator('#hardware-audio').click();await page.locator('#virtual-volume').fill('23');
     check('Volumen simulado',await page.locator('#audio-label').textContent(),'23%');
     await page.locator('#virtual-wifi').uncheck();check('Wi-Fi simulado',await page.locator('#network-label').textContent(),'Sin red');
     await page.locator('#desktop-surface').click({position:{x:1100,y:120}});
     for(const [label,status] of [['Bloquear','paused'],['Suspender','paused'],['Reiniciar','running'],['Apagar','stopped']]) {
         await page.locator('#power-button').click();await page.getByRole('button',{name:label,exact:true}).click();
-        check('Energía: '+label,await page.evaluate(()=>window.uphos.getState().status),status);
+        check('Energía: '+label,await page.evaluate(()=>window.kairos.getState().status),status);
         if(label==='Reiniciar'||label==='Apagar')check(label+' cierra ventanas',await page.locator('.window').count(),0);
         await page.locator('#session-resume').click();
     }

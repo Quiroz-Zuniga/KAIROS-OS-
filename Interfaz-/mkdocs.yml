@@ -1,14 +1,14 @@
 # Documentación de la interfaz de Rubén; no publica ni modifica otras ramas.
-site_name: UPHOS Interfaz
-site_description: Manual y correcciones de la interfaz gráfica de UPHOS
+site_name: KAIRÓS OS · Escritorio
+site_description: Manual y correcciones de la interfaz gráfica de KAIROS
 site_author: Rubén Quiroz
-repo_url: https://github.com/UPHOS/UPHOS
+repo_url: https://github.com/Quiroz-Zuniga/KAIROS-OS-
 edit_uri: ''
 docs_dir: docs/manual
 site_dir: site
 theme:
-  name: mkdocs
-  locale: es
+  name: material
+  language: es
 nav:
   - Inicio: index.md
   - Correcciones de interfaz: correcciones.md

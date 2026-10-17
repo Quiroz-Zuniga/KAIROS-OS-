@@ -1,7 +1,7 @@
 # Instalador
 `modelo.js` valida pasos y configuración. `particiones.js` gestiona el plan de disco (64 GiB, posiciones, espacio libre, destino, creación, edición y eliminación). `vista-particiones.js` presenta la tabla y sus herramientas. `instalar.js` ejecuta tareas y confirma el guardado; `interfaz.js` coordina pantallas, navegación y progreso.
 
-Los cambios de particiones antes de instalar solo afectan el borrador. Únicamente el destino se formatea en UPHFS. Las otras particiones se conservan como metadatos sin montaje ni formato. No se modifican discos reales.
+Los cambios de particiones antes de instalar solo afectan el borrador. Únicamente el destino se formatea en KAIROSFS. Las otras particiones se conservan como metadatos sin montaje ni formato. No se modifican discos reales.
 
 Las animaciones viven en `css/installer.css`, respetan movimiento reducido y no introducen temporizadores en el motor. El progreso depende de tareas completadas y el resultado final requiere guardar en IndexedDB.
 

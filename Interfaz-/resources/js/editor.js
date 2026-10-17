@@ -103,14 +103,14 @@ function saveFile() {
         const name=filename.value.trim();
         if(!name||name.length>100||/[\/\\]/.test(name))throw Error('Escribe un nombre válido sin barras.');
         if(state.items.some(x=>x.id!==item.id&&!x.deleted&&x.parent===item.parent&&x.name.toLowerCase()===name.toLowerCase()))throw Error('Ya existe un documento con ese nombre.');
-        item.name=name;item.content=textarea.value;virtualFiles.writeDesktop(state);listDocuments();editorStatus.textContent='Documento guardado en UPHOS.';
+        item.name=name;item.content=textarea.value;virtualFiles.writeDesktop(state);listDocuments();editorStatus.textContent='Documento guardado en KAIROS.';
     } catch(error) {editorStatus.textContent=error.message;}
 }
 import('./system/desktop-store.js').then(api=>{
     virtualFiles=api;listDocuments();
-    if(window.parent.uphosSelectedItem){loadDocument(window.parent.uphosSelectedItem);window.parent.uphosSelectedItem=null;}
+    if(window.parent.kairosSelectedItem){loadDocument(window.parent.kairosSelectedItem);window.parent.kairosSelectedItem=null;}
     textarea.dataset.ready='true';
-    const open=event=>{loadDocument(event.detail);window.parent.uphosSelectedItem=null;};
-    window.parent.addEventListener('uphos:open-editor',open);
-    window.addEventListener('pagehide',()=>window.parent.removeEventListener('uphos:open-editor',open),{once:true});
+    const open=event=>{loadDocument(event.detail);window.parent.kairosSelectedItem=null;};
+    window.parent.addEventListener('kairos:open-editor',open);
+    window.addEventListener('pagehide',()=>window.parent.removeEventListener('kairos:open-editor',open),{once:true});
 }).catch(error=>editorStatus.textContent=error.message);

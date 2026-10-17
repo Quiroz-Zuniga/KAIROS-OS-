@@ -1,5 +1,8 @@
 # 20. Kairós System Layer
 
+> Documento de planificación o revisión previa. El [manual técnico actual](guia/arquitectura.md) describe el código disponible; las capacidades Linux de esta especificación siguen propuestas.
+
+
 Bibliotecas en main y un helper de usuario cuando convenga; no daemon root monolítico. El renderer usa métodos explícitos `window.kairos.system.getCpu()`, `getMemory()` y `window.kairos.apps.launch(id)`. Los namespaces siguientes son contratos conceptuales; solo se publican métodos implementados.
 
 | Interfaz | Proveedor propuesto | MVP y permisos |

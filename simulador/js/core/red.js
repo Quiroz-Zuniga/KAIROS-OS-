@@ -6,7 +6,7 @@ export function siguienteDireccion(cursor) {
 }
 export const ipv4Valida = valor => typeof valor === 'string' && /^\d{1,3}(\.\d{1,3}){3}$/.test(valor) && valor.split('.').every(n => Number(n) <= 255);
 export function crearRed(ip = siguienteDireccion().ip) {
-  return { ip, conectada: true, dns: { 'google.com': '203.0.113.10', 'www.google.com': '203.0.113.10', 'uphos.local': ip }, rutas: [{ destino: '0.0.0.0/0', puerta: '10.0.0.1' }], puertos: [] };
+  return { ip, conectada: true, dns: { 'google.com': '203.0.113.10', 'www.google.com': '203.0.113.10', 'kairos.local': ip }, rutas: [{ destino: '0.0.0.0/0', puerta: '10.0.0.1' }], puertos: [] };
 }
 export function redValida(red) {
   return red == null || (ipv4Valida(red.ip) && typeof red.conectada === 'boolean' && red.dns && typeof red.dns === 'object' && !Array.isArray(red.dns) && Object.keys(red.dns).length<=100 && Object.entries(red.dns).every(([n,v]) => dominioValido(n) && ipv4Valida(v)) &&

@@ -21,7 +21,7 @@ test('El espacio libre conserva los huecos y no se superponen las particiones', 
   crearParticion(datos, 40, 8, 'Datos');
   assert.deepEqual(espaciosLibres(datos.particiones), [{ inicioGiB: 32, capacidadGiB: 8 }, { inicioGiB: 48, capacidadGiB: 16 }]);
   const antes = structuredClone(datos);
-  assert.throws(() => editarParticion(datos, 'principal', 48, 'UPHOS'), /disco.errorPlan/);
+  assert.throws(() => editarParticion(datos, 'principal', 48, 'KAIROS'), /disco.errorPlan/);
   assert.deepEqual(datos, antes);
   assert.throws(() => crearParticion(datos, 30, 8, 'Superposición'), /disco.errorPlan/);
   assert.deepEqual(datos, antes);
@@ -53,7 +53,7 @@ test('El destino exige 8 GiB y cualquier cambio requiere confirmar otra vez el f
   assert.ok(validarPaso('particionado', datos));
   eliminarParticion(datos, id);
   assert.deepEqual(espaciosLibres(datos.particiones), [{ inicioGiB: 0, capacidadGiB: 64 }]);
-  crearParticion(datos, 0, 64, 'UPHOS');
+  crearParticion(datos, 0, 64, 'KAIROS');
   assert.equal(validarPaso('particionado', datos), '');
 });
 test('Instalar conserva todas las particiones y solo formatea el destino seleccionado', async () => {
@@ -65,7 +65,7 @@ test('Instalar conserva todas las particiones y solo formatea el destino selecci
   const resultado = await instalar(datos, { guardar: async valor => { guardado = structuredClone(valor); } });
   assert.equal(resultado.disco.particionSistema, id);
   assert.equal(guardado.disco.particiones.length, 2);
-  assert.equal(guardado.disco.particiones.find(particion => particion.id === id).formato, 'UPHFS');
+  assert.equal(guardado.disco.particiones.find(particion => particion.id === id).formato, 'KAIROSFS');
   assert.equal(guardado.disco.particiones.find(particion => particion.id === 'principal').formato, null);
   assert.equal(guardado.disco.particiones[0].id, id);
   assert.equal(instalacionValida(guardado), true);

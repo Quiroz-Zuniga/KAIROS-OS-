@@ -1,4 +1,6 @@
-# Verificación de las correcciones
+# Evidencia histórica de las correcciones
+
+> Reporte de una revisión anterior. Sus resultados, ramas, capturas y límites corresponden a aquella ejecución. Para validar el código actual, ejecutar las pruebas indicadas en el manual técnico.
 
 Revisión realizada el 16 de octubre de 2026. El recorrido ejercitó acciones del escritorio, almacenamiento del navegador, ventanas de aplicaciones y reapertura de datos. Se usó Chrome automatizado con Playwright mediante APIs de JavaScript, con un origen HTTP local y contextos de prueba aislados. No se usó terminal ni línea de comandos.
 

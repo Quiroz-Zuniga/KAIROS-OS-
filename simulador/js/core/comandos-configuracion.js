@@ -13,7 +13,7 @@ export function ejecutarConfiguracion(nombre,args,datos,sesion) {
   switch(nombre){
     case 'teclado':case 'zona':case 'hostname':case 'tema':case 'idiomapermanente':{
       const clave=nombre==='idiomapermanente'?'idioma':nombre;
-      if(!args.length)return {texto:String(datos.preferencias[clave]??(clave==='hostname'?'uphos':clave==='tema'?'oscuro':'—'))};
+      if(!args.length)return {texto:String(datos.preferencias[clave]??(clave==='hostname'?'kairos':clave==='tema'?'oscuro':'—'))};
       const v=args[0];
       if((clave==='teclado'&&!Object.hasOwn(TECLADOS,v))||(clave==='zona'&&!ZONAS.includes(v))||(clave==='idioma'&&!Object.hasOwn(IDIOMAS,v))||(clave==='tema'&&!['oscuro','claro'].includes(v))||(clave==='hostname'&&!/^[a-z][a-z0-9-]{1,30}$/.test(v)))throw new Error('config.errorValor');
       datos.preferencias[clave]=v;return {...modificado(),idioma:clave==='idioma'?v:undefined,tema:clave==='tema'?v:undefined};

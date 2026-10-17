@@ -3,7 +3,7 @@ export function contextoTerminal() {
   let datos = {
     version: 1, estado: 'instalado', usuario: { usuario: 'jorge', nombre: 'Jorge' },
     preferencias: { idioma: 'es', zona: 'America/Tegucigalpa', teclado: 'latinoamericano' },
-    disco: { particiones: [{ capacidadGiB: 32, formato: 'UPHFS' }] },
+    disco: { particiones: [{ capacidadGiB: 32, formato: 'KAIROSFS' }] },
     archivos: [{ ruta: '/', tipo: 'carpeta' }, { ruta: '/sistema', tipo: 'carpeta' }]
   };
   const repositorio = {

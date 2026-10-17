@@ -1,5 +1,8 @@
 # Validación de la revisión arquitectónica
 
+> Documento de planificación o revisión previa. El [manual técnico actual](guia/arquitectura.md) describe el código disponible; las capacidades Linux de esta especificación siguen propuestas.
+
+
 Fecha: 2026-10-16. Resultado: **comprobaciones documentales aprobadas**. Esta afirmación no certifica integración Linux ni ISO.
 
 Se guardó un inventario de hashes SHA-256 de 543 archivos fuente, documentación y recursos antes de editar. Se excluyeron node_modules, dist, .git y __pycache__. La comparación final verifica 17 Markdown modificados y 15 nuevos (14 documentos en docs/ y el plan de raíz), sin archivos eliminados. Ningún archivo ejecutable, configuración, manifiesto, recurso binario o AGENTS.md cambió. Los directorios generados/dependencias no fueron editados; quedan fuera del inventario comparado.

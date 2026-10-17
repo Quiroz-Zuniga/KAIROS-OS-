@@ -1,6 +1,6 @@
 # 03. Comparación de arquitecturas
 
-> Revisión Kairós OS, 2026-10-16: la [ADR vigente](ARCHITECTURE_DECISION.md), el [roadmap](14-roadmap-8-weeks.md) y los [15 criterios MVP](MVP_ACCEPTANCE.md) gobiernan el alcance actual. Los nombres de código/datos UPHOS son históricos y se conservan. Las pruebas citadas de etapas anteriores no se ejecutaron en esta revisión.
+> Revisión Kairós OS, 2026-10-16: la [ADR vigente](ARCHITECTURE_DECISION.md), el [roadmap](14-roadmap-8-weeks.md) y los [15 criterios MVP](MVP_ACCEPTANCE.md) gobiernan el alcance actual. Los identificadores técnicos actuales usan `kairos`; el manual técnico describe la implementación vigente. Las pruebas citadas de etapas anteriores no se ejecutaron en esta revisión.
 
 A, B y C no son alternativas del mismo nivel. A sustituye el kernel; B elige una distribución personalizada; C define cómo la UI y servicios propios se integran sobre esa distribución. La propuesta combina **B como distribución y C como arquitectura de aplicaciones**.
 
@@ -16,7 +16,7 @@ A, B y C no son alternativas del mismo nivel. A sustituye el kernel; B elige una
 | Seguridad y estabilidad | Validación muy limitada y enorme superficie nueva | Base mantenida; configuración y UI siguen siendo responsabilidad Kairós OS |
 | Virtualización | Un hipervisor simplifica hardware, no elimina su implementación | Invitado estándar con drivers de VM |
 
-Un kernel de juguete no ejecutará automáticamente Electron ni aplicaciones Linux: necesitaría ABI, loader, libc y user space compatibles o portar sus runtimes. Recomendación: kernel Debian sin parches. `UPHOS Kernel Lab` puede arrancar en QEMU con serial y un experimento de memoria/procesos, en repositorio o carpeta experimental separada, sin dependencia de entrega.
+Un kernel de juguete no ejecutará automáticamente Electron ni aplicaciones Linux: necesitaría ABI, loader, libc y user space compatibles o portar sus runtimes. Recomendación: kernel Debian sin parches. `KAIRÓS OS Kernel Lab` puede arrancar en QEMU con serial y un experimento de memoria/procesos, en repositorio o carpeta experimental separada, sin dependencia de entrega.
 
 ## Bases candidatas
 

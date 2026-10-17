@@ -33,7 +33,7 @@ function closeImg(){
         imgElement.style.display = index === currentImageIndex ? "block" : "none";
         imagesContainer.appendChild(imgElement);
       });
-      UPHOSPreferences.write("imagenesGuardadas", images);
+      KAIROSPreferences.write("imagenesGuardadas", images);
     }
 
     // Mostrar modal de confirmación
@@ -58,9 +58,9 @@ function closeImg(){
     // Cambia el fondo del contenedor de la galería
 function setAsWallpaper() {
   const currentImgSrc = images[currentImageIndex];
-  if (!currentImgSrc || !UPHOSPreferences.setWallpaper(currentImgSrc)) return;
-  if (window.parent !== window) window.parent.document.dispatchEvent(new Event('uphos:wallpaper'));
-  window.dispatchEvent(new CustomEvent('uphos:notice',{ detail:'Fondo de escritorio actualizado.' }));
+  if (!currentImgSrc || !KAIROSPreferences.setWallpaper(currentImgSrc)) return;
+  if (window.parent !== window) window.parent.document.dispatchEvent(new Event('kairos:wallpaper'));
+  window.dispatchEvent(new CustomEvent('kairos:notice',{ detail:'Fondo de escritorio actualizado.' }));
 }
 
     // Subir imagen desde el dispositivo

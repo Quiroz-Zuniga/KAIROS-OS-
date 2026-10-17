@@ -11,9 +11,9 @@ export function crearLive(repositorioDestino, opciones = {}) {
   const motorInstalacion = opciones.instalar ?? instalar;
   let estado = {
     version: 1, estado: 'live', fecha: new Date().toISOString(), revision: 0, red:crearRed(),
-    usuario: { usuario: 'live', nombre: 'UPHOS Live' },
+    usuario: { usuario: 'live', nombre: 'KAIROS Live' },
     preferencias: { idioma: 'es', teclado: 'latinoamericano', zona: 'America/Tegucigalpa' },
-    disco: { capacidadGiB: 64, particiones: [{ capacidadGiB: 32, nombre: 'Live', formato: 'UPHFS' }] },
+    disco: { capacidadGiB: 64, particiones: [{ capacidadGiB: 32, nombre: 'Live', formato: 'KAIROSFS' }] },
     archivos: [{ ruta: '/', tipo: 'carpeta' }, { ruta: '/sistema', tipo: 'carpeta' }]
   };
   let borrador = crearBorrador(), ocupado = false, finalizado = false;

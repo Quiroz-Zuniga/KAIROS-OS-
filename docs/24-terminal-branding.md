@@ -1,5 +1,8 @@
 # 24. Terminal, búho y Fastfetch
 
+> Documento de planificación o revisión previa. El [manual técnico actual](guia/arquitectura.md) describe el código disponible; las capacidades Linux de esta especificación siguen propuestas.
+
+
 Estado: especificación; no se modificó Bash, terminal, hostname ni MOTD del anfitrión. La consola simulada conserva sus comandos educativos. Linux MVP abre xterm/Bash real.
 
 | Token | Color |

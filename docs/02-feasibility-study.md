@@ -1,6 +1,6 @@
 # 02. Viabilidad y alcance de ocho semanas
 
-> Revisión Kairós OS, 2026-10-16: la [ADR vigente](ARCHITECTURE_DECISION.md), el [roadmap](14-roadmap-8-weeks.md) y los [15 criterios MVP](MVP_ACCEPTANCE.md) gobiernan el alcance actual. Los nombres de código/datos UPHOS son históricos y se conservan. Las pruebas citadas de etapas anteriores no se ejecutaron en esta revisión.
+> Revisión Kairós OS, 2026-10-16: la [ADR vigente](ARCHITECTURE_DECISION.md), el [roadmap](14-roadmap-8-weeks.md) y los [15 criterios MVP](MVP_ACCEPTANCE.md) gobiernan el alcance actual. Los identificadores técnicos actuales usan `kairos`; el manual técnico describe la implementación vigente. Las pruebas citadas de etapas anteriores no se ejecutaron en esta revisión.
 
 **Viabilidad técnica condicionada; plazo del MVP ampliado aún no confirmado.** El estudio previo de capacidad depende de disponibilidad y experiencia aún no confirmadas: dos integrantes con 15–20 horas semanales cada uno, 240–320 horas totales en ocho semanas; al menos uno capaz de depurar Linux, empaquetado y permisos. Con una persona a 10 horas semanales, reducir funciones o prever 12–16 semanas como hipótesis inicial.
 

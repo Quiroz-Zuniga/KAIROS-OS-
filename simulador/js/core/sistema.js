@@ -12,7 +12,7 @@ export function instalacionValida(datos) {
     ['Plus', 'Pro'].includes(datos.edicion ?? 'Plus') && ['32', '64'].includes(datos.arquitectura ?? '64') && usuariosValidos(datos) &&
     typeof datos.usuario?.nombre === 'string' && usuarioValido(datos.usuario?.usuario) && credencialValida(datos.usuario.credencial) && recuperacionValida(datos.usuario.recuperacion) &&
     Array.isArray(datos.archivos) && datos.archivos.some(archivo => archivo.ruta === '/') &&
-    datos.disco?.particiones?.[0]?.formato === 'UPHFS' &&
+    datos.disco?.particiones?.[0]?.formato === 'KAIROSFS' &&
     Number.isInteger(datos.disco.particiones[0].capacidadGiB) && datos.disco.particiones[0].capacidadGiB >= 8 && datos.disco.particiones[0].capacidadGiB <= 64 &&
     (datos.preferencias?.idioma === 'es-HN' || Object.hasOwn(IDIOMAS, datos.preferencias?.idioma)) && (datos.preferencias?.teclado === 'espanol' || Object.hasOwn(TECLADOS, datos.preferencias?.teclado)) && ZONAS.includes(datos.preferencias?.zona);
 }

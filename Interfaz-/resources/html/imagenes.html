@@ -175,7 +175,7 @@ label.subir img,
 }
 
   </style>
-    <link rel="stylesheet" href="../css/uphos.css">
+    <link rel="stylesheet" href="../css/kairos.css">
 </head>
 
 <body>
@@ -229,11 +229,11 @@ label.subir img,
     const modal = document.getElementById("deleteModal");
 
     // Cargar imágenes desde localStorage o usar imágenes predeterminadas
-    let images = UPHOSPreferences.read('imagenesGuardadas', ['../assets/images/uphos-wallpaper.svg'],
-      value => Array.isArray(value) && value.every(item => UPHOSPreferences.validImage(item)))
-      .map(item => UPHOSPreferences.imageURL(item))
+    let images = KAIROSPreferences.read('imagenesGuardadas', ['../assets/images/kairos-wallpaper.svg'],
+      value => Array.isArray(value) && value.every(item => KAIROSPreferences.validImage(item)))
+      .map(item => KAIROSPreferences.imageURL(item))
       .filter(item => !/\/(?:fondo[1-6]|fondologin|fondoregistro)\.png$/i.test(item));
-    if (!images.length) images = ['../assets/images/uphos-wallpaper.svg'];
+    if (!images.length) images = ['../assets/images/kairos-wallpaper.svg'];
 
 //     // Mostrar la imagen anterior
 //     function showPrevImage() {

@@ -1,1 +1,1 @@
-// Archivos: conexión con UPHFS pendiente. No se utiliza el backend antiguo.
+// Archivos: conexión con KAIROSFS pendiente. No se utiliza el backend antiguo.

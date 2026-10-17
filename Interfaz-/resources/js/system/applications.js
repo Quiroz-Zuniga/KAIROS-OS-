@@ -14,10 +14,10 @@ export const applications = Object.freeze(Object.fromEntries([
     ['editor','Editor de texto',html+'editor.html','clipboard-regular 1.png',32],
     ['video','Videos',html+'virtual.html?mode=video','video-solid 1.png',96],
     ['tasks','Gestor de tareas',app+'Gestor-Tareas-Proyecto-ED-UPh/index.html','test_tasks_list_clipboard_todo_icon_191634 1.png',32],
-    ['spotify','UPHOS Beats',html+'virtual.html?mode=spotify','musica.png',64],
+    ['spotify','KAIRÓS OS Beats',html+'virtual.html?mode=spotify','musica.png',64],
     ['imagenes','Imágenes',html+'virtual.html?mode=imagenes','imagen.png',64],
-    ['calendar','Calendario',html+'calendario.html','calendar-uphos.svg',32],
-    ['recycle','Papelera de reciclaje',html+'virtual.html?mode=recycle','recycle-uphos.svg',16],
+    ['calendar','Calendario',html+'calendario.html','calendar-kairos.svg',32],
+    ['recycle','Papelera de reciclaje',html+'virtual.html?mode=recycle','recycle-kairos.svg',16],
     ['procesos','Monitor del sistema',html+'procesos.html','test_tasks_list_clipboard_todo_icon_191634 1.png',32]
 ].map(([id,title,htmlUrl,icon,memory]) => [id,Object.freeze({id,title,htmlUrl,...(id==='calendar'?{width:1180,height:760}:id==='procesos'?{width:1100,height:720}:{}),icon:new URL('../../assets/images/'+icon, import.meta.url).href,memory})])));
 export const aliases = Object.freeze({'explorer-files':'explorer',ed_texto:'editor',temporizador:'temporisador'});

@@ -1,5 +1,8 @@
 # 04. Arquitectura de Kairós OS
 
+> Documento de planificación o revisión previa. El [manual técnico actual](guia/arquitectura.md) describe el código disponible; las capacidades Linux de esta especificación siguen propuestas.
+
+
 Estado: diseño objetivo; rutas nuevas todavía no implementadas. La [ADR](ARCHITECTURE_DECISION.md) gobierna esta revisión.
 
 ```text

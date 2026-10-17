@@ -85,7 +85,7 @@ test('La respuesta se oculta incluso con comillas incompletas y no se expone en 
   assert.ok(!(await interpretar('instalar',live)).texto.includes('Secreto Luna'));
 });
 test('Electron guarda la pregunta y permite recuperar después de reabrir el almacenamiento',async()=>{
-  const raiz=await mkdtemp(path.join(tmpdir(),'uphos-recuperacion-'));
+  const raiz=await mkdtemp(path.join(tmpdir(),'kairos-recuperacion-'));
   try {
     const repo=new AlmacenLocal(raiz,instalacionValida);
     await instalar({...crearBorrador(),nombre:'Ana',usuario:'ana',contrasena:'clave antigua',confirmacion:'clave antigua',respuestaSeguridad:'Luna secreta',confirmarFormato:true},repo);

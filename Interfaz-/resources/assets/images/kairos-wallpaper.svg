@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="3840" height="2160" viewBox="0 0 3840 2160">
+  <title>KAIRÓS OS · Horizonte KAIRÓS OS</title>
+  <desc>Fondo azul noche con ondas azules y un arco cyan en la esquina inferior derecha.</desc>
+  <defs>
+    <linearGradient id="base" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0B1F3A"/><stop offset=".52" stop-color="#123B73"/><stop offset="1" stop-color="#0A0F16"/></linearGradient>
+    <radialGradient id="light" cx=".8" cy=".75" r=".8"><stop stop-color="#1C2733" stop-opacity=".9"/><stop offset="1" stop-color="#0A0F16" stop-opacity="0"/></radialGradient>
+    <linearGradient id="ribbon" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#7D8FA3" stop-opacity=".02"/><stop offset=".55" stop-color="#1C2733" stop-opacity=".6"/><stop offset="1" stop-color="#7D8FA3" stop-opacity=".24"/></linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#19C2FF" stop-opacity="0"/><stop offset=".4" stop-color="#1296F3"/><stop offset=".7" stop-color="#BFE9FF"/><stop offset=".9" stop-color="#BFE9FF"/><stop offset="1" stop-color="#F7FAFC"/></linearGradient>
+  </defs>
+  <path fill="url(#base)" d="M0 0h3840v2160H0z"/>
+  <path fill="url(#light)" d="M0 0h3840v2160H0z"/>
+  <path d="M-500 1730C480 2220 1650 630 2750 990S3970 1700 4390 680L4380 2380H-500Z" fill="url(#ribbon)"/>
+  <path d="M-500 1800C650 2350 1630 830 2760 1160S3900 1730 4380 950" fill="none" stroke="#7D8FA3" stroke-opacity=".13" stroke-width="2"/>
+  <path d="M1620 2360C2120 2020 2390 1390 2970 1450S3630 2180 4190 1490" fill="none" stroke="url(#gold)" stroke-width="12"/>
+  <path d="M1750 2410C2270 2050 2490 1520 3020 1560S3650 2280 4200 1650" fill="none" stroke="#BFE9FF" stroke-opacity=".09" stroke-width="90"/>
+  <circle cx="3250" cy="600" r="340" fill="none" stroke="#7D8FA3" stroke-opacity=".07" stroke-width="1"/>
+  <circle cx="3250" cy="600" r="400" fill="none" stroke="#7D8FA3" stroke-opacity=".05" stroke-width="1"/>
+</svg>

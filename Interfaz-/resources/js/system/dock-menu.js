@@ -12,7 +12,7 @@ export function initializeDockMenu(launchMonitor) {
     bar.addEventListener('contextmenu',event=>{event.preventDefault();event.stopPropagation();open(event);});
     bar.addEventListener('click',event=>{if(!event.target.closest('button,a')){event.stopPropagation();if(menu.hidden)open(event);else close();}});
     bar.addEventListener('keydown',event=>{if(event.key==='ContextMenu'||(event.shiftKey&&event.key==='F10')){event.preventDefault();open();}});
-    document.querySelector('#dock-view-processes').addEventListener('click',()=>{close();try{launchMonitor();}catch(error){window.dispatchEvent(new CustomEvent('uphos:notice',{detail:error.message}));}});
+    document.querySelector('#dock-view-processes').addEventListener('click',()=>{close();try{launchMonitor();}catch(error){window.dispatchEvent(new CustomEvent('kairos:notice',{detail:error.message}));}});
     document.addEventListener('click',event=>{if(!menu.contains(event.target)&&!bar.contains(event.target))close();});
     document.addEventListener('keydown',event=>{if(event.key==='Escape'&&!menu.hidden)close(true);});
     window.addEventListener('resize',()=>close());

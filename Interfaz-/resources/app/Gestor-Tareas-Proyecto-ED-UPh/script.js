@@ -104,12 +104,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
            });
            actual = actual.siguiente;
         };
-        UPHOSPreferences.write('tareas', tareas);
+        KAIROSPreferences.write('tareas', tareas);
     }
 
     // function para carafgar tareas desde localstorage
     function CargarTareas() {
-        const tareas = UPHOSPreferences.read('tareas', [], value => Array.isArray(value) && value.every(t => t && typeof t.titulo === 'string' && typeof t.descripcion === 'string' && [1,2,3].includes(t.importancia) && typeof t.fecha === 'string'));
+        const tareas = KAIROSPreferences.read('tareas', [], value => Array.isArray(value) && value.every(t => t && typeof t.titulo === 'string' && typeof t.descripcion === 'string' && [1,2,3].includes(t.importancia) && typeof t.fecha === 'string'));
         if (tareas) {
             tareas.forEach(tarea => {
                 listaTareas.agregar(tarea.titulo, tarea.descripcion, tarea.importancia, tarea.fecha);

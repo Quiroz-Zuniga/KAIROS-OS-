@@ -9,8 +9,8 @@ spec.loader.exec_module(module)
 
 class StatusTests(unittest.TestCase):
     def test_nmcli_escaped_names_and_strongest_access_point(self):
-        networks = module.parse_networks('*:UPHOS\\:Lab:80:WPA2\n:Biblioteca:20:WPA2\n:Biblioteca:70:WPA2\n:Abierta:40:--')
-        self.assertEqual(networks[0]['ssid'], 'UPHOS:Lab')
+        networks = module.parse_networks('*:KAIROS\\:Lab:80:WPA2\n:Biblioteca:20:WPA2\n:Biblioteca:70:WPA2\n:Abierta:40:--')
+        self.assertEqual(networks[0]['ssid'], 'KAIROS:Lab')
         self.assertTrue(networks[0]['connected'])
         self.assertEqual(networks[1]['signal'], 70)
         self.assertFalse(networks[2]['secure'])

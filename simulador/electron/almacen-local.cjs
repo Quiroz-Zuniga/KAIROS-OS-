@@ -42,7 +42,7 @@ class AlmacenLocal {
     if (!/^volumen-[a-f0-9-]{36}$/.test(nombre ?? '')) return;
     const destino = path.resolve(this.raiz, nombre);
     if (!destino.startsWith(this.raiz + path.sep)) throw new Error('terminal.errorProtegido');
-    // Solo carpetas generadas por UPHOS dentro de su almacenamiento privado.
+    // Solo carpetas generadas por KAIROS dentro de su almacenamiento privado.
     await fs.rm(destino, { recursive: true, force: true });
   }
   async publicar(datos) {

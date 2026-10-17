@@ -57,7 +57,7 @@ test('Editor saves atomically, rejects stale content and respects read-only attr
 });
 
 test('Native IP survives restart and clean reinstall allocates a distinct IP; account passwords cannot repeat',async()=>{
-  const raiz=await mkdtemp(path.join(tmpdir(),'uphos-red-prueba-'));
+  const raiz=await mkdtemp(path.join(tmpdir(),'kairos-red-prueba-'));
   try{
     const repo=new AlmacenLocal(raiz,instalacionValida);
     const borrador={...crearBorrador(), respuestaSeguridad: 'respuesta de prueba',nombre:'Ana',usuario:'ana',contrasena:'clave primera',confirmacion:'clave primera',confirmarFormato:true};

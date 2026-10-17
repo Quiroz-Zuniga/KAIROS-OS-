@@ -31,10 +31,10 @@ test('Windows paths, nested folders, content tools and backups round-trip', asyn
 });
 
 test('Native storage persists accounts, credentials and physical file content; rejects stale writes and escape paths', async () => {
-  const raiz = await mkdtemp(path.join(tmpdir(), 'uphos-prueba-'));
+  const raiz = await mkdtemp(path.join(tmpdir(), 'kairos-prueba-'));
   try {
     const almacen = new AlmacenLocal(raiz, instalacionValida);
-    const borrador = { ...crearBorrador(), respuestaSeguridad: 'respuesta de prueba', edicion: 'Pro', licencia: 'UPHOS-PRO-H7K2-M9Q4-T6XA', arquitectura: '32', nombre: 'Ana', usuario: 'ana', contrasena: 'clave segura', confirmacion: 'clave segura', confirmarFormato: true };
+    const borrador = { ...crearBorrador(), respuestaSeguridad: 'respuesta de prueba', edicion: 'Pro', licencia: 'KAIROS-PRO-H7K2-M9Q4-T6XA', arquitectura: '32', nombre: 'Ana', usuario: 'ana', contrasena: 'clave segura', confirmacion: 'clave segura', confirmarFormato: true };
     const datos = await instalar(borrador, almacen);
     assert.equal(datos.edicion, 'Pro'); assert.equal(datos.arquitectura, '32');
     const nucleo = crearGrupoTerminal(datos, almacen, await autenticar(datos, 'ana', 'clave segura')).crear();

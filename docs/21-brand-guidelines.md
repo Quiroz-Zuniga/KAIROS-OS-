@@ -1,5 +1,8 @@
 # 21. Identidad y activos de Kairós OS
 
+> Documento de planificación o revisión previa. El [manual técnico actual](guia/arquitectura.md) describe el código disponible; las capacidades Linux de esta especificación siguen propuestas.
+
+
 Nombre visible oficial **Kairós OS**, con acento; identificadores nuevos ASCII `kairos-*`. Concepto: momento oportuno, visión, orden y precisión. Evitar discurso religioso, estética gamer/cyberpunk, infantil y exceso de identidad AI.
 
 ## Fuente disponible y brecha

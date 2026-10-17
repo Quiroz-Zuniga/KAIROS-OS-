@@ -1,5 +1,8 @@
 # OPEN DECISIONS
 
+> Documento de planificación o revisión previa. El [manual técnico actual](guia/arquitectura.md) describe el código disponible; las capacidades Linux de esta especificación siguen propuestas.
+
+
 Fecha: 2026-10-16. Ninguna opción pendiente se presenta como implementada. Los responsables son roles propuestos, no personas asignadas. Una decisión requiere evidencia guardada y actualización de ADR/plan cuando altere arquitectura.
 
 | ID | OPEN DECISION y alternativas | Recomendación / responsable | Gate de cierre |

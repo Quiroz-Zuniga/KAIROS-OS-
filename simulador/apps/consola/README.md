@@ -1,6 +1,6 @@
-# Terminal UPHOS
+# Terminal KAIRÓS OS
 
-La terminal se abre al iniciar sesión o al elegir Probar UPHOS Live desde el arranque. No hay escritorio. El prompt es `usuario@uphos U:\home\usuario>`. Escribe directamente a su derecha y ejecuta con Enter. No hay botón Ejecutar ni selector gráfico de idioma.
+La terminal se abre al iniciar sesión o al elegir Probar KAIRÓS OS Live desde el arranque. No hay escritorio. El prompt es `usuario@kairos U:\home\usuario>`. Escribe directamente a su derecha y ejecuta con Enter. No hay botón Ejecutar ni selector gráfico de idioma.
 
 La ayuda distingue los nombres de comandos en ámbar. Al completar un comando reconocido (incluidos sus alias), su nombre aparece en rojo; los argumentos permanecen en el color normal. Las coincidencias parciales o desconocidas no se resaltan. El color también se conserva en el registro de comandos ejecutados y al recorrer el historial. Estos estilos se definen con `--color-ayuda` y `--color-comando` en `consola.css`; `presentacion.js` gestiona rangos de texto, sin cambiar el análisis ni ejecutar contenido. Los resultados de archivos siguen siendo texto literal.
 
@@ -48,7 +48,7 @@ La tabla de los 120 comandos, sus argumentos y funciones está en [GUIA-CONSOLA.
 crear carpeta "mis documentos"
 entrar "mis documentos"
 crear archivo nota.txt
-escribir nota.txt "Hola UPHOS"
+escribir nota.txt "Hola KAIRÓS OS"
 leer nota.txt
 copiar nota.txt copia.txt
 mover copia.txt final.txt
@@ -63,7 +63,7 @@ Español es predeterminado; `idioma en` cambia respuestas, ayuda y errores a ing
 
 `usuarios` consulta las cuentas instaladas y nunca muestra credenciales. Procesos y memoria son modelos simulados (dos procesos y 128 MiB lógicos con una base de 24 MiB más contenido). `reiniciar` vuelve al arranque; `apagar` cierra la sesión y presenta el estado apagado. Ninguno reinicia ni apaga Windows.
 
-No se usa `eval` ni se ejecutan comandos de Windows. En el navegador se usa IndexedDB; en Electron, el puente de almacenamiento escribe únicamente en la carpeta privada de UPHOS.
+No se usa `eval` ni se ejecutan comandos de Windows. En el navegador se usa IndexedDB; en Electron, el puente de almacenamiento escribe únicamente en la carpeta privada de KAIROS.
 
 ## Reinstalación y ayuda contextual
 
