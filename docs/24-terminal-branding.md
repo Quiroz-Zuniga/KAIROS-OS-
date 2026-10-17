@@ -9,7 +9,8 @@ Estado: especificación; no se modificó Bash, terminal, hostname ni MOTD del an
 |---|---|
 | --terminal-bg | #071019 |
 | --terminal-text | #D9F2FF |
-| --terminal-blue | #19C2FF |
+| --terminal-blue | #1296F3 |
+| --terminal-cyan | #19C2FF |
 | --terminal-green | #23C483 |
 | --terminal-warning | #F4B740 |
 | --terminal-error | #E5484D |

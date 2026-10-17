@@ -7,11 +7,31 @@ Fecha: 2026-10-16. Estado: planificación de primera ejecución; **ninguna tarea
 
 ## Reglas de ejecución
 
-Conservar `simulador/`, GUI, datos y pruebas. No reescritura ni traslado global. Preparar snapshot antes de cada etapa: no hay Git accesible en la raíz ahora. Toda integración/privilegio Linux se prueba dentro de VM de desarrollo/build; esta revisión no instaló paquetes ni tocó el host. Rutas futuras indicadas son propuestas; escoger JS/TS por costo real, con TypeScript gradual y sin migrar JS funcional por preferencia.
+Conservar `simulador/`, GUI, datos y pruebas. No reescritura ni traslado global. Preparar una referencia recuperable antes de cada etapa. Git está disponible en la raíz; [01-current-state](01-current-state.md) registra la baseline observada. Preservar además cambios locales y archivos sin seguimiento; un commit previo no los incluye automáticamente. Toda integración/privilegio Linux se prueba dentro de VM de desarrollo/build; esta revisión no instaló paquetes ni tocó el host. Rutas futuras indicadas son propuestas; escoger JS/TS por costo real, con TypeScript gradual y sin migrar JS funcional por preferencia.
 
 Cada tarea entrega un cambio revisable con su evidencia; tareas de integración pueden dividirse más al descubrir fallos. No introducir todos los servicios a la vez. Ejecutar suites existentes apropiadas al cambiar código; contratos, seguridad y recorridos Linux requieren pruebas significativas, las tareas visuales requieren captura. Las tareas se enlazan por número, TASK-008 cierra primer hito y TASK-012 cierra primera ISO técnica. No emitir estado READY como certificación de ISO/MVP.
 
 WHY: producto real sobre Debian. WHAT: shell/servicios/sesión/paquete incrementales. IMPACT: proveedores reales separados de laboratorio. MIGRATION: tareas siguientes y compatibilidad de datos de documento 06. ROLLBACK: restaurar solo cambio de tarea desde snapshot; sin borrar datos, reset destructivo ni acciones sobre discos del host.
+
+## TASK-000
+
+Nombre: Repository Safety Baseline.
+
+Estado: VALIDATED con el commit local de cierre `chore(repo): normalize agent skills and repository baseline`. Evidencia en [task-000](evidence/task-000.md); TASK-001 no ejecutada.
+
+Archivos: AGENTS.md; .agents/skills/*/SKILL.md; .gitignore; documentación de baseline y referencia del plan.
+
+Objetivo: Establecer una baseline segura y versionada del repositorio antes de comenzar implementación: verificar Git real, versionar las reglas de agentes aprobadas, validar skills y revisar ignores y documentación obsoleta. Mantener una tarea/rama/responsable; usar worktrees separados para trabajo concurrente. No desarrollar en main; develop sigue siendo opcional.
+
+Dependencias: Ninguna. Preservar los cambios previos antes de preparar la baseline.
+
+Riesgo: Medio: mezclar cambios del usuario o afirmar protecciones remotas no verificadas.
+
+Criterio de aceptación: Estado Git y remoto registrados; seis skills con frontmatter válido y nombres coherentes; reglas aprobadas versionadas en referencia recuperable, sin secretos ni cambios ajenos; ignores revisados; estrategia de ramas/worktrees documentada; protección de main verificada o explícitamente pendiente con responsable por asignar. No inicializar de nuevo el repositorio ni cerrar decisiones de producto.
+
+Evidencia: [Registro de cierre](evidence/task-000.md), validación local de las seis skills, revisión de staging y diff. La referencia recuperable es el commit local que incorpora este cierre; su SHA exacto se obtiene con `git log -1 --format=%H -- docs/evidence/task-000.md`. El usuario autorizó un único commit, sin push, merge ni tag. BRANCH PROTECTION: VERIFIED — main sin protección activa ni reglas efectivas; PR/checks no exigidos y force push/eliminación no restringidos por estas reglas. Su configuración queda pendiente para el responsable humano del repositorio.
+
+Rollback: Revertir únicamente los cambios propios desde la referencia/copia previa, conservando archivos modificados y sin seguimiento del usuario; sin reset destructivo ni limpieza global.
 
 ## TASK-001
 
@@ -19,11 +39,11 @@ Nombre: Baseline y alcance de trabajo.
 
 Archivos: AGENTS.md; docs/01-current-state.md; tests existentes.
 
-Objetivo: Actualizar instrucciones de etapa Linux solo para producto nuevo y preservar laboratorio/datos; crear snapshot recuperable.
+Objetivo: Establecer la baseline funcional, inventariar componentes y datos, delimitar el alcance Linux frente al laboratorio y registrar regresiones. Preservar simulador/datos y su recuperación; las reglas de agentes y la baseline del repositorio pertenecen a TASK-000.
 
-Dependencias: Ninguna.
+Dependencias: 000.
 
-Riesgo: Medio: alcance y ausencia de Git raíz.
+Riesgo: Medio: alcance funcional, regresiones y preservación de datos.
 
 Criterio de aceptación: Referencia recuperable, inventario de datos y comandos de regresión registrados; prohibición de modificar host preservada.
 

@@ -39,6 +39,17 @@ Referenciar paleta donde coincidan valores. Estados: --success #23C483; --warnin
 
 Gradiente de marca permitido: 135deg, navy 0%, deep-blue 45%, blue 75%, cyan 100%. Solo wallpaper/splash/login/About, no fondos de cada botón y ventana.
 
+## Tokens de terminal
+
+Los tokens son distintos y comparten la paleta oficial:
+
+```css
+--terminal-blue: #1296F3;
+--terminal-cyan: #19C2FF;
+```
+
+Semántica del prompt: `kairos`/usuario real → cyan; `system`/hostname real → blue; ruta → ice (`#BFE9FF`). Ver [branding de terminal](24-terminal-branding.md).
+
 ## Sistema reutilizable
 
 | Grupo | Especificación inicial |

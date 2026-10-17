@@ -4,3 +4,32 @@ site/
 __pycache__/
 *.pyc
 entregables/
+
+# Outputs de aplicaciones y herramientas (no configuración fuente)
+dist/
+build/
+logs/
+*.log
+
+# Credenciales y secretos locales; conservar ejemplos de configuración
+.env
+.env.*
+!.env.example
+!.env.*.example
+*.local.key
+*.local.pem
+
+# Artefactos de imagen y salidas generadas de Debian live-build
+*.iso
+*.iso.sha256
+/distro/live/chroot/
+/distro/live/binary/
+/distro/live/cache/
+/distro/live/.build/
+/distro/live/chroot.packages.*
+/distro/live/binary.packages
+/distro/live/live-image-*
+
+# Worktrees internos y temporales de Electron
+/.worktrees/
+*.asar

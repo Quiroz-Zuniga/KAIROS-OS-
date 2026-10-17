@@ -5,7 +5,7 @@
 
 Revisión: 2026-10-16. Evidencia del árbol actual, no de una distribución instalada. Se inventariaron fuentes y recursos de ambos proyectos, se leyeron los documentos de docs/ y antecedentes de Interfaz-/docs/, manifiestos, entradas Electron/web, controladores, persistencia, lectores y estilos principales. Se inspeccionó visualmente Logo/Kairos.png y se leyó Logo/kairoz-terminal-boot.txt. Dependencias vendorizadas, binarios y cada línea de apps de terceros no recibieron auditoría exhaustiva.
 
-No hay `.git` accesible en la raíz: `git status` devuelve «not a git repository». Las afirmaciones de ramas/cambios previos de informes antiguos son antecedentes, no estado verificable ahora. No se hizo commit, instalación, build, arranque VM ni consulta de hardware. Las suites presentes no se ejecutaron porque esta entrega modifica Markdown exclusivamente.
+Git está disponible en la raíz. [01-current-state](01-current-state.md) registra el SHA, rama, remoto y cambios locales observados durante la limpieza; la afirmación previa de ausencia de Git queda corregida por esa inspección. La revisión arquitectónica original no hizo commit, instalación, build, arranque VM ni consulta de hardware, ni ejecutó las suites de aplicaciones; esos límites no son evidencia de integración Linux.
 
 ## Matriz observada
 
@@ -37,7 +37,7 @@ El estudio anterior hacía opcional el panel de ventanas reales y no exigía AI/
 
 ## Archivos afectados
 
-Esta entrega: docs/ARCHITECTURE_DECISION.md, 04, 06, 07, 12, 14 y README revisados; 01/02/03/05/08/09/10/11/13/15 con aclaraciones vigentes; nuevos 16–24, GAP_ANALYSIS, OPEN_DECISIONS, MVP_ACCEPTANCE, REVIEW_VALIDATION y KAIROS_GEOMETRY; IMPLEMENTATION_PLAN.md raíz. No se editan fuentes ejecutables, recursos, manifiestos o AGENTS.md.
+Esta entrega: docs/ARCHITECTURE_DECISION.md, 04, 06, 07, 12, 14 y README revisados; 01/02/03/05/08/09/10/11/13/15 con aclaraciones vigentes; nuevos 16–24, GAP_ANALYSIS, OPEN_DECISIONS, MVP_ACCEPTANCE, REVIEW_VALIDATION y KAIROS_GEOMETRY; el plan hoy autoritativo está en [docs/IMPLEMENTATION_PLAN.md](IMPLEMENTATION_PLAN.md), con una referencia mínima desde la raíz. No se editan fuentes ejecutables, recursos, manifiestos o AGENTS.md.
 
 Implementación futura: AGENTS.md; entradas/estilos/controladores de Interfaz-/; traducciones/branding visible de simulador/ cuando corresponda; desktop/, services/linux/, system/, themes/, assets/, packaging/debian/, distro/live/, scripts/ y tests/ según tarea. [06](06-ui-migration.md) identifica las superficies e IDs que se preservan.
 

@@ -47,7 +47,7 @@ Primer hito obligatorio: Debian → Xorg → Openbox → sesión Kairós → esc
 
 ## ROLLBACK
 
-Recuperar únicamente los archivos de cada tarea desde una copia o referencia verificable; este directorio no expone un repositorio Git en su raíz. Conservar datos originales y laboratorio. Si falla la sesión, recuperar una sesión de diagnóstico en la VM; ejecutar el shell maximizado sirve para depurar pero **no cumple** el criterio de experiencia Kairós. Ningún rollback requiere reset destructivo, particionar o cambiar el anfitrión.
+Recuperar únicamente los archivos de cada tarea desde una copia o referencia verificable. Git está disponible en la raíz; la baseline observada está registrada en [01-current-state](01-current-state.md). Antes de editar, preservar también los cambios locales y archivos sin seguimiento: HEAD por sí solo no los recupera. Conservar datos originales y laboratorio. Si falla la sesión, recuperar una sesión de diagnóstico en la VM; ejecutar el shell maximizado sirve para depurar pero **no cumple** el criterio de experiencia Kairós. Ningún rollback requiere reset destructivo, particionar o cambiar el anfitrión.
 
 ## Límites y decisiones
 
