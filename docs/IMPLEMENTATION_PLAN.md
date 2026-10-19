@@ -37,6 +37,12 @@ Rollback: Revertir únicamente los cambios propios desde la referencia/copia pre
 
 Nombre: Baseline y alcance de trabajo.
 
+Estado: VALIDATED para el alcance de baseline documental y suites automatizadas
+del laboratorio (2026-10-18). Inventario y recuperación en
+[01-current-state](01-current-state.md#baseline-funcional-task-001--2026-10-18);
+resultados y límites en [evidencia TASK-001](evidence/task-001.md). No valida
+navegador, Electron Linux ni sesión/ISO. TASK-002 no ejecutada.
+
 Archivos: AGENTS.md; docs/01-current-state.md; tests existentes.
 
 Objetivo: Establecer la baseline funcional, inventariar componentes y datos, delimitar el alcance Linux frente al laboratorio y registrar regresiones. Preservar simulador/datos y su recuperación; las reglas de agentes y la baseline del repositorio pertenecen a TASK-000.

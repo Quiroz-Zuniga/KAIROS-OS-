@@ -63,6 +63,46 @@ Las rutas de esta tabla parten de la raíz del repositorio.
 
 La estructura actual ya es modular en varios puntos. La necesidad es introducir fronteras de plataforma, no reemplazar toda la aplicación ni imponer un framework.
 
+## Baseline funcional TASK-001 — 2026-10-18
+
+Referencia de código inspeccionada: `c7974f5daadc1afcfdd85e6124d52446ea4abed5`.
+La rama `codex/task-001-functional-baseline` registra únicamente documentación y
+evidencia. No existen todavía los árboles de producción propuestos `desktop/`,
+`system/`, `services/`, `distro/` o `packaging/` en esta referencia.
+
+### Datos que deben preservarse
+
+| Espacio | Ubicación/identificador observado | Preservación y recuperación |
+| --- | --- | --- |
+| Simulador web | IndexedDB `kairos-simulator`, versión 1, store `sistema`, claves `instalacion` y `cursor-red` | Conservar el origen y su perfil de navegador. Usar el respaldo del laboratorio para archivos; no borrar datos del sitio ni copiar credenciales a Linux. Las pruebas usan un adaptador de prueba, no el perfil personal. |
+| Simulador Electron | `KAIROS/datos` bajo `LOCALAPPDATA` o `app.getPath('appData')`; override `KAIROS_TEST_DATA`; perfil hermano `perfil` | Con la app cerrada, preservar la raíz privada completa: `datos/estado.json`, `datos/cursor-red.json`, `datos/volumen-<uuid>/` y `perfil/`. Conservar estado y espejo juntos; no importar el espejo como hogar Linux. Las pruebas nativas usan directorios temporales. |
+| Escritorio | localStorage `kairos.desktop.v1` | Documentos, carpetas, papelera, accesos y tamaño. Conservar el perfil/origen completo; no hay sincronización con el simulador. |
+| Apps y preferencias GUI | localStorage `calendar-events`, `tareas`, `imagenesGuardadas`, `videos`, `wallpaper`; `fileSystem` en la app histórica `file-manager-js-main` | Conservar también claves históricas sin renombrarlas. Inventario de fuentes; no demuestra que todas las apps estén accesibles desde el catálogo actual. |
+| Fuentes, recursos y configuración | `simulador/`, `Interfaz-/`, lockfiles, assets y `.vscode/` local | Git recupera contenido versionado; archivos ignorados/sin seguimiento necesitan copia separada antes de una migración. TASK-001 no los mueve ni elimina. |
+
+No se inspeccionaron ni copiaron perfiles personales o estados de instalación.
+Este inventario documenta formatos y ubicaciones del código, no un respaldo de
+datos del usuario. Las cuentas, discos, procesos y energía del laboratorio siguen
+siendo virtuales; los lectores Python existentes no constituyen una System Layer
+integrada al panel.
+
+### Regresión reproducible
+
+Desde la raíz, sin instalar dependencias:
+
+```bash
+(cd simulador && npm test)
+(cd Interfaz- && npm test)
+(cd Interfaz- && npm run test:hardware)
+```
+
+Resultados de TASK-001: 165/165, 19/19 y 4/4 respectivamente; códigos de salida 0.
+Se ejecutaron con Node.js v24.18.0, npm 11.16.0 y Python 3.13.5. No se detectaron
+fallos en estas suites. No cubren una sesión gráfica, el runtime Electron Linux,
+X11/Openbox ni una ISO. Los recorridos de navegador, builds y arranque Electron
+no se ejecutaron; las capturas históricas no se reutilizan como evidencia actual.
+Registro, límites y recuperación en [evidencia TASK-001](evidence/task-001.md).
+
 ## Alcance de la revisión Kairós OS
 
-La especificación cambia el producto objetivo a distribución/entorno Debian real, pero no cambia por sí sola lo implementado. Los identificadores KAIRÓS OS de este inventario son evidencia literal. [GAP_ANALYSIS](GAP_ANALYSIS.md) añade marca, sesión, Code, AI, EWMH y archivos afectados. Logo/Kairos.png existe como referencia raster; no existe todavía la familia SVG oficial. No se ejecutaron pruebas de aplicación ni VM en esta entrega documental.
+La especificación cambia el producto objetivo a distribución/entorno Debian real, pero no cambia por sí sola lo implementado. Los identificadores KAIRÓS OS de este inventario son evidencia literal. [GAP_ANALYSIS](GAP_ANALYSIS.md) añade marca, sesión, Code, AI, EWMH y archivos afectados. Logo/Kairos.png existe como referencia raster; no existe todavía la familia SVG oficial. La revisión documental original no ejecutó pruebas de aplicación ni VM; TASK-001 registra después las suites automatizadas anteriores, sin validar VM.
